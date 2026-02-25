@@ -1,9 +1,12 @@
 import os
 from pathlib import Path
 
+# Base directory (where this config file lives)
+BASE_DIR = Path(__file__).parent.resolve()
+
 # Load .env file if it exists
 from dotenv import load_dotenv
-load_dotenv(Path(__file__).parent / ".env")
+load_dotenv(BASE_DIR / ".env")
 
 # OpenAI Configuration
 OPENAI_BASE_URL = os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1")
@@ -29,12 +32,12 @@ TC_FORCED_DIVERGENCE_TEMP = 1.2  # Temperature for chaos injection
 MAX_CYCLES = 10
 DIMINISHING_RETURNS_CYCLES = 3  # Consecutive low-novelty cycles before stop
 
-# File Paths
-MEMORY_DIR = "memory"
-SCRATCH_DIR = "scratch"
-PROMPTS_DIR = "prompts"
-CRYSTALLIZED_FILE = f"{MEMORY_DIR}/crystallized.json"
-OPEN_KNOTS_FILE = f"{MEMORY_DIR}/open_knots.json"
-SCRATCH_FILE = f"{SCRATCH_DIR}/last_cycle.json"
-DG_PROMPT_FILE = f"{PROMPTS_DIR}/dg_prompt.txt"
-CC_PROMPT_FILE = f"{PROMPTS_DIR}/cc_prompt.txt"
+# File Paths (absolute, based on BASE_DIR)
+MEMORY_DIR = str(BASE_DIR / "memory")
+SCRATCH_DIR = str(BASE_DIR / "scratch")
+PROMPTS_DIR = str(BASE_DIR / "prompts")
+CRYSTALLIZED_FILE = str(BASE_DIR / "memory" / "crystallized.json")
+OPEN_KNOTS_FILE = str(BASE_DIR / "memory" / "open_knots.json")
+SCRATCH_FILE = str(BASE_DIR / "scratch" / "last_cycle.json")
+DG_PROMPT_FILE = str(BASE_DIR / "prompts" / "dg_prompt.txt")
+CC_PROMPT_FILE = str(BASE_DIR / "prompts" / "cc_prompt.txt")
