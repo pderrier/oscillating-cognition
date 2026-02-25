@@ -203,11 +203,25 @@ Add to `~/.claude/claude_desktop_config.json`:
 ```
 Agent receives complex question
     ↓
-Calls oscillate(seed="the question", cycles=3)
+Calls oscillate(seed="the question", cycles=3, ground=true)
     ↓
-Reviews insights + open_questions
+Reviews insights + open_questions + grounded actions
     ↓
-Formulates response with both answers AND unresolved tensions
+Formulates response with answers, tensions, AND concrete next steps
+```
+
+### Grounding Phase
+
+After oscillation, call `ground` to transform abstract insights into actionable proposals:
+
+```
+Calls ground(seed="the question")
+    ↓
+Returns:
+  - actions: concrete things to do
+  - experiments: hypotheses to test
+  - questions: things to investigate
+  - synthesis: summary connecting insights to seed
 ```
 
 ## Web UI
@@ -236,13 +250,12 @@ Design philosophy: Don't over-signal closure. Keep tensions visible.
 - [x] MCP server for AI agent integration
 - [x] Web UI for exploring memory
 - [x] Robust API client with retries and error handling
-- [x] Test suite (38 tests)
-
-### In Progress
 - [x] Embedding-based novelty scoring (detect repetition)
-- [ ] Multi-model support (e.g., Claude for DG, GPT-4 for CC)
+- [x] Grounding phase (transform insights into actions)
+- [x] Test suite (60 tests)
 
 ### Future Ideas
+- [ ] Multi-model support (e.g., Claude for DG, GPT-4 for CC)
 - [ ] Session export (markdown/JSON)
 - [ ] Collaborative mode (multi-user)
 - [ ] Timeline visualization of cycles
