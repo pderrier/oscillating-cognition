@@ -1,4 +1,9 @@
 import os
+from pathlib import Path
+
+# Load .env file if it exists
+from dotenv import load_dotenv
+load_dotenv(Path(__file__).parent / ".env")
 
 # OpenAI Configuration
 OPENAI_BASE_URL = os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1")
