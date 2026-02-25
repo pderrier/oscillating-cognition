@@ -211,10 +211,22 @@ Design philosophy: Don't over-signal closure. Keep tensions visible.
 
 ## Roadmap
 
-- [x] MCP server for agent integration
+### Completed
+- [x] CLI with oscillation cycles
+- [x] MCP server for AI agent integration
 - [x] Web UI for exploring memory
-- [ ] Embedding-based novelty scoring
-- [ ] Multi-model support (different models for DG vs CC)
+- [x] Robust API client with retries and error handling
+- [x] Test suite (38 tests)
+
+### In Progress
+- [ ] Embedding-based novelty scoring (detect repetition)
+- [ ] Multi-model support (e.g., Claude for DG, GPT-4 for CC)
+
+### Future Ideas
+- [ ] Session export (markdown/JSON)
+- [ ] Collaborative mode (multi-user)
+- [ ] Timeline visualization of cycles
+- [ ] Knot resolution tracking
 
 ## Philosophy
 
