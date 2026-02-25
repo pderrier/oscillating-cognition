@@ -200,8 +200,10 @@ Explore memory through a local web interface:
 
 Then open http://localhost:8080
 
+![Web UI Screenshot](assets/screenshot.png)
+
 The UI shows:
-- **Open Knots** (prominent) - Unresolved tensions deliberately preserved
+- **Open Knots** (prominent, orange border) - Unresolved tensions deliberately preserved
 - **Crystallized Insights** - Compressed, validated models
 - **Raw Memory** - JSON view for debugging
 
