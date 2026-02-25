@@ -1,0 +1,15 @@
+#!/bin/bash
+# Wrapper script to run oscillating-cognition in its virtualenv
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VENV_DIR="$SCRIPT_DIR/.venv"
+
+# Check if virtualenv exists
+if [ ! -d "$VENV_DIR" ]; then
+    echo "Creating virtualenv..."
+    python3 -m venv "$VENV_DIR"
+    "$VENV_DIR/bin/pip" install -q -r "$SCRIPT_DIR/requirements.txt"
+fi
+
+# Run the script
+exec "$VENV_DIR/bin/python" "$SCRIPT_DIR/run.py" "$@"
