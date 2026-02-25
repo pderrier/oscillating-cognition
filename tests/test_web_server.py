@@ -187,3 +187,46 @@ def test_clear_memory(client, tmp_path):
     # Verify cleared
     response = client.get("/api/status")
     assert response.json()["crystallized_count"] == 0
+
+
+def test_oscillation_status(client):
+    """Test oscillation status endpoint."""
+    response = client.get("/api/oscillation/status")
+    assert response.status_code == 200
+
+    data = response.json()
+    assert data["running"] is False
+    assert data["current_cycle"] == 0
+
+
+def test_oscillate_endpoint_with_mock(client, tmp_path):
+    """Test oscillation endpoint with mocked generators."""
+    # Mock the generators at their source module
+    mock_artifacts = [
+        {"type": "hypothesis", "content": "Test artifact 1"},
+        {"type": "metaphor", "content": "Test artifact 2"}
+    ]
+    mock_critique = {
+        "selected": [mock_artifacts[0]],
+        "rejected": [mock_artifacts[1]],
+        "compressed_models": ["Test insight"],
+        "new_open_knots": ["Test tension"],
+        "next_probe_directions": [],
+        "no_add": False
+    }
+
+    with patch("divergent_generator.generate", return_value=mock_artifacts):
+        with patch("convergent_critic.critique", return_value=mock_critique):
+            response = client.post("/api/oscillate", json={
+                "seed": "test topic",
+                "cycles": 1
+            })
+
+    assert response.status_code == 200
+
+    data = response.json()
+    assert data["cycles_completed"] == 1
+    assert len(data["insights"]) == 1
+    assert data["insights"][0] == "Test insight"
+    assert len(data["open_questions"]) == 1
+    assert data["open_questions"][0] == "Test tension"

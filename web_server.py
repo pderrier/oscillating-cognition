@@ -16,7 +16,10 @@ from fastapi.responses import HTMLResponse, FileResponse
 from pydantic import BaseModel
 
 from config import BASE_DIR, MEMORY_DIR, CRYSTALLIZED_FILE, OPEN_KNOTS_FILE
-from memory_manager import load_crystallized, load_open_knots, get_knot_count
+from memory_manager import (
+    load_crystallized, load_open_knots, get_knot_count, initialize_memory,
+    append_crystallized, add_open_knots, build_context
+)
 
 app = FastAPI(
     title="Oscillating Cognition",
@@ -47,6 +50,38 @@ class KnotItem(BaseModel):
     content: str
     cycle_added: int
     index: int
+
+
+class OscillateRequest(BaseModel):
+    seed: str
+    cycles: int = 3
+    ground: bool = False
+
+
+class CycleResult(BaseModel):
+    cycle: int
+    artifacts_generated: int
+    artifacts_selected: int
+    new_models: list[str]
+    new_knots: list[str]
+    silence: bool
+
+
+class OscillateResponse(BaseModel):
+    cycles_completed: int
+    insights: list[str]
+    open_questions: list[str]
+    final_knot_count: int
+    grounding: Optional[dict] = None
+
+
+# Global state for oscillation
+oscillation_state = {
+    "running": False,
+    "current_cycle": 0,
+    "total_cycles": 0,
+    "seed": None
+}
 
 
 @app.get("/", response_class=HTMLResponse)
@@ -147,10 +182,155 @@ async def clear_memory():
             shutil.rmtree(directory)
 
     # Reinitialize
-    from memory_manager import initialize_memory
     initialize_memory()
 
     return {"status": "Memory cleared"}
+
+
+@app.get("/api/oscillation/status")
+async def get_oscillation_status():
+    """Get current oscillation status."""
+    return oscillation_state
+
+
+def _run_oscillation_sync(seed: str, cycles: int, do_grounding: bool) -> dict:
+    """Run oscillation synchronously (called from thread pool)."""
+    global oscillation_state
+
+    # Import here to avoid circular imports
+    from divergent_generator import generate as dg_generate
+    from convergent_critic import critique as cc_critique
+    from tension_controller import TensionController
+    from grounding import ground as do_ground
+
+    initialize_memory()
+
+    tc = TensionController()
+    history_texts = []
+    probe_directions = []
+
+    results = []
+    all_models = []
+    all_knots = []
+
+    for i in range(cycles):
+        oscillation_state["current_cycle"] = i + 1
+
+        # Build context
+        context = build_context()
+        if i == 0 and seed:
+            context["seed_topic"] = seed
+        if probe_directions:
+            context["probe_directions"] = probe_directions
+
+        temperature = tc.current_dg_temp
+
+        # Divergent Generation
+        artifacts = dg_generate(context, temperature=temperature)
+
+        # Convergent Critique
+        critique_result = cc_critique(artifacts, context)
+
+        selected = critique_result.get("selected", [])
+        compressed = critique_result.get("compressed_models", [])
+        new_knots = critique_result.get("new_open_knots", [])
+        probe_directions = critique_result.get("next_probe_directions", [])
+        no_add = critique_result.get("no_add", False)
+
+        # Update memory
+        if not no_add:
+            if compressed:
+                append_crystallized(compressed)
+                all_models.extend(compressed)
+            if new_knots:
+                add_open_knots(new_knots)
+                all_knots.extend(new_knots)
+
+        # Update metrics
+        raw_text = " ".join(a.get("content", "") for a in artifacts)
+        history_texts.append(raw_text)
+
+        metrics = tc.compute_metrics({
+            "raw_artifacts": artifacts,
+            "compressed_models": compressed,
+            "history": history_texts
+        })
+        tc.get_adjustments(metrics)
+
+        results.append({
+            "cycle": i + 1,
+            "artifacts_generated": len(artifacts),
+            "artifacts_selected": len(selected),
+            "new_models": compressed,
+            "new_knots": new_knots,
+            "silence": no_add
+        })
+
+        # Check for diminishing returns
+        if tc.detect_diminishing_returns():
+            break
+
+    response = {
+        "cycles_completed": len(results),
+        "insights": all_models,
+        "open_questions": all_knots,
+        "final_knot_count": get_knot_count(),
+        "grounding": None
+    }
+
+    # Optional grounding phase
+    if do_grounding and (all_models or all_knots):
+        import time
+        time.sleep(1)  # Small delay to avoid API rate limits
+        try:
+            crystallized = load_crystallized()
+            knots = load_open_knots()
+            grounding_result = do_ground(seed, crystallized, knots)
+            response["grounding"] = grounding_result
+        except Exception as e:
+            response["grounding"] = {"error": str(e)}
+
+    return response
+
+
+@app.post("/api/oscillate", response_model=OscillateResponse)
+async def run_oscillation(request: OscillateRequest):
+    """Run oscillation cycles on a seed topic."""
+    global oscillation_state
+    import asyncio
+    import concurrent.futures
+
+    if oscillation_state["running"]:
+        raise HTTPException(status_code=409, detail="Oscillation already in progress")
+
+    oscillation_state = {
+        "running": True,
+        "current_cycle": 0,
+        "total_cycles": request.cycles,
+        "seed": request.seed
+    }
+
+    try:
+        # Run in thread pool to allow status polling
+        loop = asyncio.get_event_loop()
+        with concurrent.futures.ThreadPoolExecutor() as pool:
+            result = await loop.run_in_executor(
+                pool,
+                _run_oscillation_sync,
+                request.seed,
+                request.cycles,
+                request.ground
+            )
+
+        return OscillateResponse(**result)
+
+    finally:
+        oscillation_state = {
+            "running": False,
+            "current_cycle": 0,
+            "total_cycles": 0,
+            "seed": None
+        }
 
 
 def main():

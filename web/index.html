@@ -9,10 +9,65 @@
 <body>
     <header>
         <h1>◐ Oscillating Cognition</h1>
-        <p class="subtitle">Memory Explorer</p>
+        <p class="subtitle">Chaos-Structure Cognitive System</p>
     </header>
 
     <main>
+        <!-- Oscillation Control Panel -->
+        <section id="control-panel" class="panel control-panel">
+            <h2>
+                <span class="icon">◎</span>
+                Run Oscillation
+            </h2>
+            <form id="oscillate-form" class="oscillate-form">
+                <div class="form-row">
+                    <div class="input-group seed-input">
+                        <label for="seed-input">Seed Topic</label>
+                        <input
+                            type="text"
+                            id="seed-input"
+                            name="seed"
+                            placeholder="e.g., consciousness and recursion"
+                            required
+                        >
+                    </div>
+                    <div class="input-group cycles-input">
+                        <label for="cycles-input">Cycles</label>
+                        <input
+                            type="number"
+                            id="cycles-input"
+                            name="cycles"
+                            value="3"
+                            min="1"
+                            max="10"
+                        >
+                    </div>
+                    <div class="input-group ground-input">
+                        <label for="ground-checkbox">
+                            <input type="checkbox" id="ground-checkbox" name="ground">
+                            Ground insights
+                        </label>
+                    </div>
+                    <button type="submit" id="oscillate-btn" class="btn-oscillate">
+                        <span class="btn-text">Oscillate</span>
+                        <span class="btn-spinner" style="display: none;">⟳</span>
+                    </button>
+                </div>
+            </form>
+            <div id="progress-container" class="progress-container" style="display: none;">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <div id="progress-text" class="progress-text">Initializing...</div>
+            </div>
+            <div id="result-container" class="result-container" style="display: none;">
+                <div class="result-header">
+                    <span class="result-icon">✓</span>
+                    <span id="result-summary">Oscillation complete</span>
+                </div>
+            </div>
+        </section>
+
         <section id="status" class="status-bar">
             <div class="stat">
                 <span class="label">Crystallized</span>

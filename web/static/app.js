@@ -7,7 +7,9 @@ const API = {
     insights: '/api/insights',
     knots: '/api/knots',
     raw: '/api/memory/raw',
-    clear: '/api/memory'
+    clear: '/api/memory',
+    oscillate: '/api/oscillate',
+    oscillationStatus: '/api/oscillation/status'
 };
 
 // State
@@ -182,6 +184,115 @@ async function confirmClear() {
         alert('Error clearing memory: ' + error.message);
     }
 }
+
+// Oscillation form handling
+const oscillateForm = document.getElementById('oscillate-form');
+const oscillateBtn = document.getElementById('oscillate-btn');
+const progressContainer = document.getElementById('progress-container');
+const progressFill = document.getElementById('progress-fill');
+const progressText = document.getElementById('progress-text');
+const resultContainer = document.getElementById('result-container');
+const resultSummary = document.getElementById('result-summary');
+
+let pollInterval = null;
+
+async function runOscillation(seed, cycles, ground) {
+    // Reset UI
+    resultContainer.style.display = 'none';
+    resultContainer.classList.remove('error');
+    progressContainer.style.display = 'block';
+    progressFill.style.width = '0%';
+    progressText.textContent = 'Starting oscillation...';
+
+    oscillateBtn.disabled = true;
+    oscillateBtn.querySelector('.btn-text').textContent = 'Running...';
+    oscillateBtn.querySelector('.btn-spinner').style.display = 'inline';
+
+    // Start polling for progress
+    pollInterval = setInterval(async () => {
+        try {
+            const status = await fetchJson(API.oscillationStatus);
+            if (status.running) {
+                const progress = (status.current_cycle / status.total_cycles) * 100;
+                progressFill.style.width = `${progress}%`;
+                progressText.textContent = `Cycle ${status.current_cycle} of ${status.total_cycles}: Exploring "${status.seed}"`;
+            }
+        } catch (e) {
+            // Ignore polling errors
+        }
+    }, 500);
+
+    try {
+        const response = await fetch(API.oscillate, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ seed, cycles, ground })
+        });
+
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.detail || `HTTP ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        // Update progress to complete
+        progressFill.style.width = '100%';
+        progressText.textContent = 'Complete!';
+
+        // Show result
+        setTimeout(() => {
+            progressContainer.style.display = 'none';
+            resultContainer.style.display = 'block';
+
+            let summary = `${result.cycles_completed} cycles completed. `;
+            summary += `${result.insights.length} new insights, `;
+            summary += `${result.open_questions.length} new open questions.`;
+
+            if (result.grounding) {
+                if (result.grounding.error) {
+                    summary += ` Grounding failed: ${result.grounding.error}`;
+                } else {
+                    summary += ' Grounding complete.';
+                }
+            }
+
+            resultSummary.textContent = summary;
+        }, 500);
+
+        // Refresh the data displays
+        await loadAll();
+
+    } catch (error) {
+        progressContainer.style.display = 'none';
+        resultContainer.style.display = 'block';
+        resultContainer.classList.add('error');
+        resultSummary.textContent = `Error: ${error.message}`;
+    } finally {
+        if (pollInterval) {
+            clearInterval(pollInterval);
+            pollInterval = null;
+        }
+        oscillateBtn.disabled = false;
+        oscillateBtn.querySelector('.btn-text').textContent = 'Oscillate';
+        oscillateBtn.querySelector('.btn-spinner').style.display = 'none';
+    }
+}
+
+oscillateForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const seed = document.getElementById('seed-input').value.trim();
+    const cycles = parseInt(document.getElementById('cycles-input').value, 10) || 3;
+    const ground = document.getElementById('ground-checkbox').checked;
+
+    if (!seed) {
+        alert('Please enter a seed topic');
+        return;
+    }
+
+    await runOscillation(seed, cycles, ground);
+});
 
 // Event listeners
 elements.refreshBtn.addEventListener('click', loadAll);
