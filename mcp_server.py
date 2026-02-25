@@ -18,11 +18,13 @@ from memory_manager import (
 from divergent_generator import generate as dg_generate
 from convergent_critic import critique as cc_critique
 from tension_controller import TensionController
+from grounding import ground as do_ground, format_grounding_result
 
 # Global state
 tc = TensionController()
 history_texts = []
 probe_directions = []
+current_seed = None  # Store seed for grounding
 
 app = Server("oscillating-cognition")
 
@@ -98,9 +100,27 @@ async def list_tools():
                         "type": "integer",
                         "description": "Number of oscillation cycles (default: 3)",
                         "default": 3
+                    },
+                    "ground": {
+                        "type": "boolean",
+                        "description": "Run grounding phase after oscillation to generate actionable proposals (default: false)",
+                        "default": False
                     }
                 },
                 "required": ["seed"]
+            }
+        ),
+        Tool(
+            name="ground",
+            description="Transform abstract insights into actionable proposals. Takes the crystallized insights and open knots from previous oscillation cycles and generates concrete actions, experiments, and questions in the context of the original seed topic.",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "seed": {
+                        "type": "string",
+                        "description": "The seed topic to ground insights to (uses last oscillation seed if not provided)"
+                    }
+                }
             }
         ),
         Tool(
@@ -156,11 +176,15 @@ async def list_tools():
 
 @app.call_tool()
 async def call_tool(name: str, arguments: dict):
-    global history_texts, probe_directions, tc
+    global history_texts, probe_directions, tc, current_seed
 
     if name == "oscillate":
         seed = arguments.get("seed")
         cycles = arguments.get("cycles", 3)
+        do_grounding = arguments.get("ground", False)
+
+        # Store seed for potential grounding
+        current_seed = seed
 
         initialize_memory()
 
@@ -188,9 +212,40 @@ async def call_tool(name: str, arguments: dict):
             "final_knot_count": get_knot_count()
         }
 
+        # Optional grounding phase
+        if do_grounding:
+            crystallized = load_crystallized()
+            knots = load_open_knots()
+            grounding_result = do_ground(seed, crystallized, knots)
+            summary["grounding"] = grounding_result
+
         return [TextContent(
             type="text",
             text=json.dumps(summary, indent=2, ensure_ascii=False)
+        )]
+
+    elif name == "ground":
+        seed = arguments.get("seed") or current_seed
+        if not seed:
+            return [TextContent(
+                type="text",
+                text=json.dumps({"error": "No seed topic provided and no previous oscillation seed found"})
+            )]
+
+        crystallized = load_crystallized()
+        knots = load_open_knots()
+
+        if not crystallized and not knots:
+            return [TextContent(
+                type="text",
+                text=json.dumps({"error": "No insights to ground. Run oscillate first."})
+            )]
+
+        grounding_result = do_ground(seed, crystallized, knots)
+
+        return [TextContent(
+            type="text",
+            text=json.dumps(grounding_result, indent=2, ensure_ascii=False)
         )]
 
     elif name == "get_insights":
