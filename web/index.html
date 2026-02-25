@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscillating Cognition</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>◐ Oscillating Cognition</h1>
+        <p class="subtitle">Memory Explorer</p>
+    </header>
+
+    <main>
+        <section id="status" class="status-bar">
+            <div class="stat">
+                <span class="label">Crystallized</span>
+                <span id="crystallized-count" class="value">-</span>
+            </div>
+            <div class="stat">
+                <span class="label">Open Knots</span>
+                <span id="knots-count" class="value tension">-</span>
+            </div>
+            <div class="stat">
+                <span class="label">Last Updated</span>
+                <span id="last-modified" class="value dim">-</span>
+            </div>
+            <button id="refresh-btn" class="btn-refresh" title="Refresh">↻</button>
+        </section>
+
+        <div class="panels">
+            <!-- Open Knots Panel - Deliberately prominent -->
+            <section id="knots-panel" class="panel knots-panel">
+                <h2>
+                    <span class="icon">⚡</span>
+                    Open Knots
+                    <span class="badge" id="knots-badge">0</span>
+                </h2>
+                <p class="panel-desc">Unresolved tensions, paradoxes, and contradictions deliberately preserved.</p>
+                <div id="knots-list" class="items-list">
+                    <p class="loading">Loading...</p>
+                </div>
+            </section>
+
+            <!-- Crystallized Panel -->
+            <section id="insights-panel" class="panel insights-panel">
+                <h2>
+                    <span class="icon">◆</span>
+                    Crystallized Insights
+                    <span class="badge" id="insights-badge">0</span>
+                </h2>
+                <p class="panel-desc">Compressed, validated models that emerged from exploration.</p>
+                <div id="insights-list" class="items-list">
+                    <p class="loading">Loading...</p>
+                </div>
+            </section>
+        </div>
+
+        <section id="raw-panel" class="panel raw-panel collapsed">
+            <h2 class="collapsible" onclick="toggleRaw()">
+                <span class="icon">{ }</span>
+                Raw Memory
+                <span class="expand-icon">▶</span>
+            </h2>
+            <pre id="raw-json" class="raw-json"></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <em>"Intelligence may be sustained oscillation between incompatible regimes."</em>
+        </p>
+        <div class="footer-actions">
+            <button id="clear-btn" class="btn-danger" onclick="confirmClear()">Clear Memory</button>
+        </div>
+    </footer>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

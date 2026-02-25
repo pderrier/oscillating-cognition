@@ -190,10 +190,27 @@ Reviews insights + open_questions
 Formulates response with both answers AND unresolved tensions
 ```
 
+## Web UI
+
+Explore memory through a local web interface:
+
+```bash
+./web-serve
+```
+
+Then open http://localhost:8080
+
+The UI shows:
+- **Open Knots** (prominent) - Unresolved tensions deliberately preserved
+- **Crystallized Insights** - Compressed, validated models
+- **Raw Memory** - JSON view for debugging
+
+Design philosophy: Don't over-signal closure. Keep tensions visible.
+
 ## Roadmap
 
 - [x] MCP server for agent integration
-- [ ] Web UI for exploring memory
+- [x] Web UI for exploring memory
 - [ ] Embedding-based novelty scoring
 - [ ] Multi-model support (different models for DG vs CC)
 

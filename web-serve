@@ -1,0 +1,21 @@
+#!/bin/bash
+# Web server wrapper for oscillating-cognition
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VENV_DIR="$SCRIPT_DIR/.venv"
+
+# Check if virtualenv exists
+if [ ! -d "$VENV_DIR" ]; then
+    echo "Creating virtualenv..." >&2
+    python3 -m venv "$VENV_DIR"
+    "$VENV_DIR/bin/pip" install -q -r "$SCRIPT_DIR/requirements.txt"
+fi
+
+# Install web dependencies if needed
+if ! "$VENV_DIR/bin/pip" show fastapi &>/dev/null; then
+    echo "Installing web dependencies..." >&2
+    "$VENV_DIR/bin/pip" install -q fastapi uvicorn
+fi
+
+echo "Starting web server at http://localhost:8080" >&2
+exec "$VENV_DIR/bin/uvicorn" web_server:app --host 0.0.0.0 --port 8080 --reload
