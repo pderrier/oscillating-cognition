@@ -1,19 +1,32 @@
+import logging
 import tiktoken
 import numpy as np
 from config import (
     TC_MIN_KNOTS, TC_COMPRESSION_TARGET, TC_NOVELTY_THRESHOLD,
-    TC_FORCED_DIVERGENCE_TEMP, DG_TEMPERATURE
+    TC_FORCED_DIVERGENCE_TEMP, DG_TEMPERATURE, USE_EMBEDDINGS
 )
 from memory_manager import get_knot_count
+
+logger = logging.getLogger(__name__)
 
 
 class TensionController:
     """Controls the balance between chaos and structure."""
 
-    def __init__(self):
+    def __init__(self, use_embeddings: bool = None):
+        """
+        Initialize tension controller.
+
+        Args:
+            use_embeddings: Use embedding-based novelty scoring (default from config)
+        """
+        if use_embeddings is None:
+            use_embeddings = USE_EMBEDDINGS
         self.history = []  # Track novelty scores for diminishing returns detection
+        self.history_embeddings = []  # Store embeddings for novelty comparison
         self.current_dg_temp = DG_TEMPERATURE
         self.forced_divergence = False
+        self.use_embeddings = use_embeddings
         try:
             self.tokenizer = tiktoken.encoding_for_model("gpt-4o")
         except Exception:
@@ -34,12 +47,53 @@ class TensionController:
 
     def compute_novelty_score(self, text: str, history_texts: list[str] = None) -> float:
         """
-        Compute lexical diversity as novelty heuristic.
+        Compute novelty score for text.
+
+        Uses embedding-based semantic similarity if enabled, otherwise
+        falls back to lexical diversity heuristic.
+
         Returns: score between 0 and 1 (higher = more novel)
         """
         if not text:
             return 0.0
 
+        # Try embedding-based scoring
+        if self.use_embeddings:
+            try:
+                return self._compute_embedding_novelty(text)
+            except Exception as e:
+                logger.warning(f"Embedding novelty failed, using lexical: {e}")
+
+        # Fallback: lexical diversity
+        return self._compute_lexical_novelty(text, history_texts)
+
+    def _compute_embedding_novelty(self, text: str) -> float:
+        """Compute novelty using embeddings."""
+        from embeddings import get_embedding, compute_novelty_score, EMBEDDING_DIMENSIONS
+
+        # Get embedding for new text
+        text_embedding = get_embedding(text)
+
+        # Check if we got a valid embedding (not zero vector)
+        if all(v == 0.0 for v in text_embedding[:10]):
+            raise ValueError("Got zero embedding, API may have failed")
+
+        # Compute novelty against history
+        novelty = compute_novelty_score(text, self.history_embeddings, text_embedding)
+
+        # Store embedding for future comparisons (keep last 20)
+        self.history_embeddings.append(text_embedding)
+        if len(self.history_embeddings) > 20:
+            self.history_embeddings.pop(0)
+
+        logger.debug(f"Embedding novelty score: {novelty:.3f}")
+        return novelty
+
+    def _compute_lexical_novelty(self, text: str, history_texts: list[str] = None) -> float:
+        """
+        Compute lexical diversity as novelty heuristic (fallback).
+        Returns: score between 0 and 1 (higher = more novel)
+        """
         words = text.lower().split()
         if not words:
             return 0.0

@@ -25,8 +25,14 @@ CC_MAX_SELECTED = 3  # Maximum artifacts to select per cycle
 # Tension Controller Thresholds
 TC_MIN_KNOTS = 1  # Minimum open knots to maintain
 TC_COMPRESSION_TARGET = 0.4  # Target compression ratio (0.3-0.5 ideal)
-TC_NOVELTY_THRESHOLD = 0.05  # Below this triggers diminishing returns
+TC_NOVELTY_THRESHOLD = 0.15  # Below this triggers diminishing returns
 TC_FORCED_DIVERGENCE_TEMP = 1.2  # Temperature for chaos injection
+
+# Embedding-based Novelty Scoring
+USE_EMBEDDINGS = os.environ.get("USE_EMBEDDINGS", "true").lower() == "true"
+EMBEDDING_MODEL = os.environ.get("EMBEDDING_MODEL", "text-embedding-3-small")
+SIMILARITY_THRESHOLD = 0.85  # Above this similarity = repetition
+NOVELTY_REJECTION_THRESHOLD = 0.15  # Below this novelty score = reject artifact
 
 # Orchestrator Settings
 MAX_CYCLES = 10

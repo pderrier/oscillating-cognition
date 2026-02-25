@@ -255,6 +255,8 @@ async def call_tool(name: str, arguments: dict):
         import shutil
         import os
         from config import MEMORY_DIR, SCRATCH_DIR
+        from divergent_generator import reset_artifact_history
+        from embeddings import get_cache
 
         for directory in [MEMORY_DIR, SCRATCH_DIR]:
             if os.path.exists(directory):
@@ -264,6 +266,10 @@ async def call_tool(name: str, arguments: dict):
         tc = TensionController()
         history_texts = []
         probe_directions = []
+
+        # Reset embedding history
+        reset_artifact_history()
+        get_cache().clear()
 
         initialize_memory()
 

@@ -120,12 +120,32 @@ Environment variables:
 - `OPENAI_API_KEY` — Required
 - `OPENAI_BASE_URL` — API endpoint (default: OpenAI)
 - `OPENAI_MODEL` — Model to use (default: gpt-4o)
+- `USE_EMBEDDINGS` — Enable semantic novelty detection (default: true)
+- `EMBEDDING_MODEL` — Embedding model (default: text-embedding-3-small)
 
 Edit `config.py` for fine-tuning:
 - Temperature settings
 - Artifact counts
 - Tension thresholds
+- Novelty rejection threshold
 - Cycle limits
+
+## Novelty Detection
+
+The system uses **embedding-based novelty scoring** to detect semantic repetition:
+
+1. Each generated artifact is converted to a vector embedding
+2. Cosine similarity is computed against all previous artifacts
+3. Artifacts too similar to existing content are filtered out
+4. This prevents the system from "spinning its wheels" on the same ideas
+
+```
+Artifact: "Recursion might be conscious"     → novelty: 0.92 ✓ kept
+Artifact: "Consciousness could be recursive" → novelty: 0.11 ✗ rejected (too similar)
+Artifact: "Time is a construct of memory"    → novelty: 0.87 ✓ kept
+```
+
+Disable with `USE_EMBEDDINGS=false` to use lexical diversity fallback.
 
 ## File Structure
 
@@ -219,7 +239,7 @@ Design philosophy: Don't over-signal closure. Keep tensions visible.
 - [x] Test suite (38 tests)
 
 ### In Progress
-- [ ] Embedding-based novelty scoring (detect repetition)
+- [x] Embedding-based novelty scoring (detect repetition)
 - [ ] Multi-model support (e.g., Claude for DG, GPT-4 for CC)
 
 ### Future Ideas

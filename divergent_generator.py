@@ -3,11 +3,14 @@ import uuid
 import logging
 from config import (
     DG_TEMPERATURE, DG_MAX_TOKENS, DG_ARTIFACT_COUNT,
-    DG_PROMPT_FILE
+    DG_PROMPT_FILE, USE_EMBEDDINGS, NOVELTY_REJECTION_THRESHOLD
 )
 from api_client import chat_completion, APIClientError
 
 logger = logging.getLogger(__name__)
+
+# Module-level embedding history for artifact novelty
+_artifact_embeddings_history = []
 
 
 class GenerationError(Exception):
@@ -73,7 +76,82 @@ def generate(context: dict, temperature: float = None, artifact_count: int = Non
         if "id" not in artifact or not artifact["id"]:
             artifact["id"] = f"dg_{uuid.uuid4().hex[:8]}"
 
+    # Compute novelty scores and filter if embeddings enabled
+    if USE_EMBEDDINGS:
+        artifacts = score_and_filter_artifacts(artifacts)
+
     return artifacts
+
+
+def score_and_filter_artifacts(
+    artifacts: list[dict],
+    threshold: float = NOVELTY_REJECTION_THRESHOLD
+) -> list[dict]:
+    """
+    Compute novelty scores for artifacts and filter out repetitive ones.
+
+    Args:
+        artifacts: List of artifact dicts
+        threshold: Minimum novelty score to keep artifact
+
+    Returns:
+        Filtered list of artifacts with novelty_score added
+    """
+    global _artifact_embeddings_history
+
+    if not artifacts:
+        return artifacts
+
+    try:
+        from embeddings import get_embeddings_batch, compute_novelty_score
+
+        # Extract content from artifacts
+        contents = [a.get("content", "") for a in artifacts]
+
+        # Get embeddings for all artifacts
+        embeddings = get_embeddings_batch(contents)
+
+        # Score each artifact against history
+        filtered = []
+        for artifact, content, embedding in zip(artifacts, contents, embeddings):
+            # Check if embedding is valid (not zero vector)
+            if all(v == 0.0 for v in embedding[:10]):
+                # Keep artifact but mark as unscored
+                artifact["novelty_score"] = None
+                artifact["novelty_status"] = "unscored"
+                filtered.append(artifact)
+                continue
+
+            # Compute novelty against history
+            novelty = compute_novelty_score(content, _artifact_embeddings_history, embedding)
+            artifact["novelty_score"] = round(novelty, 3)
+
+            if novelty >= threshold:
+                artifact["novelty_status"] = "novel"
+                filtered.append(artifact)
+                # Add to history for future comparisons
+                _artifact_embeddings_history.append(embedding)
+            else:
+                artifact["novelty_status"] = "rejected"
+                logger.info(f"Rejected artifact (novelty={novelty:.3f}): {content[:50]}...")
+
+        # Keep history bounded
+        if len(_artifact_embeddings_history) > 50:
+            _artifact_embeddings_history = _artifact_embeddings_history[-50:]
+
+        logger.info(f"Artifacts: {len(artifacts)} generated, {len(filtered)} kept after novelty filter")
+        return filtered
+
+    except Exception as e:
+        logger.warning(f"Novelty scoring failed, keeping all artifacts: {e}")
+        return artifacts
+
+
+def reset_artifact_history():
+    """Reset the artifact embedding history (for new sessions)."""
+    global _artifact_embeddings_history
+    _artifact_embeddings_history = []
+    logger.debug("Artifact embedding history reset")
 
 
 def build_user_prompt(context: dict) -> str:
