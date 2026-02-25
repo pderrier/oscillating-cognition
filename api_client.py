@@ -87,7 +87,15 @@ def chat_completion(
     for attempt in range(max_retries):
         try:
             response = client.chat.completions.create(**kwargs)
-            return response.choices[0].message.content
+            content = response.choices[0].message.content
+
+            # Validate response is not None/empty
+            if content is None:
+                raise APIClientError("API returned None content")
+            if not content.strip():
+                raise APIClientError("API returned empty content")
+
+            return content
 
         except APITimeoutError as e:
             last_error = e

@@ -20,6 +20,10 @@ Output a single JSON object with these fields:
 4. CANNOT resolve all ambiguity - preserve tension
 5. Reject noise, but don't reject all divergence
 6. Value contradiction - it generates productive tension
+7. NO meta-commentary about the system state or generation process
+8. compressed_models must contain INSIGHTS about the topic, not observations about artifacts
+9. new_open_knots must be QUESTIONS or TENSIONS about the topic, not about the system
+10. NEVER write "The system...", "No new artifacts...", "The scaffold...", "Meta-model:..."
 
 ## EVALUATION CRITERIA
 

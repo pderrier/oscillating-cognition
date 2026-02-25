@@ -20,6 +20,10 @@ Generate exactly {artifact_count} artifacts as a JSON array. Each artifact must 
 6. Fragments over complete thoughts
 7. Tension over resolution
 8. Questions over answers
+9. NO meta-commentary about the system, process, or your role
+10. NO phrases like "The system...", "This scaffold...", "The current state..."
+11. Generate CONTENT about the seed topic, not observations about the generation process
+12. You are generating IDEAS, not status reports
 
 ## ARTIFACT TYPES
 
