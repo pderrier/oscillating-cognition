@@ -1,17 +1,26 @@
 import json
-from openai import OpenAI
-from config import (
-    OPENAI_BASE_URL, OPENAI_API_KEY, OPENAI_MODEL,
-    CC_TEMPERATURE, CC_MAX_TOKENS,
-    CC_PROMPT_FILE
-)
+import logging
+from config import CC_TEMPERATURE, CC_MAX_TOKENS, CC_PROMPT_FILE
 from memory_manager import get_knot_count
+from api_client import chat_completion, APIClientError
+
+logger = logging.getLogger(__name__)
+
+
+class CritiqueError(Exception):
+    """Error during critique."""
+    pass
 
 
 def load_prompt() -> str:
     """Load the convergent critic system prompt."""
-    with open(CC_PROMPT_FILE, "r") as f:
-        return f.read()
+    try:
+        with open(CC_PROMPT_FILE, "r") as f:
+            return f.read()
+    except FileNotFoundError:
+        raise CritiqueError(f"CC prompt file not found: {CC_PROMPT_FILE}")
+    except IOError as e:
+        raise CritiqueError(f"Error reading CC prompt file: {e}")
 
 
 def critique(artifacts: list[dict], context: dict) -> dict:
@@ -25,26 +34,31 @@ def critique(artifacts: list[dict], context: dict) -> dict:
     Returns:
         Dict with selected, rejected, compressed_models, new_open_knots,
         next_probe_directions, no_add
+
+    Raises:
+        CritiqueError: If critique fails after retries
     """
-    client = OpenAI(base_url=OPENAI_BASE_URL, api_key=OPENAI_API_KEY)
-
     system_prompt = load_prompt()
-
     user_prompt = build_user_prompt(artifacts, context)
 
-    response = client.chat.completions.create(
-        model=OPENAI_MODEL,
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt}
-        ],
-        temperature=CC_TEMPERATURE,
-        max_tokens=CC_MAX_TOKENS,
-        response_format={"type": "json_object"}
-    )
+    try:
+        content = chat_completion(
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt}
+            ],
+            temperature=CC_TEMPERATURE,
+            max_tokens=CC_MAX_TOKENS,
+            json_response=True
+        )
+    except APIClientError as e:
+        logger.error(f"Critique failed: {e}")
+        raise CritiqueError(f"API call failed: {e}") from e
 
-    content = response.choices[0].message.content
     result = parse_critique(content)
+
+    if not result:
+        logger.warning("Empty critique result, using defaults")
 
     # Ensure required fields
     result.setdefault("selected", [])

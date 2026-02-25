@@ -1,17 +1,29 @@
 import json
 import uuid
-from openai import OpenAI
+import logging
 from config import (
-    OPENAI_BASE_URL, OPENAI_API_KEY, OPENAI_MODEL,
     DG_TEMPERATURE, DG_MAX_TOKENS, DG_ARTIFACT_COUNT,
     DG_PROMPT_FILE
 )
+from api_client import chat_completion, APIClientError
+
+logger = logging.getLogger(__name__)
+
+
+class GenerationError(Exception):
+    """Error during artifact generation."""
+    pass
 
 
 def load_prompt() -> str:
     """Load the divergent generator system prompt."""
-    with open(DG_PROMPT_FILE, "r") as f:
-        return f.read()
+    try:
+        with open(DG_PROMPT_FILE, "r") as f:
+            return f.read()
+    except FileNotFoundError:
+        raise GenerationError(f"DG prompt file not found: {DG_PROMPT_FILE}")
+    except IOError as e:
+        raise GenerationError(f"Error reading DG prompt file: {e}")
 
 
 def generate(context: dict, temperature: float = None, artifact_count: int = None) -> list[dict]:
@@ -25,31 +37,36 @@ def generate(context: dict, temperature: float = None, artifact_count: int = Non
 
     Returns:
         List of artifact dicts with id, type, content, novelty_estimate
+
+    Raises:
+        GenerationError: If generation fails after retries
     """
     if temperature is None:
         temperature = DG_TEMPERATURE
     if artifact_count is None:
         artifact_count = DG_ARTIFACT_COUNT
 
-    client = OpenAI(base_url=OPENAI_BASE_URL, api_key=OPENAI_API_KEY)
-
     system_prompt = load_prompt().format(artifact_count=artifact_count)
-
     user_prompt = build_user_prompt(context)
 
-    response = client.chat.completions.create(
-        model=OPENAI_MODEL,
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt}
-        ],
-        temperature=temperature,
-        max_tokens=DG_MAX_TOKENS,
-        response_format={"type": "json_object"}
-    )
+    try:
+        content = chat_completion(
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt}
+            ],
+            temperature=temperature,
+            max_tokens=DG_MAX_TOKENS,
+            json_response=True
+        )
+    except APIClientError as e:
+        logger.error(f"Divergent generation failed: {e}")
+        raise GenerationError(f"API call failed: {e}") from e
 
-    content = response.choices[0].message.content
     artifacts = parse_artifacts(content)
+
+    if not artifacts:
+        logger.warning("No artifacts parsed from response, returning empty list")
 
     # Ensure unique IDs
     for artifact in artifacts:
