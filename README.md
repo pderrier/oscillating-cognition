@@ -143,9 +143,56 @@ prompts/
   cc_prompt.txt            # Convergent system prompt
 ```
 
+## MCP Server
+
+Run as an MCP server for AI agent integration:
+
+```bash
+./mcp-serve
+```
+
+### Claude Desktop Configuration
+
+Add to `~/.claude/claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "oscillating-cognition": {
+      "command": "/path/to/oscillating-cognition/mcp-serve",
+      "env": {
+        "OPENAI_API_KEY": "your-key"
+      }
+    }
+  }
+}
+```
+
+### Available Tools
+
+| Tool | Description |
+|------|-------------|
+| `oscillate` | Run N cycles on a seed topic. Returns insights and open questions. |
+| `get_insights` | Retrieve crystallized models from memory. |
+| `get_open_questions` | Retrieve unresolved tensions and paradoxes. |
+| `continue_thinking` | Add more cycles without a new seed. |
+| `reset_cognition` | Clear memory and start fresh. |
+
+### Agent Usage Example
+
+```
+Agent receives complex question
+    ↓
+Calls oscillate(seed="the question", cycles=3)
+    ↓
+Reviews insights + open_questions
+    ↓
+Formulates response with both answers AND unresolved tensions
+```
+
 ## Roadmap
 
-- [ ] MCP server for agent integration
+- [x] MCP server for agent integration
 - [ ] Web UI for exploring memory
 - [ ] Embedding-based novelty scoring
 - [ ] Multi-model support (different models for DG vs CC)
