@@ -128,3 +128,97 @@ def test_chat_completion_success_after_retry():
 
         assert result == '{"ok": true}'
         assert mock_client.chat.completions.create.call_count == 2
+
+
+def test_chat_completion_retries_on_empty_content():
+    """chat_completion should retry when API returns empty content."""
+    from api_client import chat_completion
+
+    mock_response_empty = MagicMock()
+    mock_response_empty.choices = [MagicMock()]
+    mock_response_empty.choices[0].message.content = ""
+
+    mock_response_ok = MagicMock()
+    mock_response_ok.choices = [MagicMock()]
+    mock_response_ok.choices[0].message.content = '{"ok": true}'
+
+    mock_client = MagicMock()
+    # First call returns empty, second returns valid content
+    mock_client.chat.completions.create.side_effect = [
+        mock_response_empty,
+        mock_response_ok
+    ]
+
+    with patch('api_client.OPENAI_API_KEY', 'test-key'), \
+         patch('api_client.get_client', return_value=mock_client), \
+         patch('api_client.time.sleep'):
+
+        result = chat_completion(
+            messages=[{"role": "user", "content": "test"}],
+            temperature=0.5,
+            max_tokens=100,
+            max_retries=3
+        )
+
+        assert result == '{"ok": true}'
+        assert mock_client.chat.completions.create.call_count == 2
+
+
+def test_chat_completion_retries_on_none_content():
+    """chat_completion should retry when API returns None content."""
+    from api_client import chat_completion
+
+    mock_response_none = MagicMock()
+    mock_response_none.choices = [MagicMock()]
+    mock_response_none.choices[0].message.content = None
+
+    mock_response_ok = MagicMock()
+    mock_response_ok.choices = [MagicMock()]
+    mock_response_ok.choices[0].message.content = '{"ok": true}'
+
+    mock_client = MagicMock()
+    mock_client.chat.completions.create.side_effect = [
+        mock_response_none,
+        mock_response_ok
+    ]
+
+    with patch('api_client.OPENAI_API_KEY', 'test-key'), \
+         patch('api_client.get_client', return_value=mock_client), \
+         patch('api_client.time.sleep'):
+
+        result = chat_completion(
+            messages=[{"role": "user", "content": "test"}],
+            temperature=0.5,
+            max_tokens=100,
+            max_retries=3
+        )
+
+        assert result == '{"ok": true}'
+        assert mock_client.chat.completions.create.call_count == 2
+
+
+def test_chat_completion_fails_after_all_empty_retries():
+    """chat_completion should fail if all retries return empty content."""
+    from api_client import chat_completion, APIClientError
+
+    mock_response_empty = MagicMock()
+    mock_response_empty.choices = [MagicMock()]
+    mock_response_empty.choices[0].message.content = ""
+
+    mock_client = MagicMock()
+    mock_client.chat.completions.create.return_value = mock_response_empty
+
+    with patch('api_client.OPENAI_API_KEY', 'test-key'), \
+         patch('api_client.get_client', return_value=mock_client), \
+         patch('api_client.time.sleep'):
+
+        with pytest.raises(APIClientError) as exc_info:
+            chat_completion(
+                messages=[{"role": "user", "content": "test"}],
+                temperature=0.5,
+                max_tokens=100,
+                max_retries=2
+            )
+
+        assert "failed after 2 attempts" in str(exc_info.value)
+        assert mock_client.chat.completions.create.call_count == 2

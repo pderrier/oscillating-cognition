@@ -89,11 +89,24 @@ def chat_completion(
             response = client.chat.completions.create(**kwargs)
             content = response.choices[0].message.content
 
-            # Validate response is not None/empty
+            # Validate response is not None/empty - these are retryable
             if content is None:
-                raise APIClientError("API returned None content")
+                logger.warning(f"API returned None content (attempt {attempt + 1}/{max_retries})")
+                last_error = APIClientError("API returned None content")
+                if attempt < max_retries - 1:
+                    sleep_time = retry_delay * (2 ** attempt)
+                    logger.info(f"Retrying in {sleep_time}s...")
+                    time.sleep(sleep_time)
+                continue
+
             if not content.strip():
-                raise APIClientError("API returned empty content")
+                logger.warning(f"API returned empty content (attempt {attempt + 1}/{max_retries})")
+                last_error = APIClientError("API returned empty content")
+                if attempt < max_retries - 1:
+                    sleep_time = retry_delay * (2 ** attempt)
+                    logger.info(f"Retrying in {sleep_time}s...")
+                    time.sleep(sleep_time)
+                continue
 
             return content
 

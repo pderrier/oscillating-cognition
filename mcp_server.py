@@ -214,10 +214,18 @@ async def call_tool(name: str, arguments: dict):
 
         # Optional grounding phase
         if do_grounding:
+            import time
+            # Small delay to avoid API rate limits after rapid oscillation cycles
+            time.sleep(1)
+
             crystallized = load_crystallized()
             knots = load_open_knots()
-            grounding_result = do_ground(seed, crystallized, knots)
-            summary["grounding"] = grounding_result
+            try:
+                grounding_result = do_ground(seed, crystallized, knots)
+                summary["grounding"] = grounding_result
+            except Exception as e:
+                summary["grounding_error"] = str(e)
+                summary["grounding_hint"] = "Try calling 'ground' tool separately"
 
         return [TextContent(
             type="text",
