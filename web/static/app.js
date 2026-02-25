@@ -249,11 +249,47 @@ async function runOscillation(seed, cycles, ground) {
             summary += `${result.insights.length} new insights, `;
             summary += `${result.open_questions.length} new open questions.`;
 
+            const groundingResults = document.getElementById('grounding-results');
+            const actionsList = document.getElementById('grounding-actions-list');
+            const experimentsList = document.getElementById('grounding-experiments-list');
+            const questionsList = document.getElementById('grounding-questions-list');
+
+            // Reset grounding display
+            groundingResults.style.display = 'none';
+            actionsList.innerHTML = '';
+            experimentsList.innerHTML = '';
+            questionsList.innerHTML = '';
+
             if (result.grounding) {
                 if (result.grounding.error) {
                     summary += ` Grounding failed: ${result.grounding.error}`;
                 } else {
-                    summary += ' Grounding complete.';
+                    summary += ' Grounded.';
+                    groundingResults.style.display = 'block';
+
+                    // Populate actions
+                    const actions = result.grounding.actions || [];
+                    actions.forEach(action => {
+                        const li = document.createElement('li');
+                        li.textContent = action;
+                        actionsList.appendChild(li);
+                    });
+
+                    // Populate experiments
+                    const experiments = result.grounding.experiments || [];
+                    experiments.forEach(exp => {
+                        const li = document.createElement('li');
+                        li.textContent = exp;
+                        experimentsList.appendChild(li);
+                    });
+
+                    // Populate questions
+                    const questions = result.grounding.questions || [];
+                    questions.forEach(q => {
+                        const li = document.createElement('li');
+                        li.textContent = q;
+                        questionsList.appendChild(li);
+                    });
                 }
             }
 
