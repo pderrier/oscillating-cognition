@@ -252,7 +252,7 @@ Design philosophy: Don't over-signal closure. Keep tensions visible.
 - [x] Robust API client with retries and error handling
 - [x] Embedding-based novelty scoring (detect repetition)
 - [x] Grounding phase (transform insights into actions)
-- [x] Test suite (60 tests)
+- [x] Test suite (63 tests)
 
 ### Future Ideas
 - [ ] Multi-model support (e.g., Claude for DG, GPT-4 for CC)
