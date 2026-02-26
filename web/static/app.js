@@ -9,7 +9,8 @@ const API = {
     raw: '/api/memory/raw',
     clear: '/api/memory',
     oscillate: '/api/oscillate',
-    oscillationStatus: '/api/oscillation/status'
+    oscillationStatus: '/api/oscillation/status',
+    grounding: '/api/grounding'
 };
 
 // State
@@ -267,11 +268,22 @@ async function runOscillation(seed, cycles, ground) {
                     summary += ' Grounded.';
                     groundingResults.style.display = 'block';
 
+                    // Helper to extract text from grounding item
+                    const getItemText = (item) => {
+                        if (typeof item === 'string') return item;
+                        if (item.description) {
+                            let text = item.description;
+                            if (item.effort) text = `[${item.effort}] ${text}`;
+                            return text;
+                        }
+                        return String(item);
+                    };
+
                     // Populate actions
                     const actions = result.grounding.actions || [];
                     actions.forEach(action => {
                         const li = document.createElement('li');
-                        li.textContent = action;
+                        li.textContent = getItemText(action);
                         actionsList.appendChild(li);
                     });
 
@@ -279,7 +291,7 @@ async function runOscillation(seed, cycles, ground) {
                     const experiments = result.grounding.experiments || [];
                     experiments.forEach(exp => {
                         const li = document.createElement('li');
-                        li.textContent = exp;
+                        li.textContent = getItemText(exp);
                         experimentsList.appendChild(li);
                     });
 
@@ -287,7 +299,7 @@ async function runOscillation(seed, cycles, ground) {
                     const questions = result.grounding.questions || [];
                     questions.forEach(q => {
                         const li = document.createElement('li');
-                        li.textContent = q;
+                        li.textContent = getItemText(q);
                         questionsList.appendChild(li);
                     });
                 }
@@ -336,8 +348,71 @@ elements.refreshBtn.addEventListener('click', loadAll);
 // Auto-refresh every 30 seconds
 setInterval(loadAll, 30000);
 
+// Load and display grounding results
+async function loadGrounding() {
+    try {
+        const data = await fetchJson(API.grounding);
+        if (data.result && data.seed) {
+            displayGroundingResults(data.result, data.seed);
+        }
+    } catch (error) {
+        // Ignore - no grounding to show
+    }
+}
+
+function displayGroundingResults(grounding, seed) {
+    const resultContainer = document.getElementById('result-container');
+    const resultSummary = document.getElementById('result-summary');
+    const groundingResults = document.getElementById('grounding-results');
+    const actionsList = document.getElementById('grounding-actions-list');
+    const experimentsList = document.getElementById('grounding-experiments-list');
+    const questionsList = document.getElementById('grounding-questions-list');
+
+    // Helper to extract text from grounding item
+    const getItemText = (item) => {
+        if (typeof item === 'string') return item;
+        if (item.description) {
+            let text = item.description;
+            if (item.effort) text = `[${item.effort}] ${text}`;
+            return text;
+        }
+        return String(item);
+    };
+
+    resultContainer.style.display = 'block';
+    resultSummary.textContent = `Grounded insights for: "${seed}"`;
+    groundingResults.style.display = 'block';
+
+    // Clear and populate
+    actionsList.innerHTML = '';
+    experimentsList.innerHTML = '';
+    questionsList.innerHTML = '';
+
+    const actions = grounding.actions || [];
+    actions.forEach(action => {
+        const li = document.createElement('li');
+        li.textContent = getItemText(action);
+        actionsList.appendChild(li);
+    });
+
+    const experiments = grounding.experiments || [];
+    experiments.forEach(exp => {
+        const li = document.createElement('li');
+        li.textContent = getItemText(exp);
+        experimentsList.appendChild(li);
+    });
+
+    const questions = grounding.questions || [];
+    questions.forEach(q => {
+        const li = document.createElement('li');
+        li.textContent = getItemText(q);
+        questionsList.appendChild(li);
+    });
+}
+
 // Initial load
 loadAll();
+loadGrounding();
 
 // Make functions available globally for onclick handlers
 window.toggleRaw = toggleRaw;

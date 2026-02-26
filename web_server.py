@@ -83,6 +83,12 @@ oscillation_state = {
     "seed": None
 }
 
+# Store latest grounding result
+latest_grounding = {
+    "result": None,
+    "seed": None
+}
+
 
 @app.get("/", response_class=HTMLResponse)
 async def root():
@@ -193,6 +199,12 @@ async def get_oscillation_status():
     return oscillation_state
 
 
+@app.get("/api/grounding")
+async def get_grounding():
+    """Get the latest grounding result."""
+    return latest_grounding
+
+
 def _run_oscillation_sync(seed: str, cycles: int, do_grounding: bool) -> dict:
     """Run oscillation synchronously (called from thread pool)."""
     global oscillation_state
@@ -279,6 +291,7 @@ def _run_oscillation_sync(seed: str, cycles: int, do_grounding: bool) -> dict:
     }
 
     # Optional grounding phase
+    global latest_grounding
     if do_grounding and (all_models or all_knots):
         import time
         time.sleep(1)  # Small delay to avoid API rate limits
@@ -287,6 +300,8 @@ def _run_oscillation_sync(seed: str, cycles: int, do_grounding: bool) -> dict:
             knots = load_open_knots()
             grounding_result = do_ground(seed, crystallized, knots)
             response["grounding"] = grounding_result
+            # Store for persistence
+            latest_grounding = {"result": grounding_result, "seed": seed}
         except Exception as e:
             response["grounding"] = {"error": str(e)}
 
