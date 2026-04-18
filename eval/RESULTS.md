@@ -30,18 +30,18 @@
 | Tie | 12 (60%) | 7 (70%) |
 | Mean delta | **0.0** | **+0.1** |
 
-### Track 2 — Raw (pre-grounding) — partial results, 8/10 seeds
+### Track 2 — Raw (pre-grounding) — 10/10 seeds
 
 **Oscillation wins overwhelmingly.**
 
-| | GPT (16 judgments) | Opus (5 judgments*) |
+| | GPT (20 judgments) | Opus (5 judgments*) |
 |---|:-:|:-:|
-| Oscillation wins | 16 (100%) | 4 (80%) |
-| Baseline wins | 0 (0%) | 0 (0%) |
+| Oscillation wins | 19 (95%) | 4 (80%) |
+| Baseline wins | 1 (5%) | 0 (0%) |
 | Tie | 0 (0%) | 1 (20%) |
 | Mean delta | **+1.1** | **+2.3** |
 
-*Opus judges ran on first 5 seeds only. GPT judges ran on 8/10 seeds (2 still generating).
+*Opus judges ran on first 5 seeds only. The single baseline win (GPT, decentralization) was a split decision — the other GPT judge on the same seed preferred oscillation.
 
 ### The Contrast
 
@@ -102,16 +102,16 @@ The evaluation reveals that oscillation is not universally better — it excels 
 | **Quick brainstorming** — generate a list of ideas fast | **Baseline** | Oscillation's multi-cycle architecture is overhead when you just need a competent list. Three standard passes produce equivalent practical output. |
 | **Adversarial stress-testing** — attack your own assumptions | **Oscillation (adversarial mode)** | The DG's inversion constraint is purpose-built for this. Not yet implemented as a separate mode, but the architecture supports it. |
 
-### Per-Criterion Breakdown (Track 2, GPT judge, 14 judgments)
+### Per-Criterion Breakdown (Track 2, GPT judge, 20 judgments, all 10 seeds)
 
 | Criterion | Oscillation | Baseline | Delta | Winner |
 |-----------|:-----------:|:--------:|:-----:|:------:|
 | Novelty | 9.0 | 7.2 | +1.8 | **Oscillation** |
-| Internal tension | 9.6 | 7.8 | +1.8 | **Oscillation** |
+| Internal tension | 9.4 | 7.7 | +1.8 | **Oscillation** |
 | Emergent insight | 9.0 | 7.5 | +1.5 | **Oscillation** |
-| Human-likeness | 8.1 | 7.0 | +1.1 | **Oscillation** |
-| Depth | 8.6 | 8.0 | +0.6 | ~equal |
-| **Specificity** | **6.7** | **8.3** | **-1.6** | **Baseline** |
+| Human-likeness | 7.9 | 7.2 | +0.8 | **Oscillation** |
+| Depth | 8.6 | 8.0 | +0.6 | Oscillation (moderate) |
+| **Specificity** | **6.5** | **8.2** | **-1.7** | **Baseline** |
 
 Oscillation wins 5/6 criteria but **loses on the one that matters most for practical output**. This is why grounding exists — and why it erases the advantage: it forces specificity at the cost of everything else.
 

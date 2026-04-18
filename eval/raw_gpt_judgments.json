@@ -844,5 +844,99 @@
         }
       }
     }
+  ],
+  "decentralization": [
+    {
+      "scores": {
+        "X": {
+          "novelty": 9,
+          "depth": 8,
+          "specificity": 5,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 7
+        },
+        "Y": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 7,
+          "emergent_insight": 8,
+          "human_likeness": 8
+        }
+      },
+      "qualitative": "X is more original and conceptually adventurous. Its best ideas refract re-centralization through rhythm, reassurance, procedural charisma, and cognitive fatigue, which feels genuinely fresh, though sometimes at the cost of precision. Y is more disciplined and analytically usable: it introduces concrete layers like interface control, liability, and reversibility, making the argument sharper and more applicable. Overall, X reaches for deeper reframings, while Y offers the cleaner and more operational model.",
+      "preference": "Y",
+      "mapping": {
+        "X": "oscillation",
+        "Y": "baseline"
+      },
+      "seed": "Decentralized systems always re-centralize and this is inevitable",
+      "preferred_method": "baseline",
+      "scores_by_method": {
+        "oscillation": {
+          "novelty": 9,
+          "depth": 8,
+          "specificity": 5,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 7
+        },
+        "baseline": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 7,
+          "emergent_insight": 8,
+          "human_likeness": 8
+        }
+      }
+    },
+    {
+      "scores": {
+        "X": {
+          "novelty": 9,
+          "depth": 8,
+          "specificity": 6,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "Y": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 9,
+          "internal_tension": 7,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        }
+      },
+      "qualitative": "X is more original and conceptually alive: it reframes re-centralization through rhythm, reassurance, fatigue, procedure, and personification, which creates stronger internal tension and more surprising insight. Its weakness is precision; several claims are evocative but abstract. Y is clearer, more operational, and more analytically grounded, especially around interface control, accountability, and layer-specific centralization, but it stays closer to familiar arguments. Overall, X feels more like a genuinely exploratory mind producing non-obvious thought, while Y feels more like a strong synthesized argument.",
+      "preference": "X",
+      "mapping": {
+        "X": "oscillation",
+        "Y": "baseline"
+      },
+      "seed": "Decentralized systems always re-centralize and this is inevitable",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "oscillation": {
+          "novelty": 9,
+          "depth": 8,
+          "specificity": 6,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "baseline": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 9,
+          "internal_tension": 7,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        }
+      }
+    }
   ]
 }
