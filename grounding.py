@@ -16,19 +16,45 @@ logger = logging.getLogger(__name__)
 
 GROUNDING_PROMPT_FILE = BASE_DIR / "prompts" / "grounding_prompt.txt"
 
+GROUNDING_MODES = {
+    "default": BASE_DIR / "prompts" / "grounding_prompt.txt",
+    "policy": BASE_DIR / "prompts" / "grounding_prompt.txt",
+    "essay": BASE_DIR / "prompts" / "grounding_essay.txt",
+    "strategy": BASE_DIR / "prompts" / "grounding_strategy.txt",
+    "hypotheses": BASE_DIR / "prompts" / "grounding_hypotheses.txt",
+    "provocations": BASE_DIR / "prompts" / "grounding_provocations.txt",
+}
+
 
 class GroundingError(Exception):
     """Error during grounding phase."""
     pass
 
 
-def load_prompt() -> str:
-    """Load the grounding system prompt."""
+def load_prompt(mode: str = "default") -> str:
+    """Load the grounding system prompt for the given mode.
+
+    Args:
+        mode: Grounding mode name. One of: default, policy, essay,
+              strategy, hypotheses, provocations.
+
+    Returns:
+        The system prompt text.
+
+    Raises:
+        GroundingError: If the mode is unknown or the file cannot be read.
+    """
+    if mode not in GROUNDING_MODES:
+        available = ", ".join(sorted(GROUNDING_MODES.keys()))
+        raise GroundingError(
+            f"Unknown grounding mode '{mode}'. Available modes: {available}"
+        )
+    prompt_file = GROUNDING_MODES[mode]
     try:
-        with open(GROUNDING_PROMPT_FILE, "r") as f:
+        with open(prompt_file, "r") as f:
             return f.read()
     except FileNotFoundError:
-        raise GroundingError(f"Grounding prompt file not found: {GROUNDING_PROMPT_FILE}")
+        raise GroundingError(f"Grounding prompt file not found: {prompt_file}")
     except IOError as e:
         raise GroundingError(f"Error reading grounding prompt file: {e}")
 
@@ -37,7 +63,8 @@ def ground(
     seed_topic: str,
     crystallized: list[dict],
     open_knots: list[dict],
-    temperature: float = None
+    temperature: float = None,
+    mode: str = "default"
 ) -> dict:
     """
     Ground abstract insights into actionable proposals.
@@ -47,9 +74,11 @@ def ground(
         crystallized: List of crystallized insight dicts
         open_knots: List of open knot dicts
         temperature: Override temperature (default: same as CC)
+        mode: Grounding mode — one of: default, policy, essay,
+              strategy, hypotheses, provocations
 
     Returns:
-        Dict with actions, experiments, questions, synthesis
+        Dict with grounding results (structure varies by mode)
 
     Raises:
         GroundingError: If grounding fails
@@ -60,7 +89,7 @@ def ground(
     if not seed_topic:
         raise GroundingError("Seed topic is required for grounding")
 
-    system_prompt = load_prompt()
+    system_prompt = load_prompt(mode)
     user_prompt = build_user_prompt(seed_topic, crystallized, open_knots)
 
     try:

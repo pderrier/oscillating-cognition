@@ -1,0 +1,22 @@
+{
+  "essay": [
+    {"id": "essay-consciousness", "topic": "We will never be able to determine whether a machine is conscious"},
+    {"id": "essay-inequality", "topic": "Life extension technology will create the most extreme inequality in human history"},
+    {"id": "essay-art", "topic": "AI-generated art is not art and should not be treated as such"}
+  ],
+  "strategy": [
+    {"id": "strat-remote", "topic": "Our company should go fully remote-first within 12 months"},
+    {"id": "strat-opensource", "topic": "We should open-source our core product to outcompete larger rivals"},
+    {"id": "strat-ai-tutor", "topic": "We should pivot from traditional courseware to an AI-tutor-first platform"}
+  ],
+  "hypotheses": [
+    {"id": "hyp-nuclear", "topic": "Nuclear energy is the only realistic path to decarbonization at scale"},
+    {"id": "hyp-decentralization", "topic": "Decentralized systems always re-centralize and this is inevitable"},
+    {"id": "hyp-remote-productivity", "topic": "Remote workers are more productive than office workers"}
+  ],
+  "provocations": [
+    {"id": "prov-cars", "topic": "Cars should be banned from city centers worldwide"},
+    {"id": "prov-university", "topic": "AI tutors will make traditional universities obsolete for most students"},
+    {"id": "prov-crispr", "topic": "CRISPR gene editing should be available for non-medical human enhancement"}
+  ]
+}

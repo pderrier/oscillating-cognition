@@ -16,7 +16,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 logger = logging.getLogger(__name__)
 
 
-def run_oscillation(seed: str, cycles: int = 3, model: str = None, skip_grounding: bool = False) -> dict:
+def run_oscillation(seed: str, cycles: int = 3, model: str = None, skip_grounding: bool = False, grounding_mode: str = None) -> dict:
     """
     Run oscillating cognition on a seed with isolated memory.
 
@@ -87,9 +87,13 @@ def run_oscillation(seed: str, cycles: int = 3, model: str = None, skip_groundin
             # Run grounding phase (optional)
             grounding_result = {}
             if not skip_grounding:
-                logger.info("[OSCILLATION] Running grounding phase...")
+                mode_label = f" (mode={grounding_mode})" if grounding_mode else ""
+                logger.info(f"[OSCILLATION] Running grounding phase{mode_label}...")
                 try:
-                    grounding_result = ground(seed, crystallized, open_knots)
+                    ground_kwargs = {}
+                    if grounding_mode:
+                        ground_kwargs["mode"] = grounding_mode
+                    grounding_result = ground(seed, crystallized, open_knots, **ground_kwargs)
                 except Exception as e:
                     logger.warning(f"Grounding failed: {e}")
 

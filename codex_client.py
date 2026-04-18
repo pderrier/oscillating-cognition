@@ -112,7 +112,11 @@ class CodexAppServer:
         })
         logger.info(f"[CODEX] Initialized: {resp.get('result', {}).get('userAgent', '?')}")
 
-        # Create thread
+        # Thread is created per-call in chat() to ensure stateless behavior
+        logger.info("[CODEX] Ready (threads created per call)")
+
+    def _new_thread(self):
+        """Create a fresh thread so each call is stateless (no conversational history)."""
         thread_params = {"ephemeral": True}
         if self.model:
             thread_params["model"] = self.model
@@ -121,11 +125,14 @@ class CodexAppServer:
         self.thread_id = result.get("threadId") or result.get("thread", {}).get("id")
         if not self.thread_id:
             raise CodexClientError(f"No threadId in thread/start response: {resp}")
-        logger.info(f"[CODEX] Thread created: {self.thread_id}")
 
     def chat(self, messages: list[dict], temperature: float = 0.7) -> str:
         """Send a turn and collect the full response text."""
         self.start()
+
+        # Fresh thread per call — ensures stateless behavior matching OpenAI API semantics.
+        # Without this, the model sees all prior turns in the thread (DG sees CC responses, etc.)
+        self._new_thread()
 
         # Build prompt from messages
         prompt_parts = []

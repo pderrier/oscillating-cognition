@@ -122,7 +122,7 @@ Output only the JSON object, no other text.
 """
 
 
-def run_baseline(seed: str, temperature: float = 0.7, model: str = None, skip_grounding: bool = False) -> dict:
+def run_baseline(seed: str, temperature: float = 0.7, model: str = None, skip_grounding: bool = False, grounding_mode: str = None) -> dict:
     """
     Run 3-pass iterative refinement + grounding on a seed topic.
 
@@ -191,22 +191,35 @@ def run_baseline(seed: str, temperature: float = 0.7, model: str = None, skip_gr
 
     # Pass 4: Grounding (optional — same format as oscillation's grounding phase)
     if not skip_grounding:
-        logger.info("[BASELINE] Pass 4: Grounding...")
+        mode_label = f" (mode={grounding_mode})" if grounding_mode else ""
+        logger.info(f"[BASELINE] Pass 4: Grounding{mode_label}...")
         insights = pass3.get("final_ideas", [])
         questions = pass3.get("open_questions", [])
 
-        grounding_user = _build_grounding_input(seed, insights, questions)
-        grounding_raw = chat_completion(
-            messages=[
-                {"role": "system", "content": GROUNDING_PROMPT},
-                {"role": "user", "content": grounding_user}
-            ],
-            temperature=0.5,
-            max_tokens=2000,
-            model=model,
-            json_response=True
-        )
-        grounding = _safe_parse(grounding_raw)
+        if grounding_mode:
+            # Use mode-specific grounding via grounding.py for fair comparison
+            from grounding import ground as ground_fn, build_user_prompt
+            # Convert baseline insights to crystallized format expected by ground()
+            crystallized = [
+                {"content": i.get("content", str(i)) if isinstance(i, dict) else str(i)}
+                for i in insights
+            ]
+            open_knots = [{"content": q} for q in questions]
+            grounding = ground_fn(seed, crystallized, open_knots, mode=grounding_mode)
+        else:
+            grounding_user = _build_grounding_input(seed, insights, questions)
+            grounding_raw = chat_completion(
+                messages=[
+                    {"role": "system", "content": GROUNDING_PROMPT},
+                    {"role": "user", "content": grounding_user}
+                ],
+                temperature=0.5,
+                max_tokens=2000,
+                model=model,
+                json_response=True
+            )
+            grounding = _safe_parse(grounding_raw)
+
         grounding.setdefault("actions", [])
         grounding.setdefault("experiments", [])
         grounding.setdefault("questions", [])
