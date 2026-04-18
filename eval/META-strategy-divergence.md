@@ -1,6 +1,6 @@
 # Why Two Judges Disagreed on Strategy — And What It Means
 
-**Context:** Two AI judges (GPT-4o and Claude Opus) evaluated the same pair of strategic option sets for an AI-tutor pivot. GPT preferred Output B. Opus preferred Output A. Same criteria, opposite verdicts.
+**Context:** Two AI judges (GPT-5.4 and Claude Opus) evaluated the same pair of strategic option sets for an AI-tutor pivot. GPT preferred Output B. Opus preferred Output A. Same criteria, opposite verdicts.
 
 ---
 

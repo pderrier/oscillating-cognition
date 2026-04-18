@@ -1,20 +1,20 @@
-# Model Divergence as Signal: Systematic Disagreement Between GPT-4o and Claude Opus as Evaluation Judges
+# Model Divergence as Signal: Systematic Disagreement Between GPT-5.4 and Claude Opus as Evaluation Judges
 
 ## Abstract
 
-When two frontier LLMs judge the same blind output pairs using the same rubric, they sometimes reach opposite conclusions. This document reports a systematic pattern observed during an A/B evaluation of a cognitive tool across three output modes: GPT-4o and Claude Opus agree when one output is clearly stronger across all quality dimensions, but diverge sharply when **originality and executability trade off against each other**. The disagreement is not noise -- it reveals an under-specification in the rubric that a single-judge system would silently resolve according to that model's implicit preferences.
+When two frontier LLMs judge the same blind output pairs using the same rubric, they sometimes reach opposite conclusions. This document reports a systematic pattern observed during an A/B evaluation of a cognitive tool across three output modes: GPT-5.4 and Claude Opus agree when one output is clearly stronger across all quality dimensions, but diverge sharply when **originality and executability trade off against each other**. The disagreement is not noise -- it reveals an under-specification in the rubric that a single-judge system would silently resolve according to that model's implicit preferences.
 
 These findings are relevant to anyone building LLM-as-judge evaluation pipelines.
 
 ## Evaluation Setup
 
-Two models (GPT-4o, Claude Opus) judged blind A/B pairs of outputs produced by a baseline system and an experimental "oscillation" system. Outputs were evaluated across three modes -- essay, strategy, and hypotheses -- using identical rubrics per mode. Judges scored on mode-specific criteria and selected a winner.
+Two models (GPT-5.4, Claude Opus) judged blind A/B pairs of outputs produced by a baseline system and an experimental "oscillation" system. Outputs were evaluated across three modes -- essay, strategy, and hypotheses -- using identical rubrics per mode. Judges scored on mode-specific criteria and selected a winner.
 
 ## Results
 
 ### Agreement by Mode
 
-| Mode | Seeds | GPT-4o Judgments | GPT-4o Winner | Opus Judgments | Opus Winner | Agreement |
+| Mode | Seeds | GPT-5.4 Judgments | GPT-5.4 Winner | Opus Judgments | Opus Winner | Agreement |
 |------|-------|------------------|---------------|----------------|-------------|-----------|
 | Essay | 3 | 6 | Oscillation (6/6) | 3 | Oscillation (3/3) | AGREE |
 | Strategy | 1 | 2 | Baseline (2/2) | 1 | Oscillation (1/1) | **DISAGREE** |
@@ -24,13 +24,13 @@ The pattern is immediate: **agreement in essay mode, disagreement in strategy an
 
 ### Score Calibration
 
-| Metric | GPT-4o | Claude Opus |
+| Metric | GPT-5.4 | Claude Opus |
 |--------|--------|-------------|
 | Mean score range | 8.5 - 9.0 | 5.0 - 8.0 |
 | Score variance | Low (compressed) | High (discriminating) |
 | Score spread | ~0.5 pts between outputs | ~2-3 pts between outputs |
 
-GPT-4o is a generous grader with a compressed scale. Opus is a harsher grader that uses more of the scale. Both behaviors are stable across all three evaluation modes. Crucially, this calibration difference does not explain the winner disagreement -- a judge can be generous and still rank correctly. The disagreement comes from *which criteria dominate the ranking*.
+GPT-5.4 is a generous grader with a compressed scale. Opus is a harsher grader that uses more of the scale. Both behaviors are stable across all three evaluation modes. Crucially, this calibration difference does not explain the winner disagreement -- a judge can be generous and still rank correctly. The disagreement comes from *which criteria dominate the ranking*.
 
 ### Where They Disagree: Criteria-Level Analysis
 
@@ -43,7 +43,7 @@ In strategy and hypotheses modes, Opus scores reveal a clean split in which crit
 | Connection to tensions | Test protocol quality |
 | Research value | Decision-readiness |
 
-The total per-output means are nearly tied: **7.0 vs 7.0** in strategy, **7.4 vs 7.2** in hypotheses. The ranking depends entirely on which criteria a judge implicitly weights more heavily. GPT-4o weights the right column. Opus weights the left.
+The total per-output means are nearly tied: **7.0 vs 7.0** in strategy, **7.4 vs 7.2** in hypotheses. The ranking depends entirely on which criteria a judge implicitly weights more heavily. GPT-5.4 weights the right column. Opus weights the left.
 
 ## The Mechanism
 
@@ -73,7 +73,7 @@ The standard argument for multi-judge evaluation is noise reduction (average out
 
 ### 3. Score calibration differences are cosmetic; criteria weighting differences are structural
 
-GPT-4o's generous scoring and Opus's harsh scoring are easy to normalize away. The criteria weighting divergence cannot be normalized because it reflects genuinely different evaluation philosophies. Any system that averages cross-model scores without detecting this divergence will produce meaningless middle-ground verdicts.
+GPT-5.4's generous scoring and Opus's harsh scoring are easy to normalize away. The criteria weighting divergence cannot be normalized because it reflects genuinely different evaluation philosophies. Any system that averages cross-model scores without detecting this divergence will produce meaningless middle-ground verdicts.
 
 ### 4. Rubrics need explicit weighting or they delegate weighting to the model
 
@@ -93,7 +93,7 @@ An unweighted rubric is not a neutral rubric. It is a rubric whose weighting is 
 
 ## The Deeper Question
 
-The observed pattern -- GPT-4o as pragmatist, Opus as intellectual -- is consistent across all evaluation modes in this study. Is this a stable model "personality" that will persist across versions, or an artifact of current training data and RLHF?
+The observed pattern -- GPT-5.4 as pragmatist, Opus as intellectual -- is consistent across all evaluation modes in this study. Is this a stable model "personality" that will persist across versions, or an artifact of current training data and RLHF?
 
 This question matters for evaluation infrastructure. If these biases are stable, teams can calibrate for them. If they shift between model versions, any evaluation pipeline that depends on a specific model's implicit weighting is fragile in a way that will not be detected until results silently change.
 

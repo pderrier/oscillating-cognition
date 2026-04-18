@@ -251,7 +251,7 @@ Each trial is presented as "Output X" and "Output Y" with randomized assignment.
 
 | Judge | Model | Relation to generator | Per trial |
 |-------|-------|----------------------|-----------|
-| **Judge GPT** | GPT-4o (via Codex OAuth) | Same family as generator | 2 |
+| **Judge GPT** | GPT-5.4 (via Codex OAuth) | Same family as generator | 2 |
 | **Judge Opus** | Claude Opus 4.6 | Different family | 1 |
 
 ### Criteria by Track
@@ -289,7 +289,7 @@ The first evaluation run reused a single Codex app-server thread across all seed
 LLM judges have systematic biases (preferring verbose output, favoring certain rhetorical styles). Same-family judges (GPT judging GPT output) inflate scores. Mitigated by using two judge families. In Track 1, GPT scored both conditions at 8.88 mean while Opus scored ~6.0. Both reached the same structural conclusion (tie), but Opus was more discriminating.
 
 ### B5: Single generator model
-Both conditions use the same model (via Codex OAuth, GPT-4o or equivalent). Results may not generalize to other model families.
+Both conditions use the same model (via Codex OAuth, GPT-5.4 or equivalent). Results may not generalize to other model families.
 
 ### B6: Volume asymmetry in Track 2
 Oscillation produces ~9 insights + ~11 knots vs. baseline's 5 ideas + 5 questions + synthesis. Judges may favor richer outputs regardless of per-item quality. Track 3 mitigates this: grounding normalizes output volume to format-specific requirements.

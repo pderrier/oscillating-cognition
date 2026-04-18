@@ -1,0 +1,393 @@
+{
+  "essay": {
+    "total_judgments": 6,
+    "criteria": [
+      "narrative_voice",
+      "tension_as_structure",
+      "originality_of_framing",
+      "would_you_keep_reading",
+      "intellectual_honesty"
+    ],
+    "oscillation": {
+      "narrative_voice": {
+        "mean": 9.5,
+        "std": 0.5,
+        "n": 6
+      },
+      "tension_as_structure": {
+        "mean": 9.5,
+        "std": 0.5,
+        "n": 6
+      },
+      "originality_of_framing": {
+        "mean": 9.67,
+        "std": 0.47,
+        "n": 6
+      },
+      "would_you_keep_reading": {
+        "mean": 9.0,
+        "std": 0.0,
+        "n": 6
+      },
+      "intellectual_honesty": {
+        "mean": 8.33,
+        "std": 0.47,
+        "n": 6
+      },
+      "overall": {
+        "mean": 9.2,
+        "n": 30
+      }
+    },
+    "baseline": {
+      "narrative_voice": {
+        "mean": 8.17,
+        "std": 0.37,
+        "n": 6
+      },
+      "tension_as_structure": {
+        "mean": 8.17,
+        "std": 0.37,
+        "n": 6
+      },
+      "originality_of_framing": {
+        "mean": 7.67,
+        "std": 0.47,
+        "n": 6
+      },
+      "would_you_keep_reading": {
+        "mean": 8.0,
+        "std": 0.0,
+        "n": 6
+      },
+      "intellectual_honesty": {
+        "mean": 9.0,
+        "std": 0.0,
+        "n": 6
+      },
+      "overall": {
+        "mean": 8.2,
+        "n": 30
+      }
+    },
+    "win_rate": {
+      "oscillation": {
+        "count": 6,
+        "rate": 1.0
+      },
+      "baseline": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "tie": {
+        "count": 0,
+        "rate": 0.0
+      }
+    },
+    "deltas": {
+      "narrative_voice": 1.33,
+      "tension_as_structure": 1.33,
+      "originality_of_framing": 2.0,
+      "would_you_keep_reading": 1.0,
+      "intellectual_honesty": -0.67
+    }
+  },
+  "strategy": {
+    "total_judgments": 4,
+    "criteria": [
+      "non_obviousness",
+      "clarity_of_tradeoffs",
+      "actionability",
+      "risk_awareness",
+      "decision_readiness"
+    ],
+    "oscillation": {
+      "non_obviousness": {
+        "mean": 5.0,
+        "std": 4.0,
+        "n": 4
+      },
+      "clarity_of_tradeoffs": {
+        "mean": 4.75,
+        "std": 3.77,
+        "n": 4
+      },
+      "actionability": {
+        "mean": 3.5,
+        "std": 2.5,
+        "n": 4
+      },
+      "risk_awareness": {
+        "mean": 4.5,
+        "std": 3.5,
+        "n": 4
+      },
+      "decision_readiness": {
+        "mean": 4.0,
+        "std": 3.0,
+        "n": 4
+      },
+      "overall": {
+        "mean": 4.35,
+        "n": 20
+      }
+    },
+    "baseline": {
+      "non_obviousness": {
+        "mean": 7.5,
+        "std": 0.5,
+        "n": 4
+      },
+      "clarity_of_tradeoffs": {
+        "mean": 9.0,
+        "std": 0.0,
+        "n": 4
+      },
+      "actionability": {
+        "mean": 8.5,
+        "std": 0.5,
+        "n": 4
+      },
+      "risk_awareness": {
+        "mean": 8.0,
+        "std": 0.0,
+        "n": 4
+      },
+      "decision_readiness": {
+        "mean": 9.0,
+        "std": 0.0,
+        "n": 4
+      },
+      "overall": {
+        "mean": 8.4,
+        "n": 20
+      }
+    },
+    "win_rate": {
+      "oscillation": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "baseline": {
+        "count": 4,
+        "rate": 1.0
+      },
+      "tie": {
+        "count": 0,
+        "rate": 0.0
+      }
+    },
+    "deltas": {
+      "non_obviousness": -2.5,
+      "clarity_of_tradeoffs": -4.25,
+      "actionability": -5.0,
+      "risk_awareness": -3.5,
+      "decision_readiness": -5.0
+    }
+  },
+  "hypotheses": {
+    "total_judgments": 6,
+    "criteria": [
+      "falsifiability",
+      "originality",
+      "test_protocol_quality",
+      "connection_to_tensions",
+      "research_value"
+    ],
+    "oscillation": {
+      "falsifiability": {
+        "mean": 7.33,
+        "std": 0.75,
+        "n": 6
+      },
+      "originality": {
+        "mean": 9.0,
+        "std": 0.0,
+        "n": 6
+      },
+      "test_protocol_quality": {
+        "mean": 7.33,
+        "std": 0.47,
+        "n": 6
+      },
+      "connection_to_tensions": {
+        "mean": 8.67,
+        "std": 0.47,
+        "n": 6
+      },
+      "research_value": {
+        "mean": 8.17,
+        "std": 0.37,
+        "n": 6
+      },
+      "overall": {
+        "mean": 8.1,
+        "n": 30
+      }
+    },
+    "baseline": {
+      "falsifiability": {
+        "mean": 9.0,
+        "std": 0.0,
+        "n": 6
+      },
+      "originality": {
+        "mean": 7.17,
+        "std": 0.37,
+        "n": 6
+      },
+      "test_protocol_quality": {
+        "mean": 8.5,
+        "std": 0.5,
+        "n": 6
+      },
+      "connection_to_tensions": {
+        "mean": 8.0,
+        "std": 0.0,
+        "n": 6
+      },
+      "research_value": {
+        "mean": 8.83,
+        "std": 0.37,
+        "n": 6
+      },
+      "overall": {
+        "mean": 8.3,
+        "n": 30
+      }
+    },
+    "win_rate": {
+      "oscillation": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "baseline": {
+        "count": 6,
+        "rate": 1.0
+      },
+      "tie": {
+        "count": 0,
+        "rate": 0.0
+      }
+    },
+    "deltas": {
+      "falsifiability": -1.67,
+      "originality": 1.83,
+      "test_protocol_quality": -1.17,
+      "connection_to_tensions": 0.67,
+      "research_value": -0.66
+    }
+  },
+  "provocations": {
+    "total_judgments": 6,
+    "criteria": [
+      "discomfort_level",
+      "precision",
+      "resistance_to_platitudes",
+      "ability_to_unstick",
+      "source_insight_quality"
+    ],
+    "oscillation": {
+      "discomfort_level": {
+        "mean": 8.83,
+        "std": 0.37,
+        "n": 6
+      },
+      "precision": {
+        "mean": 8.33,
+        "std": 0.47,
+        "n": 6
+      },
+      "resistance_to_platitudes": {
+        "mean": 8.5,
+        "std": 0.76,
+        "n": 6
+      },
+      "ability_to_unstick": {
+        "mean": 8.83,
+        "std": 0.37,
+        "n": 6
+      },
+      "source_insight_quality": {
+        "mean": 8.5,
+        "std": 0.5,
+        "n": 6
+      },
+      "overall": {
+        "mean": 8.6,
+        "n": 30
+      }
+    },
+    "baseline": {
+      "discomfort_level": {
+        "mean": 8.17,
+        "std": 0.37,
+        "n": 6
+      },
+      "precision": {
+        "mean": 8.83,
+        "std": 0.37,
+        "n": 6
+      },
+      "resistance_to_platitudes": {
+        "mean": 8.17,
+        "std": 0.37,
+        "n": 6
+      },
+      "ability_to_unstick": {
+        "mean": 8.33,
+        "std": 0.47,
+        "n": 6
+      },
+      "source_insight_quality": {
+        "mean": 8.5,
+        "std": 0.5,
+        "n": 6
+      },
+      "overall": {
+        "mean": 8.4,
+        "n": 30
+      }
+    },
+    "win_rate": {
+      "oscillation": {
+        "count": 4,
+        "rate": 0.67
+      },
+      "baseline": {
+        "count": 2,
+        "rate": 0.33
+      },
+      "tie": {
+        "count": 0,
+        "rate": 0.0
+      }
+    },
+    "deltas": {
+      "discomfort_level": 0.66,
+      "precision": -0.5,
+      "resistance_to_platitudes": 0.33,
+      "ability_to_unstick": 0.5,
+      "source_insight_quality": 0.0
+    }
+  },
+  "_aggregate": {
+    "total_judgments": 22,
+    "win_rate": {
+      "oscillation": {
+        "count": 10,
+        "rate": 0.45
+      },
+      "baseline": {
+        "count": 12,
+        "rate": 0.55
+      },
+      "tie": {
+        "count": 0,
+        "rate": 0.0
+      }
+    },
+    "oscillation_mean": 7.56,
+    "baseline_mean": 8.32
+  }
+}

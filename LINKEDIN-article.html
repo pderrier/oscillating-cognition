@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Does Forcing an AI to Think Like a Human Actually Work?</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.7; color: #333; }
+  h1 { font-size: 28px; margin-bottom: 4px; }
+  h2 { font-size: 22px; margin-top: 40px; border-bottom: 1px solid #ddd; padding-bottom: 8px; }
+  h3 { font-size: 18px; margin-top: 30px; }
+  blockquote { border-left: 3px solid #0a66c2; padding: 8px 16px; margin: 16px 0; background: #f8f9fa; font-style: italic; }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+  th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  .subtitle { color: #666; font-size: 16px; margin-bottom: 30px; }
+  .section-label { color: #0a66c2; font-weight: 600; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; margin-bottom: 4px; }
+  .result-box { background: #f0f7ff; border-radius: 8px; padding: 16px; margin: 16px 0; }
+  .result-box strong { color: #0a66c2; }
+  .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 14px; color: #666; }
+  a { color: #0a66c2; }
+  ul { padding-left: 24px; }
+  li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<h1>Does Forcing an AI to Think Like a Human Actually Work? We Tested It.</h1>
+<p class="subtitle">Follow-up to <a href="https://www.linkedin.com/pulse/another-approach-building-machine-intelligence-between-pierre-derrier-2ow1f/">Another Approach to Building Machine Intelligence: Between Chaos and Structure</a></p>
+
+<p>A few months ago, I published an article about <a href="https://www.linkedin.com/pulse/another-approach-building-machine-intelligence-between-pierre-derrier-2ow1f/">Oscillating Cognition</a> &mdash; a system designed to make LLMs think more like humans.</p>
+
+<p>The premise: LLMs converge too fast. Ask one a hard question and it summarizes, concludes, and moves on. Great for quick answers, but terrible for deep exploration &mdash; the kind where you need to sit with contradictions, follow unexpected tangents, and resist the urge to wrap things up neatly.</p>
+
+<p>So we built a cognitive orchestration system that forces oscillation between <strong>divergence</strong> (wild, metaphorical, conclusion-free generation at high temperature) and <strong>convergence</strong> (ruthless compression, critique, but with at least one unresolved tension preserved per cycle). A Tension Controller monitors the balance and injects chaos if the system becomes too rigid. Memory persists across cycles so ideas compound.</p>
+
+<p>The system runs as an <a href="https://github.com/pderrier/oscillating-cognition">MCP server</a> &mdash; any AI agent can call <code>oscillate(seed="your topic", cycles=3)</code> and get back crystallized insights, open questions, and optionally grounded action proposals. It also has a CLI and a web UI.</p>
+
+<p>The obvious next question was: <strong>does it actually produce better thinking than standard prompting?</strong></p>
+
+<p>So we built a rigorous A/B evaluation and ran it. Here's what we found &mdash; including where the system genuinely outperforms, where it doesn't, and an unexpected meta-discovery about how different AI models judge quality itself.</p>
+
+<h2>The Test Design</h2>
+
+<p>We compared oscillation against a <strong>fair baseline</strong> &mdash; not a single prompt, but a 3-pass iterative refinement (generate &rarr; critique &rarr; synthesize). The kind of structured chain-of-thought that a competent engineer would build. Same number of iteration passes, same final formatting.</p>
+
+<p>We picked <strong>10 topics across domains</strong> that have nothing to do with our project &mdash; to prevent circular evaluation:</p>
+
+<ul>
+<li><em>"CRISPR gene editing should be available for non-medical human enhancement"</em> (bioethics)</li>
+<li><em>"Remote-first companies will outcompete office-first companies within 10 years"</em> (business strategy)</li>
+<li><em>"Nuclear energy is the only realistic path to decarbonization at scale"</em> (energy policy)</li>
+<li><em>"AI-generated art is not art and should not be treated as such"</em> (aesthetics)</li>
+<li>&hellip;and six more across education, urban planning, philosophy, economics, social futures, and systems theory.</li>
+</ul>
+
+<p>Both systems explored each topic, and their outputs were evaluated <strong>blindly</strong> &mdash; judges see "Output X" and "Output Y" with randomized assignment. No labels, no method names. Two different judge models (<strong>GPT-5.4</strong> and <strong>Claude Opus</strong>) to catch model-specific bias.</p>
+
+<p>We ran three evaluation tracks, each designed in response to what the previous one revealed.</p>
+
+<h2>Track 1: The Humbling Tie</h2>
+
+<p>Both systems explored each topic, then their raw thinking was passed through an identical <strong>"grounding" prompt</strong> that converts insights into a structured deliverable: actions to take, experiments to run, questions to investigate, and a synthesis.</p>
+
+<div class="result-box">
+<strong>Result: perfect tie.</strong> Mean scores of 8.88 vs 8.88. Sixty percent of judgments were ties.
+</div>
+
+<blockquote>"The overlap is so extensive that it suggests a shared underlying template rather than independent reasoning."</blockquote>
+
+<p>This was our first surprise. Both systems &mdash; one with specialized prompts, persistent memory, temperature oscillation, and tension preservation, the other with three generic passes &mdash; produced <strong>near-identical policy memos</strong> after grounding.</p>
+
+<p>The problem wasn't the thinking engine. It was the last mile: the grounding step was acting as a convergent compressor that flattened everything into the same format, erasing whatever upstream difference existed.</p>
+
+<h2>Track 2: What Does Oscillation Actually Think?</h2>
+
+<p>So we removed the grounding step entirely and compared the <strong>raw upstream outputs</strong> side by side: oscillation's crystallized insights + deliberately unresolved tensions versus baseline's refined ideas + synthesis.</p>
+
+<div class="result-box">
+<strong>Result: oscillation wins 19 out of 20 blind judgments.</strong>
+</div>
+
+<p>The per-criterion breakdown reveals what's different &mdash; and what isn't:</p>
+
+<table>
+<tr><th>Criterion</th><th>Oscillation</th><th>Baseline</th><th>Delta</th></tr>
+<tr><td>Novelty</td><td>9.0</td><td>7.2</td><td><strong>+1.8</strong></td></tr>
+<tr><td>Preserved contradictions</td><td>9.4</td><td>7.7</td><td><strong>+1.8</strong></td></tr>
+<tr><td>Emergent insight</td><td>9.0</td><td>7.5</td><td><strong>+1.5</strong></td></tr>
+<tr><td>Human-likeness</td><td>7.9</td><td>7.2</td><td>+0.8</td></tr>
+<tr><td>Depth</td><td>8.6</td><td>8.0</td><td>+0.6</td></tr>
+<tr><td><strong>Specificity</strong></td><td><strong>6.5</strong></td><td><strong>8.2</strong></td><td><strong>-1.7</strong></td></tr>
+</table>
+
+<p>Oscillation wins on 5 out of 6 criteria. But baseline wins on the one that matters most for practical use: <strong>specificity</strong>.</p>
+
+<p>To make this concrete, here's what the difference looks like. On <em>"Remote-first companies will outcompete office-first companies within 10 years"</em>:</p>
+
+<p>The <strong>baseline</strong> produced: <em>"Remote-first advantage is operational legibility &mdash; written decisions create compounding institutional memory"</em> and <em>"Geographic diversification reduces cost shocks."</em> Competent, correct, and you've read it before.</p>
+
+<p><strong>Oscillation</strong> produced: <em>"Remote-first may sort for liminal operators: people fluent in translation, ambiguity, and self-explanation rather than people whose authority depends on thick local context"</em> and <em>"Physical co-presence may function less as a coordination engine than as a trust-conversion device, turning uncertainty into felt legitimacy through embodied ritual."</em></p>
+
+<blockquote>"The baseline delivers a competent, well-organized take that reads like a strong blog post &mdash; correct but largely predictable. Oscillation operates at a genuinely different level of abstraction: rival memory architectures, interpretive hierarchies, presence as trust-conversion ritual."</blockquote>
+
+<p>On <em>"AI tutors will make traditional universities obsolete"</em>:</p>
+
+<blockquote>"Oscillation treats the university as a psychosocial institution &mdash; moratorium on adulthood, witness to becoming, accent formation, marriage market &mdash; rather than defaulting to the standard unbundling/credentialing frame that the baseline reproduces competently but predictably."</blockquote>
+
+<p>The thinking is genuinely different in <strong>kind</strong>, not just degree. But it's less actionable. That tradeoff is real and, as we'd discover, irreducible by design.</p>
+
+<h2>Track 3: The Right Output for the Right Job</h2>
+
+<p>Track 1 showed that generic grounding erases the difference. Track 2 showed that the raw thinking is superior but too abstract. The natural question: <strong>what if we design the output format to match the actual use case?</strong></p>
+
+<p>We built four "grounding modes" &mdash; each with its own prompt and its own judging criteria.</p>
+
+<h3>Essay Mode</h3>
+
+<p>Instead of actions and experiments, the grounding prompt asks: <em>"Write a structured essay with a narrative arc. Use tensions as rhetorical structure. Preserve the strongest metaphors as section anchors."</em></p>
+
+<p>We tested on three philosophical/societal topics &mdash; machine consciousness, life-extension inequality, and AI-generated art. Judged on: narrative voice, tension as structure, originality of framing, "would you keep reading?", and intellectual honesty.</p>
+
+<div class="result-box">
+<strong>Result: oscillation wins all 9 judgments. Both judge models agree.</strong>
+</div>
+
+<p>The essays were strikingly different. On <em>"We will never be able to determine whether a machine is conscious"</em>, oscillation produced <strong>"The Trial We Can Never Finish"</strong> &mdash; built around consciousness as an asylum claim, where private reality is true but public legitimacy is granted only through hostile procedures. Baseline produced <strong>"The Witness We Cannot Call"</strong> &mdash; a well-organized epistemological survey.</p>
+
+<blockquote>"Oscillation's tensions genuinely destabilize the reader's footing. Baseline's tensions organize the reader's learning. That is the difference between an essay and a textbook chapter."</blockquote>
+
+<p>On AI-generated art:</p>
+
+<blockquote>"Baseline would be publishable in a generalist outlet. Oscillation would make someone stop scrolling."</blockquote>
+
+<p>On life-extension inequality:</p>
+
+<blockquote>"Oscillation earns its unresolved ending &mdash; the impossibility feels discovered through the argument. Baseline's unresolved ending feels more like a responsible caveat."</blockquote>
+
+<p><em>(Full essays are available in the <a href="https://github.com/pderrier/oscillating-cognition/blob/main/eval/generated_essays.md">eval data on GitHub</a>.)</em></p>
+
+<h3>Provocation Mode</h3>
+
+<p>The prompt asks: <em>"Generate 5 provocative questions designed to destabilize consensus in a team discussion. Each must be uncomfortable, precise, and impossible to answer with a platitude."</em></p>
+
+<p>We tested on urban car bans, university obsolescence, and CRISPR ethics.</p>
+
+<div class="result-box">
+<strong>Result: oscillation wins 2 out of 3 seeds unanimously.</strong>
+</div>
+
+<p>On CRISPR, the <strong>baseline</strong> asked: <em>"If enhancement is legal only through accredited clinics, what stops it from becoming a premium advantage for the wealthy?"</em> &mdash; a real question, but one a bioethics seminar handles routinely.</p>
+
+<p><strong>Oscillation</strong> asked: <em>"If the rich can signal superiority both by editing their children and by publicly refusing to edit them, what makes you think legalization levels the field?"</em></p>
+
+<blockquote>"Oscillation's questions assume legalization has already happened and ask what follows, which strips away the comfortable abstraction layer. Baseline leans on familiar policy-debate framing that experienced participants can handle with practiced responses."</blockquote>
+
+<p>On university obsolescence:</p>
+
+<blockquote>"Oscillation asks whether universities are a diagnosable pathology and whether their survival instincts will make them actively harmful. That move is harder to deflect."</blockquote>
+
+<h3>Strategy and Hypothesis Modes &mdash; Where It Gets Complicated</h3>
+
+<p>We also tested strategic option generation and research hypothesis generation. Here's where something unexpected happened: <strong>the two judge models disagreed systematically.</strong></p>
+
+<p>GPT-5.4 preferred baseline on every strategy and hypothesis seed. Claude Opus preferred oscillation on every one. Same rubric, same outputs, opposite verdicts.</p>
+
+<h2>The Meta-Finding: AI Models Have Implicit Values</h2>
+
+<p>This turned out to be the most thought-provoking result of the entire evaluation.</p>
+
+<p>On the strategy seed, Opus gave these scores:</p>
+
+<table>
+<tr><th>Criterion</th><th>Oscillation</th><th>Baseline</th></tr>
+<tr><td>Non-obviousness</td><td><strong>8</strong></td><td>5</td></tr>
+<tr><td>Clarity of tradeoffs</td><td><strong>9</strong></td><td>8</td></tr>
+<tr><td>Actionability</td><td>5</td><td><strong>8</strong></td></tr>
+<tr><td>Decision-readiness</td><td>6</td><td><strong>8</strong></td></tr>
+</table>
+
+<p>The total scores are nearly tied. But <strong>which criteria you weight determines who wins</strong>. GPT implicitly weighted actionability and decision-readiness. Opus implicitly weighted originality and tradeoff clarity.</p>
+
+<blockquote>"Oscillation optimizes for intellectual originality at the cost of executability. Baseline optimizes for decision utility at the cost of originality. If the ask were 'which set do I hand to an exec team on Monday,' the answer flips."</blockquote>
+
+<p>We ran a meta-analysis on the disagreement itself:</p>
+
+<blockquote>"The two judges are answering different implicit questions. One asks: which output is more useful to a decision-maker? The other: which output demonstrates stronger strategic thinking? These are not the same question."</blockquote>
+
+<blockquote>"The disagreement itself is the most informative signal in this evaluation. A single-judge system would have presented one answer as authoritative."</blockquote>
+
+<p>This has implications far beyond our project. <strong>Anyone using LLM-as-judge should know that a single model gives you one implicit value system, not ground truth.</strong> Cross-model judging doesn't just reduce bias &mdash; it surfaces tensions in what "quality" means. (We wrote a <a href="https://github.com/pderrier/oscillating-cognition/blob/main/eval/MODEL-DIVERGENCE.md">standalone analysis</a> on this finding.)</p>
+
+<h2>So When Should You Use Oscillation?</h2>
+
+<p><strong>Oscillation's strength</strong> is producing ideas you wouldn't have reached otherwise. Judges consistently described its output as operating at a <em>"genuinely different level of abstraction"</em> &mdash; reframing problems instead of mapping them, questioning the terms of the debate instead of arguing within them.</p>
+
+<p>On research ideation: <em>"the field is saturated with baseline-type studies and starved for this type of reframing."</em> On provocations: oscillation's questions <em>"locate the uncomfortable insight one layer deeper."</em> On essays: <em>"baseline would be publishable in a generalist outlet; oscillation would make someone stop scrolling."</em></p>
+
+<p><strong>Baseline's strength</strong> is producing output you can act on immediately. Its strategy options <em>"genuinely span a spectrum from narrow-and-safe to broad-and-disruptive."</em> Its hypotheses have <em>"numeric thresholds, named methods, and clear success criteria &mdash; a modeler could start work tomorrow."</em></p>
+
+<table>
+<tr><th>Use case</th><th>Recommended</th><th>What the judges said</th></tr>
+<tr><td>Essay / thought piece</td><td><strong>Oscillation</strong></td><td><em>"The difference between an essay and a textbook chapter."</em> +3.0 on originality.</td></tr>
+<tr><td>Workshop provocations</td><td><strong>Oscillation</strong></td><td><em>"Harder to deflect with stock answers."</em> Locates insights one layer deeper.</td></tr>
+<tr><td>Research ideation</td><td><strong>Oscillation</strong></td><td><em>"Would change how we interpret the debate itself"</em> vs <em>"confirms existing intuitions."</em></td></tr>
+<tr><td>Research protocols</td><td><strong>Baseline</strong></td><td><em>"Could be handed to a modeler tomorrow."</em> Falsifiability +3.0.</td></tr>
+<tr><td>Strategy (explore)</td><td><strong>Oscillation</strong></td><td><em>"Every option built around a real insight."</em> Sharper tradeoffs.</td></tr>
+<tr><td>Strategy (decide)</td><td><strong>Baseline</strong></td><td><em>"Spans a risk spectrum for an exec team."</em> Better portfolio coverage.</td></tr>
+<tr><td>Policy memos</td><td><strong>Either</strong></td><td>Generic grounding makes both identical.</td></tr>
+</table>
+
+<p><strong>The core tradeoff is irreducible by design.</strong> The divergent generator forbids conclusions and forces metaphors and inversions. That's what produces genuinely novel thinking &mdash; and also what makes it less concrete.</p>
+
+<p><strong>But you can sequence them.</strong> Oscillation upstream for exploration, then adapted grounding for the specific deliverable. Our essay and provocation modes already prove this works. Strategy and hypothesis modes need further work &mdash; probably splitting into "explore" and "decide" sub-modes.</p>
+
+<h2>Where We Stand (A Temporary Conclusion)</h2>
+
+<p>Oscillating Cognition started as a bet: that forcing an LLM to oscillate between chaos and structure would produce thinking that a standard prompt chain cannot.</p>
+
+<p>That bet is <strong>partially validated</strong>. The system genuinely produces different thinking. Not marginally better on the same axis, but operating on a different axis entirely &mdash; one that values reframing over mapping, tension over resolution, and surprise over completeness. When the output format is designed to carry that texture (essays, provocations), the result is measurably and unanimously superior.</p>
+
+<p>But the system also has a real weakness: <strong>it doesn't naturally produce actionable output</strong>. Its strength in novelty comes at the cost of specificity, and if you compress the output into a standard deliverable format, you lose exactly what made it valuable.</p>
+
+<p>My current take on when oscillating cognition earns its place:</p>
+
+<p><strong>Use it when you suspect you're thinking inside a frame you haven't noticed.</strong> When every brainstorm produces variations on the same three ideas. When a strategy deck feels thorough but somehow unsurprising. When a research proposal is rigorous but asks questions everyone is already asking. That's where the system reliably breaks through &mdash; not by being smarter, but by being structurally unable to settle.</p>
+
+<p><strong>Don't use it when you need to ship.</strong> If the question is "what do we build this sprint?" or "what's the test protocol?", standard iterative prompting is faster, more concrete, and equally good. Oscillation is a thinking tool, not an execution tool.</p>
+
+<p><strong>The most interesting space is in between</strong> &mdash; and it's where the work goes next. Can a system that thinks divergently also land concretely, without one destroying the other? The essay mode suggests yes. The strategy mode suggests not yet. That's an honest answer, and an interesting problem.</p>
+
+<h2>What's Next</h2>
+
+<ol>
+<li><strong>Redesign the grounding prompts</strong> to preserve tensions alongside actions &mdash; the current "last mile" is too convergent for some modes</li>
+<li><strong>Human expert judges</strong> &mdash; LLM judges revealed fascinating model-level biases, but we need domain experts to establish ground truth</li>
+<li><strong>Cross-model generation</strong> &mdash; what happens when Claude runs the divergent generator and GPT runs the convergent critic?</li>
+<li><strong>Longitudinal testing</strong> &mdash; does oscillation with persistent memory across sessions compound insight over days, not just cycles?</li>
+</ol>
+
+<p>The code, full evaluation data, judge quotes, and methodology are all open source:<br>
+<strong><a href="https://github.com/pderrier/oscillating-cognition">github.com/pderrier/oscillating-cognition</a></strong></p>
+
+<div class="footer">
+<p>The evaluation was run using GPT-5.4 (via Codex OAuth) for generation and judging, with Claude Opus 4.6 as cross-model judge.</p>
+<p>
+<a href="https://github.com/pderrier/oscillating-cognition/blob/main/eval/PROTOCOL.md">Full methodology</a> &bull;
+<a href="https://github.com/pderrier/oscillating-cognition/blob/main/eval/RESULTS.md">Complete results with judge quotes</a> &bull;
+<a href="https://github.com/pderrier/oscillating-cognition/blob/main/eval/MODEL-DIVERGENCE.md">Model divergence analysis</a>
+</p>
+</div>
+
+</body>
+</html>
