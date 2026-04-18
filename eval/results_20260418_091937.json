@@ -1,0 +1,2493 @@
+{
+  "config": {
+    "cycles": 3,
+    "judges_per_seed": 2,
+    "model": "default (config.py)",
+    "judge_model": "same as generation",
+    "timestamp": "2026-04-18T09:19:37.101556+00:00",
+    "total_seeds": 10,
+    "total_time_seconds": 1462.8
+  },
+  "trials": {
+    "biotech-ethics": {
+      "seed": "CRISPR gene editing should be available for non-medical human enhancement",
+      "domain": "bioethics",
+      "oscillation_time": 72.1,
+      "baseline_time": 62.9,
+      "oscillation_final": {
+        "actions": [
+          {
+            "description": "Draft a policy framework that allows tightly regulated non-medical CRISPR access only through licensed clinics, mandatory public reporting of trait categories, long-term follow-up, and price transparency.",
+            "rationale": "Builds on the risk that prohibition pushes access into private status markets and hardens inequality before norms form.",
+            "effort": "high"
+          },
+          {
+            "description": "Create a prohibited-use list for traits tied to institutional sorting, such as admissions, employment screening, insurance pricing, or other merit-gating functions.",
+            "rationale": "Builds on the concern that preselected traits can turn merit into purchased compliance and let institutions quietly force editing.",
+            "effort": "medium"
+          },
+          {
+            "description": "Require an independent child-advocacy review for any proposed non-medical embryonic edit, focused on future autonomy, social pressure, and reversibility of the parental choice.",
+            "rationale": "Builds on the tension between parental protection and the child's inability to refuse edits made against anticipated shame or exclusion.",
+            "effort": "high"
+          },
+          {
+            "description": "Develop a public language charter for clinical consent materials that forbids terms like 'normal,' 'defect,' or 'burden' for non-medical traits unless medically justified.",
+            "rationale": "Builds on the insight that coercion may hide inside care language and that selectable traits can make 'normal' more coercive.",
+            "effort": "low"
+          },
+          {
+            "description": "Set up a standing ethics observatory to monitor how non-medical CRISPR affects dating markets, school expectations, social stigma, and identity labels such as 'natural' or 'edited.'",
+            "rationale": "Builds on the view that gene editing will shape biological culture formation, intimacy patterns, and new caste signals rather than only health outcomes.",
+            "effort": "medium"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Run a deliberative public survey with randomized policy scenarios comparing full prohibition, tightly regulated access, and open commercial access; measure expected black-market demand, perceived fairness, and willingness to edit children for non-medical traits.",
+            "rationale": "Tests whether legal access diffuses pressure or instead normalizes visible biological distinction and accelerates stratification.",
+            "effort": "medium"
+          },
+          {
+            "description": "Conduct vignette-based studies with prospective parents where the same trait is described using aspiration language, shame-avoidance language, and care/prevention language; compare editing approval rates.",
+            "rationale": "Tests whether demand is driven more by anticipatory shame and soft coercion than by straightforward desire for status.",
+            "effort": "low"
+          },
+          {
+            "description": "Model admissions, hiring, and insurance decisions in simulated institutions where some traits are editable and some are not; track whether selection criteria drift toward editable traits over time.",
+            "rationale": "Tests the hypothesis that institutions will adapt in ways that indirectly force editing and hollow out merit claims.",
+            "effort": "high"
+          }
+        ],
+        "questions": [
+          {
+            "description": "Which non-medical traits, if any, could be offered without turning social preference into biological obligation?",
+            "rationale": "Builds on the tensions around care language, social discomfort, and the coercive expansion of 'normal.'",
+            "effort": "medium"
+          },
+          {
+            "description": "What legal protections would let a person remain unedited without losing fair access to education, work, insurance, or partnership markets?",
+            "rationale": "Builds on the knot over whether refusal remains freedom or becomes inherited disadvantage.",
+            "effort": "medium"
+          },
+          {
+            "description": "How should law distinguish protection of a future child from parental transmission of fear, class aspiration, or stigma?",
+            "rationale": "Builds on the insight that parents may edit against humiliation before the child can consent.",
+            "effort": "high"
+          },
+          {
+            "description": "Who has standing to define 'natural,' 'edited,' and 'acceptable variation' once genomes become objects of taste and status signaling?",
+            "rationale": "Builds on the instability of 'natural' as a category under routine non-medical editing.",
+            "effort": "medium"
+          },
+          {
+            "description": "Would a regulated market for non-medical CRISPR reduce hidden inequality, or simply give caste formation a legitimate interface?",
+            "rationale": "Builds on the competing possibilities that access diffuses power or makes biological distinction more legible and desirable.",
+            "effort": "high"
+          }
+        ],
+        "synthesis": "If non-medical CRISPR becomes available, the main issue is not only safety but the social architecture it creates: who gets pressured to edit, who can afford not to, and how institutions convert preference into obligation. A workable agenda would pair any access regime with anti-coercion rules, child-centered review, and continuous monitoring of inequality, stigma, and changing definitions of what counts as normal."
+      },
+      "baseline_final": {
+        "actions": [
+          {
+            "description": "Draft a model law that permits non-medical CRISPR only through licensed clinics, with a narrow allowed-traits list, mandatory longitudinal registries, public price disclosure, and international reporting agreements.",
+            "rationale": "Builds on the insight that the core case for availability is governance rather than unrestricted liberty, and that legalization without strong oversight may simply formalize elite advantage.",
+            "effort": "high"
+          },
+          {
+            "description": "Create a genomic civil rights framework that bans discrimination based on edited status, unedited status, or refusal to disclose editing history across education, employment, insurance, housing, and reproductive services.",
+            "rationale": "Builds on the insight that any legal access regime needs a real right to remain unedited, or else nominal choice turns into soft coercion.",
+            "effort": "high"
+          },
+          {
+            "description": "Establish a rule that schools, employers, insurers, and other gatekeeping institutions may not require, reward, or infer non-medical edited traits in admissions, hiring, pricing, or ranking decisions.",
+            "rationale": "Builds on the concerns about meritocracy collapsing into purchased advantage and institutions indirectly forcing editing through selection pressure.",
+            "effort": "medium"
+          },
+          {
+            "description": "Require enhanced consent and independent review for parental requests involving embryo editing for non-medical traits, with explicit scrutiny of social-pressure arguments such as fear of exclusion or status loss.",
+            "rationale": "Builds on the insight that parental demand may be driven by defensive adaptation rather than vanity, raising questions about coercion disguised as care.",
+            "effort": "medium"
+          },
+          {
+            "description": "Launch a standing social-impact observatory to track how non-medical CRISPR affects inequality, partner choice, school competition, stigma, and the formation of edited subcultures over time.",
+            "rationale": "Builds on the possibility that legalized enhancement creates durable biological subcultures and caste-like divisions rather than a single enhancement ladder.",
+            "effort": "medium"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Run a randomized public deliberation study comparing responses to three policy regimes for non-medical CRISPR: prohibition, tightly regulated access, and open commercial access; measure support, perceived fairness, expected black-market demand, and willingness to edit future children.",
+            "rationale": "Tests whether regulation actually reduces covert demand and whether legalization is seen as diffusing or legitimizing inequality.",
+            "effort": "medium"
+          },
+          {
+            "description": "Conduct audit-style simulations with admissions officers, hiring managers, and insurers using fictional profiles that vary only in edited-status signals to measure whether institutions indirectly favor editable traits.",
+            "rationale": "Tests the claim that institutions will reward preselected traits even if they never openly require CRISPR.",
+            "effort": "high"
+          },
+          {
+            "description": "Use vignette experiments with prospective parents where the same non-medical trait edit is framed as aspiration, risk prevention, anti-bullying protection, or normalizing care; compare acceptance rates and moral judgments.",
+            "rationale": "Tests whether support for non-medical CRISPR is driven more by defensive parenting and care language than by overt status seeking.",
+            "effort": "low"
+          }
+        ],
+        "questions": [
+          {
+            "description": "Which non-medical traits, if any, can be legally offered without turning social preference into institutional obligation?",
+            "rationale": "Builds on the unresolved boundary between acceptable self-direction and coercive trait selection.",
+            "effort": "medium"
+          },
+          {
+            "description": "What enforcement tools would actually stop wealth from dominating access to non-medical CRISPR once cross-border clinics and private markets emerge?",
+            "rationale": "Builds on the open question of whether regulation can prevent legalization from becoming elite capture by another name.",
+            "effort": "high"
+          },
+          {
+            "description": "How can a right to remain unedited be made materially real once schools, employers, insurers, and dating markets reorganize around edited norms?",
+            "rationale": "Builds on the concern that legal rights may become hollow under strong social and market pressure.",
+            "effort": "medium"
+          },
+          {
+            "description": "Should law treat parental non-medical CRISPR choices differently when the stated motive is protection from exclusion rather than aspiration or prestige?",
+            "rationale": "Builds on the tension between responsible care and participation in a coercive competitive order.",
+            "effort": "medium"
+          },
+          {
+            "description": "If edited populations begin forming distinct cultural or mating clusters, what institutions are needed to prevent those differences from hardening into hereditary caste structure?",
+            "rationale": "Builds on the insight that legalized enhancement may create plural engineered identities with new stigma and belonging boundaries.",
+            "effort": "high"
+          }
+        ],
+        "synthesis": "If CRISPR is to be available for non-medical human enhancement, the central task is not simply permitting access but shaping the social rules around access, refusal, and institutional use. The most actionable path is a combined regime of strict licensing, anti-discrimination protections, limits on gatekeeper incentives, and ongoing measurement of whether legalization reduces covert inequality or merely gives it a lawful interface."
+      },
+      "judgments": [
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 8,
+              "internal_tension": 9,
+              "emergent_insight": 8,
+              "human_likeness": 8
+            },
+            "Y": {
+              "novelty": 8,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 8,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are strong and clearly engage the topic beyond the standard bioethics frame. X is slightly more surprising because it includes less conventional moves like a language charter and sharper attention to symbolic coercion, which gives it more edge and tension. Y is more institutionally mature: the genomic civil rights framework and the focus on downstream gatekeeper behavior combine into a more actionable and system-level policy package. X feels more exploratory and provocative; Y feels more integrated, implementable, and like the work of someone who has thought through how rules would actually operate.",
+          "preference": "Y",
+          "mapping": {
+            "X": "oscillation",
+            "Y": "baseline"
+          },
+          "seed": "CRISPR gene editing should be available for non-medical human enhancement",
+          "preferred_method": "baseline",
+          "scores_by_method": {
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 8,
+              "internal_tension": 9,
+              "emergent_insight": 8,
+              "human_likeness": 8
+            },
+            "baseline": {
+              "novelty": 8,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 8,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          }
+        },
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 8,
+              "internal_tension": 9,
+              "emergent_insight": 8,
+              "human_likeness": 8
+            },
+            "Y": {
+              "novelty": 8,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 8,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are unusually strong and move well beyond a standard bioethics checklist. X is more conceptually provocative, especially in its attention to symbolic coercion, language, identity labels, and the child-advocacy angle; it feels slightly riskier and more exploratory. Y is more institutionally coherent, with a cleaner policy architecture built around genomic civil rights, gatekeeper constraints, and enforceable downstream protections. X has more productive friction; Y has more integrated statecraft. ",
+          "preference": "Y",
+          "mapping": {
+            "X": "oscillation",
+            "Y": "baseline"
+          },
+          "seed": "CRISPR gene editing should be available for non-medical human enhancement",
+          "preferred_method": "baseline",
+          "scores_by_method": {
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 8,
+              "internal_tension": 9,
+              "emergent_insight": 8,
+              "human_likeness": 8
+            },
+            "baseline": {
+              "novelty": 8,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 8,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          }
+        }
+      ]
+    },
+    "remote-work": {
+      "seed": "Remote-first companies will outcompete office-first companies within 10 years",
+      "domain": "business strategy",
+      "oscillation_time": 68.9,
+      "baseline_time": 63.3,
+      "oscillation_final": {
+        "actions": [
+          {
+            "description": "Run a 12-month head-to-head operating model comparison inside one company or portfolio: assign matched teams to remote-first and office-first conditions, then track hiring reach, retention, promotion velocity, execution speed, and manager load.",
+            "rationale": "Builds on the claim that remote-first may win through lower organizational metabolism and documented coordination rather than simple productivity slogans.",
+            "effort": "high"
+          },
+          {
+            "description": "Design a remote-first promotion system that removes travel-dependent gatekeeping by requiring written sponsorship records, promotion evidence packets, and explicit calibration criteria that do not rely on retreat attendance or informal visibility.",
+            "rationale": "Builds on the insight that remote-first can widen entry while keeping advancement tied to embodied recognition and hidden mobility advantages.",
+            "effort": "medium"
+          },
+          {
+            "description": "Replace default offices with limited-purpose in-person rituals such as onboarding residencies, mentorship intensives, and decision summits, then publish the exact purpose of each gathering.",
+            "rationale": "Builds on the idea that offices may survive as ceremonial spaces for trust, loyalty, and promotion rather than daily production sites.",
+            "effort": "medium"
+          },
+          {
+            "description": "Create an apprenticeship layer for remote-first firms: shadowing programs, craft reviews, annotated decision logs, and rotating senior mentors responsible for tacit knowledge transfer.",
+            "rationale": "Builds on the concern that heavy documentation can scale coordination while weakening mentorship, inherited instinct, and culture-carriers.",
+            "effort": "medium"
+          },
+          {
+            "description": "Audit remote-first organizations for hidden mobility bias by measuring who gets invited to offsites, who can attend, who gets promoted afterward, and how visa status, caregiving, and income affect access.",
+            "rationale": "Builds on the possibility that remote-first firms create a mobile inner circle even while claiming geographic openness.",
+            "effort": "medium"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Test whether documentation-heavy remote teams outperform office-first teams across company age cohorts by comparing startups, scale-ups, and mature firms on decision quality, onboarding speed, and error recurrence.",
+            "rationale": "Evaluates the hypothesis that remote-first is strongest early and may weaken as succession, lore, and tacit judgment become more important.",
+            "effort": "high"
+          },
+          {
+            "description": "Run a promotion experiment in a remote-first company: one cohort uses standard manager discretion, another uses structured written evidence and blind calibration; compare promotion equity, perceived fairness, and subsequent performance.",
+            "rationale": "Tests whether remote-first advancement can be detached from physical presence and informal sponsorship.",
+            "effort": "medium"
+          },
+          {
+            "description": "Compare mentorship outcomes across three models in remote-first firms: documentation only, documentation plus scheduled live apprenticeship, and periodic in-person residencies; measure skill transfer, retention, and time-to-independence.",
+            "rationale": "Tests whether tacit knowledge can be preserved without rebuilding full office dependence.",
+            "effort": "medium"
+          }
+        ],
+        "questions": [
+          {
+            "description": "In which sectors or work types does remote-first create a real competitive edge, and where does office-first still hold a durable advantage?",
+            "rationale": "Builds on the unresolved possibility that the contest depends on industry, company phase, and the amount of tacit coordination required.",
+            "effort": "medium"
+          },
+          {
+            "description": "What metrics would prove that a remote-first company is truly meritocratic rather than merely redistributing visibility from headquarters to travel-capable insiders?",
+            "rationale": "Builds on the tension between broad hiring access and concentrated recognition.",
+            "effort": "medium"
+          },
+          {
+            "description": "How much in-person contact is enough to sustain trust, culture, and craft transmission without re-creating office hierarchy?",
+            "rationale": "Builds on the tension between portable written culture and the loss of local interpreters, nuance, and embodied trust.",
+            "effort": "high"
+          },
+          {
+            "description": "Do ceremonial offices make office-first firms less competitive by adding theater, or more competitive by concentrating status and loyalty more efficiently?",
+            "rationale": "Builds on the idea that offices may gain power as symbolic gatekeeping spaces even as their production role shrinks.",
+            "effort": "medium"
+          },
+          {
+            "description": "Can remote-first companies build durable institutional memory that survives founders and early employees, or does maturity inevitably push them back toward denser co-presence?",
+            "rationale": "Builds on the lifecycle concern that remote-first may age badly once lore, succession, and tacit judgment become central.",
+            "effort": "high"
+          }
+        ],
+        "synthesis": "If remote-first companies are going to outcompete office-first companies within 10 years, the edge will likely come from lower organizational drag, broader talent access, and stronger written coordination rather than from abolishing offices altogether. The decisive question is whether remote-first firms can solve promotion fairness, tacit knowledge transfer, and cultural durability before office-first firms turn physical presence into a sharper instrument of loyalty, gatekeeping, and status."
+      },
+      "baseline_final": {
+        "actions": [
+          {
+            "description": "Run a multi-year benchmarking program comparing remote-first and office-first firms on revenue per employee, time-to-hire, retention of high performers, managerial span, onboarding speed, and decision latency across similar industries.",
+            "rationale": "Builds on the claim that remote-first outcompetition will come from organizational legibility, lower coordination drag, and global talent access rather than generic productivity claims.",
+            "effort": "high"
+          },
+          {
+            "description": "Design a remote-first operating model that requires written decision logs, async handoff protocols, searchable project records, and explicit ownership maps for all core workflows.",
+            "rationale": "Builds on the insight that remote-first companies gain by turning coordination into durable, searchable capital that scales across geography and turnover.",
+            "effort": "medium"
+          },
+          {
+            "description": "Create a hybrid-by-function people system: keep daily work location-agnostic, but reserve in-person time for onboarding, apprenticeship, conflict repair, strategic alignment, and executive succession.",
+            "rationale": "Builds on the idea that the strongest remote-first model preserves embodiment for specific purposes without letting offices dominate everyday execution.",
+            "effort": "medium"
+          },
+          {
+            "description": "Build a global talent infrastructure stack covering cross-border payroll, legal compliance, visa support, localized compensation bands, and timezone-aware workflow design.",
+            "rationale": "Builds on the view that remote-first firms can outcompete by accessing scarce talent globally as an operating capability rather than a labor-cost hack.",
+            "effort": "high"
+          },
+          {
+            "description": "Install anti-proximity safeguards for promotion and influence: publish promotion criteria, track who attends in-person residencies, audit travel-linked advancement patterns, and require written justification for high-impact decisions made at offsites.",
+            "rationale": "Builds on the risk that remote-first companies may recreate office politics through travel circuits, residencies, and hidden governance.",
+            "effort": "medium"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Test whether documentation-rich remote teams outperform office-based teams over time by assigning matched business units to remote-first and office-first coordination models, then measuring throughput, error recurrence, onboarding speed, and resilience after staff turnover.",
+            "rationale": "Evaluates the hypothesis that remote-first wins by creating durable organizational memory rather than by boosting individual effort alone.",
+            "effort": "high"
+          },
+          {
+            "description": "Run a controlled mentorship experiment with three remote-first cohorts: documentation only, documentation plus live virtual apprenticeship, and documentation plus periodic in-person residencies; compare skill transfer, promotion rates, and perceived culture cohesion.",
+            "rationale": "Tests whether tacit knowledge and craft transmission can survive without rebuilding office dependence.",
+            "effort": "medium"
+          },
+          {
+            "description": "Pilot AI-assisted organizational memory tools in remote-first teams and compare them against standard documentation systems on searchability, reuse of prior decisions, onboarding time, and decision quality.",
+            "rationale": "Tests whether AI is a meaningful multiplier for remote-first advantage by turning written organizational exhaust into practical memory and coaching.",
+            "effort": "medium"
+          }
+        ],
+        "questions": [
+          {
+            "description": "Which sectors are most likely to see remote-first companies outcompete office-first firms, and which sectors are structurally resistant because secrecy, tacit craft, or dense trust matter more?",
+            "rationale": "Builds on the idea that the contest is really between asynchronous cognition and synchronized presence, not a universal remote-versus-office rule.",
+            "effort": "medium"
+          },
+          {
+            "description": "What is the minimum amount of in-person contact needed to preserve mentorship, trust, and succession without allowing residency events to become gatekeeping rituals?",
+            "rationale": "Builds on the unresolved tension around whether purpose-specific residencies can stay bounded or turn into hidden governance.",
+            "effort": "high"
+          },
+          {
+            "description": "How can companies detect when remote-first promotion systems are drifting toward a hidden travel elite rather than genuine meritocracy?",
+            "rationale": "Builds on the concern that advancement may remain tied to embodied presence even if hiring becomes geographically open.",
+            "effort": "medium"
+          },
+          {
+            "description": "What forms of documentation create real legibility, and what forms merely create bureaucratic exhaust that slows work and weakens judgment?",
+            "rationale": "Builds on the tension between durable coordination capital and the risk of flattening tacit knowledge into sterile process.",
+            "effort": "medium"
+          },
+          {
+            "description": "Does office-first become more competitive when it stops being the default and becomes a concentrated ritual technology for trust, loyalty, and status allocation?",
+            "rationale": "Builds on the insight that offices may lose operational centrality while gaining symbolic and gatekeeping power.",
+            "effort": "medium"
+          }
+        ],
+        "synthesis": "If remote-first companies are going to outcompete office-first companies within 10 years, the advantage will likely come from scalable coordination, global talent reach, and the ability to turn work into durable organizational memory. The practical challenge is preserving mentorship, trust, and fair advancement without letting episodic in-person gatherings recreate the same proximity-based hierarchy that remote-first models are supposed to escape."
+      },
+      "judgments": [
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 8,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 8,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 8,
+              "emergent_insight": 9,
+              "human_likeness": 8
+            }
+          },
+          "qualitative": "Both outputs are strong, concrete, and unusually thoughtful. X is slightly more original in how it foregrounds hidden mobility bias, ceremonial offices, and the lifecycle problem of remote-first firms; it feels closer to a sharp organizational theorist stress-testing the claim. Y is more architecturally coherent and system-building, especially around global talent infrastructure, durable organizational memory, and AI-assisted memory tools. X has more productive friction and sharper tensions; Y is cleaner and more operationally integrated.",
+          "preference": "X",
+          "mapping": {
+            "X": "oscillation",
+            "Y": "baseline"
+          },
+          "seed": "Remote-first companies will outcompete office-first companies within 10 years",
+          "preferred_method": "oscillation",
+          "scores_by_method": {
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 8,
+              "human_likeness": 9
+            },
+            "baseline": {
+              "novelty": 8,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 8,
+              "emergent_insight": 9,
+              "human_likeness": 8
+            }
+          }
+        },
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 8,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 8,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 8,
+              "emergent_insight": 9,
+              "human_likeness": 8
+            }
+          },
+          "qualitative": "Both outputs are strong, concrete, and substantially above generic remote-work analysis. X is more distinctive in its attention to hidden mobility bias, ceremonial offices, and the lifecycle risk that remote-first firms may age poorly as tacit knowledge and succession become central; it carries more friction and feels more like an original human argument. Y is more systematized and strategically complete, especially around global talent infrastructure, organizational memory, and AI as a force multiplier, which gives it a cleaner operating model. X is sharper and more provocative; Y is more integrated and managerial.",
+          "preference": "X",
+          "mapping": {
+            "X": "oscillation",
+            "Y": "baseline"
+          },
+          "seed": "Remote-first companies will outcompete office-first companies within 10 years",
+          "preferred_method": "oscillation",
+          "scores_by_method": {
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 8,
+              "human_likeness": 9
+            },
+            "baseline": {
+              "novelty": 8,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 8,
+              "emergent_insight": 9,
+              "human_likeness": 8
+            }
+          }
+        }
+      ]
+    },
+    "education-ai": {
+      "seed": "AI tutors will make traditional universities obsolete for most students",
+      "domain": "education",
+      "oscillation_time": 74.8,
+      "baseline_time": 56.1,
+      "oscillation_final": {
+        "actions": [
+          {
+            "description": "Pilot AI-tutor-first degree pathways in which core instruction, drill, and feedback are delivered by AI systems, while universities focus in-person time on labs, peer cohorts, mentorship, and capstone assessment.",
+            "rationale": "Builds on the insight that teaching may unbundle first, with universities retaining value mainly in assessment, community, identity formation, and concentrated peer interaction.",
+            "effort": "high"
+          },
+          {
+            "description": "Create lower-cost 'network campus' models that replace most lectures with AI tutoring but preserve structured cohorts, project teams, advising, and limited residential intensives.",
+            "rationale": "Builds on the possibility that universities survive less as instruction providers and more as managed transition zones and ambition clusters.",
+            "effort": "medium"
+          },
+          {
+            "description": "Redesign accreditation around demonstrated competency and portfolio-based assessment rather than seat time, lecture attendance, or fixed semesters.",
+            "rationale": "Builds on the view that AI tutors may outperform traditional pacing, making endurance in institutional routines a weaker proxy for actual learning.",
+            "effort": "high"
+          },
+          {
+            "description": "Develop public or nonprofit AI tutoring infrastructure for foundational subjects to reduce dependence on elite universities as the main gateway to high-quality instruction.",
+            "rationale": "Builds on the tension between democratized access to personalized learning and the risk that elite campuses become even stronger as scarce social signals.",
+            "effort": "high"
+          },
+          {
+            "description": "Require universities receiving public funds to separate and publish the value they provide in teaching, assessment, career placement, social experience, and residential life.",
+            "rationale": "Builds on the concern that if AI tutors absorb much of teaching, universities should justify their cost by functions other than hidden status allocation.",
+            "effort": "medium"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Run randomized trials comparing student outcomes in AI-tutor-first courses versus traditional lecture courses on mastery, retention, confidence, persistence, and time-to-competency.",
+            "rationale": "Tests the claim that AI tutors outperform traditional universities first on pacing, emotional fit, and personalized repetition rather than just content delivery.",
+            "effort": "high"
+          },
+          {
+            "description": "Compare job-placement and long-term earnings outcomes among three groups: AI-tutor-only learners, students in low-cost hybrid network campuses, and students in traditional universities.",
+            "rationale": "Tests whether universities remain necessary for signaling, peer clustering, and network formation even when instruction becomes abundant.",
+            "effort": "high"
+          },
+          {
+            "description": "Pilot peer-cohort programs layered on top of AI tutoring to measure whether structured rivalrous communities increase learning, persistence, and identity development more than solo AI tutoring does.",
+            "rationale": "Tests the hypothesis that peer intensity becomes more central as explanation gets cheaper.",
+            "effort": "medium"
+          }
+        ],
+        "questions": [
+          {
+            "description": "Which university functions are genuinely educational for most students, and which are mainly filters, social signals, or adulthood staging mechanisms?",
+            "rationale": "Builds on the tension over what remains of universities once AI tutors absorb much of teaching.",
+            "effort": "medium"
+          },
+          {
+            "description": "Will AI tutors mostly replace middle-tier universities while leaving elite campuses stronger, and what would that do to social mobility?",
+            "rationale": "Builds on the insight that the disruption may be uneven and could widen inequality even as access to instruction expands.",
+            "effort": "high"
+          },
+          {
+            "description": "What forms of assessment can remain credible when AI tutors help students learn, practice, and potentially complete much of their work?",
+            "rationale": "Builds on the idea that assessment may become one of the university's last defensible core functions.",
+            "effort": "medium"
+          },
+          {
+            "description": "How much of the value students derive from universities comes from peer density, rivalry, and network formation rather than formal instruction?",
+            "rationale": "Builds on the insight that campuses may persist as concentrated fields of ambition even after teaching is commoditized.",
+            "effort": "medium"
+          },
+          {
+            "description": "If universities increasingly sell supervised transition into adulthood, should that function be treated as a public developmental service, a private luxury, or an unnecessary gatekeeping layer?",
+            "rationale": "Builds on the view that universities may survive as managed transition zones rather than superior teaching institutions.",
+            "effort": "medium"
+          }
+        ],
+        "synthesis": "AI tutors are most likely to make traditional universities obsolete for most students by undercutting their weakest function first: standardized, fixed-pace instruction. The institutions most likely to survive are those that can justify themselves through credible assessment, concentrated peer networks, mentorship, and developmental structure, while those centered mainly on delivering lectures may be hollowed out first."
+      },
+      "baseline_final": {
+        "actions": [
+          {
+            "description": "Pilot AI-tutor-first degree alternatives that replace most lectures with persistent AI tutoring, verified project work, and short in-person residencies for labs, peer interaction, and final assessment.",
+            "rationale": "Builds on the idea that AI can displace universities first in teaching and that an AI apprenticeship model could replicate many university functions without the full residential package.",
+            "effort": "high"
+          },
+          {
+            "description": "Redesign university budgets and program structures to separate teaching, credentialing, residential life, and career networking into distinct priced components.",
+            "rationale": "Builds on the insight that universities may be unbundled, and that their future legitimacy depends on clarifying whether they are selling learning, certification, adulthood staging, or access to ambition-dense networks.",
+            "effort": "medium"
+          },
+          {
+            "description": "Develop third-party assessment and credentialing bodies that verify competency independently of where or how a student learned, including AI-tutor-based pathways.",
+            "rationale": "Builds on the concern that universities may retain power mainly through certification even if their teaching advantage collapses.",
+            "effort": "high"
+          },
+          {
+            "description": "Create publicly funded AI tutoring systems for foundational subjects and deploy them through schools, libraries, and workforce programs rather than leaving access to private platforms alone.",
+            "rationale": "Builds on the hope that AI-driven education could democratize learning rather than only strengthening elite institutions and private providers.",
+            "effort": "high"
+          },
+          {
+            "description": "Build cohort-based AI learning communities that combine personalized tutoring with structured peer groups, deadlines, collaborative projects, and mentorship networks.",
+            "rationale": "Builds on the idea that the scarce asset after AI is not explanation alone but peer intensity, belonging, and ambition density.",
+            "effort": "medium"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Run randomized comparisons between traditional lecture courses and AI-tutor-first courses on mastery, retention, persistence, confidence, and cost per competent graduate.",
+            "rationale": "Tests whether AI tutors actually outperform fixed-tempo classroom teaching for most students rather than just offering a cheaper supplement.",
+            "effort": "high"
+          },
+          {
+            "description": "Pilot AI apprenticeship programs with employers and compare their placement rates, earnings, and skill durability against those of graduates from mid-tier universities.",
+            "rationale": "Tests whether AI-centered alternatives can replace the practical and signaling functions of traditional universities for most students.",
+            "effort": "high"
+          },
+          {
+            "description": "Compare student outcomes in solo AI tutoring versus AI-plus-cohort models on persistence, belonging, ambition formation, and long-term project completion.",
+            "rationale": "Tests whether peer pressure and social formation can be recreated outside campus life well enough to make universities obsolete for most learners.",
+            "effort": "medium"
+          }
+        ],
+        "questions": [
+          {
+            "description": "Which university functions remain legitimate public goods if AI tutors take over most instruction?",
+            "rationale": "Builds on the concern that universities may survive mainly as certifiers, social sorters, or adulthood staging institutions.",
+            "effort": "medium"
+          },
+          {
+            "description": "How can assessment remain trustworthy when AI tutors are deeply entangled with learning, drafting, practice, and problem-solving?",
+            "rationale": "Builds on the risk that universities retain power through credentials unless new forms of credible assessment emerge.",
+            "effort": "high"
+          },
+          {
+            "description": "Are mid-tier universities the main institutions at risk, and what would their decline do to regional mobility and inequality?",
+            "rationale": "Builds on the asymmetric disruption model in which elite and subsidized institutions survive while the middle collapses.",
+            "effort": "medium"
+          },
+          {
+            "description": "Can AI-mediated cohort systems reproduce enough rivalry, friendship, and network effects to rival campus life for most students?",
+            "rationale": "Builds on the idea that ambition density may become the scarce educational resource once knowledge is abundant.",
+            "effort": "medium"
+          },
+          {
+            "description": "If universities increasingly sell developmental structure rather than teaching, should that function be publicly supported, privately purchased, or treated as avoidable gatekeeping?",
+            "rationale": "Builds on the possibility that universities survive as managed transitions into adulthood more than as intellectual institutions.",
+            "effort": "medium"
+          }
+        ],
+        "synthesis": "If AI tutors make traditional universities obsolete for most students, they will do it first by making standardized teaching look slow, expensive, and poorly matched to individual learning. The key practical questions are whether assessment, peer intensity, and developmental structure can be rebuilt outside the campus model, and whether that shift broadens opportunity or simply leaves universities stronger as scarce prestige and network institutions."
+      },
+      "judgments": [
+        {
+          "scores": {
+            "X": {
+              "novelty": 8,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 8,
+              "emergent_insight": 8,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are strong and substantially more thoughtful than a generic 'AI will disrupt education' take. X is slightly more policy-shaped and institution-facing, with clear moves around accreditation, public funding, and forced university transparency; it feels disciplined and actionable. Y is more conceptually integrated: the third-party credentialing idea, the priced unbundling of university functions, and the cohort-based AI community model combine into a sharper picture of what a post-university ecosystem could actually look like. X is excellent on reforming the existing system; Y is stronger on imagining the successor system while preserving the core tensions around legitimacy, inequality, and social formation.",
+          "preference": "Y",
+          "mapping": {
+            "X": "oscillation",
+            "Y": "baseline"
+          },
+          "seed": "AI tutors will make traditional universities obsolete for most students",
+          "preferred_method": "baseline",
+          "scores_by_method": {
+            "oscillation": {
+              "novelty": 8,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 8,
+              "emergent_insight": 8,
+              "human_likeness": 9
+            },
+            "baseline": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          }
+        },
+        {
+          "scores": {
+            "X": {
+              "novelty": 8,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 8,
+              "emergent_insight": 8,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are strong, concrete, and unusually nuanced. X is slightly more policy-reform oriented, with strong moves around accreditation, public-interest tutoring infrastructure, and forcing universities to disclose what they actually sell; it feels disciplined and institutionally grounded. Y is more structurally imaginative: third-party credentialing, explicitly priced unbundling of university functions, and cohort-based AI communities together sketch a clearer post-university ecosystem. X is better at reforming the incumbent model, while Y is better at describing and operationalizing a successor model without losing sight of inequality, legitimacy, and peer effects.",
+          "preference": "Y",
+          "mapping": {
+            "X": "oscillation",
+            "Y": "baseline"
+          },
+          "seed": "AI tutors will make traditional universities obsolete for most students",
+          "preferred_method": "baseline",
+          "scores_by_method": {
+            "oscillation": {
+              "novelty": 8,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 8,
+              "emergent_insight": 8,
+              "human_likeness": 9
+            },
+            "baseline": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          }
+        }
+      ]
+    },
+    "climate-nuclear": {
+      "seed": "Nuclear energy is the only realistic path to decarbonization at scale",
+      "domain": "energy policy",
+      "oscillation_time": 72.8,
+      "baseline_time": 56.6,
+      "oscillation_final": {
+        "actions": [
+          {
+            "description": "Build a decarbonization planning framework that evaluates nuclear, renewables, storage, transmission, and demand-side measures using not only cost, carbon, and reliability, but also contestability, permitting burden, institutional complexity, and long-term stewardship requirements.",
+            "rationale": "Builds on the insight that 'realism' in energy planning should include governance texture and public contestability, not just engineering performance.",
+            "effort": "high"
+          },
+          {
+            "description": "Create parallel demonstration programs: one centered on a new nuclear deployment pathway and one on a highly distributed renewable-plus-grid-upgrade model, with matched public reporting on delivery speed, local conflict, permitting delay, cost drift, and trust outcomes.",
+            "rationale": "Builds on the tension that nuclear and renewables may differ as much in political form and state fit as in technical characteristics.",
+            "effort": "high"
+          },
+          {
+            "description": "Establish long-horizon stewardship institutions for any new nuclear build, including protected waste governance funds, independent safety oversight, and legally durable intergenerational accountability rules.",
+            "rationale": "Builds on the view that nuclear is an institutional wager on competence and trust across timescales much longer than normal politics.",
+            "effort": "high"
+          },
+          {
+            "description": "Design participatory siting and compensation systems for renewable and transmission projects so local conflict is surfaced and negotiated early rather than treated as external obstruction.",
+            "rationale": "Builds on the insight that distributed systems often appear less realistic because they expose conflict openly instead of compressing it into expert administration.",
+            "effort": "medium"
+          },
+          {
+            "description": "Require national climate plans to state explicitly what level of centralization, emergency power, and public contestability they assume for each decarbonization pathway.",
+            "rationale": "Builds on the claim that technology arguments often hide governance assumptions about command, legitimacy, and the acceptable texture of public disagreement.",
+            "effort": "medium"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Run comparative policy simulations in multiple regions testing nuclear-led, renewables-led, and mixed decarbonization portfolios, with success measured not just by emissions and cost but by permitting duration, litigation frequency, public trust, and institutional durability.",
+            "rationale": "Tests whether nuclear is truly the only realistic path once political coordination and contestability are treated as first-class variables.",
+            "effort": "high"
+          },
+          {
+            "description": "Pilot citizen-oversight models for major energy infrastructure projects and compare outcomes against conventional expert-led approval processes on delay, legitimacy, opposition intensity, and project completion.",
+            "rationale": "Tests whether higher contestability slows decarbonization fatally or produces more governable infrastructure over time.",
+            "effort": "medium"
+          },
+          {
+            "description": "Model long-term governance stress for new nuclear programs by simulating institutional decay, regulatory capture, fiscal shocks, and changes in public trust over multidecade horizons.",
+            "rationale": "Tests whether a nuclear-heavy path remains realistic when stewardship assumptions are stressed instead of taken for granted.",
+            "effort": "high"
+          }
+        ],
+        "questions": [
+          {
+            "description": "What should count as 'realistic' in decarbonization planning: technical feasibility alone, or also public contestability, institutional durability, and political legitimacy?",
+            "rationale": "Builds on the repeated tension between technical realism and democratic realism in the nuclear debate.",
+            "effort": "medium"
+          },
+          {
+            "description": "Are nuclear-heavy systems easier to build because they are technically superior, or because they better fit centralized state decision-making?",
+            "rationale": "Builds on the question of whether the appeal of nuclear arises from physics or from governance style.",
+            "effort": "medium"
+          },
+          {
+            "description": "How much local conflict can a distributed renewable buildout absorb before deployment slows below climate targets, and how does that compare with the hidden conflicts of centralized systems?",
+            "rationale": "Builds on the insight that distributed systems may be politically harder because they surface conflict rather than conceal it.",
+            "effort": "high"
+          },
+          {
+            "description": "What institutions would make long-term nuclear stewardship credible in countries where trust in state competence is weak or unstable?",
+            "rationale": "Builds on the concern that nuclear assumes competent governance over much longer timescales than many political systems reliably sustain.",
+            "effort": "high"
+          },
+          {
+            "description": "Does a mixed portfolio reduce political and institutional risk more effectively than treating any single technology as the sole realistic path?",
+            "rationale": "Builds on the deeper possibility that the 'only realistic path' framing itself may obscure the real coordination problem.",
+            "effort": "medium"
+          }
+        ],
+        "synthesis": "Whether nuclear is the only realistic path to decarbonization at scale depends not just on engineering, but on what kinds of institutions, public conflict, and long-term trust a society can sustain. A serious response to the topic should test energy pathways as governance systems as well as technical systems, because the real bottleneck may be political coordination and institutional durability rather than any single generating technology."
+      },
+      "baseline_final": {
+        "actions": [
+          {
+            "description": "Create a national decarbonization scorecard that evaluates nuclear, renewable, storage, transmission, and demand-response pathways on political and institutional friction as well as cost, carbon, and reliability.",
+            "rationale": "Builds on the insight that realism should include permitting burden, litigation risk, public compliance, institutional durability, and exposure to political turnover, not just engineering performance.",
+            "effort": "high"
+          },
+          {
+            "description": "Design and publish a mixed-portfolio decarbonization plan that explicitly diversifies governance burdens instead of treating nuclear or renewables as a single winning doctrine.",
+            "rationale": "Builds on the view that no single technology is likely to be the only realistic path because each option fails under different institutional conditions.",
+            "effort": "medium"
+          },
+          {
+            "description": "Establish permanent long-term stewardship institutions for any new nuclear build program, including ring-fenced waste funds, independent safety oversight, and multi-decade public accountability mechanisms.",
+            "rationale": "Builds on the insight that nuclear is a long-duration wager on institutional competence and trust, not just a generation technology.",
+            "effort": "high"
+          },
+          {
+            "description": "Build local negotiation and compensation frameworks for transmission, storage, and renewable siting so distributed decarbonization does not fail by default when conflict becomes visible.",
+            "rationale": "Builds on the idea that distributed systems may look less realistic because they surface disagreement openly rather than compressing it into expert institutions.",
+            "effort": "medium"
+          },
+          {
+            "description": "Require major energy plans to disclose what kinds of public contestation, emergency powers, and centralized authority they assume for delivery.",
+            "rationale": "Builds on the argument that technology choices often hide governance choices about command, legitimacy, and who gets to object.",
+            "effort": "medium"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Run comparative simulations of nuclear-heavy, renewables-heavy, and mixed decarbonization portfolios across several regions, measuring emissions reductions, cost, deployment speed, litigation rates, public trust, and resilience to political turnover.",
+            "rationale": "Tests whether nuclear is truly the only realistic path once governance burdens and institutional fragility are treated as first-class variables.",
+            "effort": "high"
+          },
+          {
+            "description": "Pilot participatory governance models for distributed energy projects and compare them against conventional expert-led approval processes on time-to-build, opposition intensity, and long-term acceptance.",
+            "rationale": "Tests whether public contestability necessarily slows decarbonization or can create more durable legitimacy for distributed systems.",
+            "effort": "medium"
+          },
+          {
+            "description": "Stress-test nuclear governance assumptions by modeling regulatory failure, fiscal crisis, public trust erosion, and administrative turnover over multi-decade horizons for proposed reactor programs.",
+            "rationale": "Tests whether a nuclear-heavy path remains realistic when long-term institutional competence is treated as uncertain rather than assumed.",
+            "effort": "high"
+          }
+        ],
+        "questions": [
+          {
+            "description": "What would count as decisive evidence that nuclear is uniquely realistic rather than simply better aligned with centralized state planning habits?",
+            "rationale": "Builds on the unresolved distinction between technical superiority and institutional fit.",
+            "effort": "medium"
+          },
+          {
+            "description": "Should contestability and civic legibility be treated as core design criteria for energy systems, even when they complicate fast deployment?",
+            "rationale": "Builds on the tension between democratic realism and climate-speed realism.",
+            "effort": "medium"
+          },
+          {
+            "description": "How much visible local conflict can distributed decarbonization tolerate before it becomes politically slower than a centralized nuclear strategy?",
+            "rationale": "Builds on the question of whether distributed systems are politically harder because they expose disagreement rather than because they fail technically.",
+            "effort": "high"
+          },
+          {
+            "description": "What institutional reforms would make long-term nuclear stewardship credible in democracies with weak trust, high turnover, or fragmented authority?",
+            "rationale": "Builds on the concern that nuclear presumes generations of competence that many existing systems may not sustain.",
+            "effort": "high"
+          },
+          {
+            "description": "Does a mixed portfolio outperform any single-path strategy not only technically, but also in legitimacy, resilience, and political durability?",
+            "rationale": "Builds on the insight that diversified governance burdens may be as important as diversified engineering risks.",
+            "effort": "medium"
+          }
+        ],
+        "synthesis": "Whether nuclear is the only realistic path to decarbonization at scale depends on how 'realistic' is defined: as an engineering question, a governance question, or both. The most actionable approach is to evaluate energy pathways as political systems as well as technical systems, then test whether mixed portfolios can reduce not only emissions risk but also the institutional and legitimacy risks hidden inside single-path arguments."
+      },
+      "judgments": [
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 8,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 8,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are unusually strong and operate well above a standard pro/con energy debate. X is slightly more original because it turns the topic into a comparison of governance regimes in action: the parallel demonstration programs, citizen-oversight pilots, and explicit attention to hidden versus visible conflict create a more vivid and testable framework. Y is cleaner and more policy-systematic, especially in its scorecard and mixed-portfolio framing, but it feels a bit more like a polished institutional memo. X holds the tensions more sharply without losing actionability, which makes it feel more generative as well as more humanly argued.",
+          "preference": "X",
+          "mapping": {
+            "X": "oscillation",
+            "Y": "baseline"
+          },
+          "seed": "Nuclear energy is the only realistic path to decarbonization at scale",
+          "preferred_method": "oscillation",
+          "scores_by_method": {
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "baseline": {
+              "novelty": 8,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 8,
+              "human_likeness": 9
+            }
+          }
+        },
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 8,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 8,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are strong, rigorous, and far more reflective than a standard technology comparison. X stands out for its sharper framing of decarbonization as a live comparison of governance systems, especially through the parallel demonstration programs and citizen-oversight experiments; it feels more original and more generative. Y is cleaner and more policy-structured, with a crisp scorecard-and-portfolio logic that makes it easier to operationalize at a national planning level. X is the more surprising and tension-rich exploration, while Y is the more streamlined institutional memo.",
+          "preference": "X",
+          "mapping": {
+            "X": "oscillation",
+            "Y": "baseline"
+          },
+          "seed": "Nuclear energy is the only realistic path to decarbonization at scale",
+          "preferred_method": "oscillation",
+          "scores_by_method": {
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "baseline": {
+              "novelty": 8,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 8,
+              "human_likeness": 9
+            }
+          }
+        }
+      ]
+    },
+    "open-source-sustainability": {
+      "seed": "The open-source model is fundamentally broken and needs a new economic foundation",
+      "domain": "software economics",
+      "oscillation_time": 68.6,
+      "baseline_time": 58.6,
+      "oscillation_final": {
+        "actions": [
+          {
+            "description": "Create an open-source infrastructure fund financed by mandatory contributions from firms above a dependency-use threshold, with governance split among maintainers, public-interest representatives, and paying firms rather than controlled by any single group.",
+            "rationale": "Builds on the insight that open source functions as private infrastructure subsidized by unpaid labor, and that diffuse reliance needs a compulsory funding mechanism without simple donor capture.",
+            "effort": "high"
+          },
+          {
+            "description": "Develop dependency-liability rules that require companies to disclose critical open-source dependencies, fund their maintenance, or carry insurance against failure and security risk.",
+            "rationale": "Builds on the idea that a new economic foundation may emerge through liability and risk allocation rather than goodwill or branding-driven sponsorship.",
+            "effort": "high"
+          },
+          {
+            "description": "Support maintainer cooperatives or labor associations that negotiate minimum compensation, support standards, and governance rights for critical projects used by industry.",
+            "rationale": "Builds on the view that open source is partly a labor and bargaining problem, not just a donation problem.",
+            "effort": "medium"
+          },
+          {
+            "description": "Require large organizations to publish an annual open-source dependency report showing what projects they rely on, what they contribute financially or through staff time, and how much governance influence they already exert.",
+            "rationale": "Builds on the concern that open-source governance capture already happens through hidden patronage and invisible non-cash power.",
+            "effort": "medium"
+          },
+          {
+            "description": "Pilot public-interest procurement rules in which governments and large enterprises preferentially adopt software ecosystems that include transparent maintainer compensation, risk-pooling, and anti-capture governance structures.",
+            "rationale": "Builds on the possibility that a new economic base for open source may need institutional demand signals, not just voluntary community norms.",
+            "effort": "medium"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Run a pilot insurance pool for a set of critical open-source dependencies, where firms pay premiums based on dependency criticality and maintainers receive baseline funding plus incident-response support; measure maintainer retention, security outcomes, and corporate participation.",
+            "rationale": "Tests whether compulsory risk-pooling can support open source more effectively than donations or sponsorships.",
+            "effort": "high"
+          },
+          {
+            "description": "Compare projects funded through direct corporate sponsorship, pooled infrastructure funding, and maintainer cooperatives on maintainer burnout, roadmap independence, governance diversity, and release stability.",
+            "rationale": "Tests which economic foundation preserves openness while reducing both precarity and governance capture.",
+            "effort": "medium"
+          },
+          {
+            "description": "Pilot dependency transparency mandates for a group of large firms and track whether public disclosure changes their funding behavior, staffing allocations, or governance participation in critical open-source projects.",
+            "rationale": "Tests whether accountability can be increased when diffuse dependence is made visible and measurable.",
+            "effort": "medium"
+          }
+        ],
+        "questions": [
+          {
+            "description": "What legal or institutional trigger should determine who must pay for open-source infrastructure: revenue, dependency criticality, deployment scale, or something else?",
+            "rationale": "Builds on the unresolved question of who should bear financial responsibility once open source is treated as infrastructure.",
+            "effort": "medium"
+          },
+          {
+            "description": "How can maintainers gain bargaining power across borders and employers without turning open source into a closed guild or vendor cartel?",
+            "rationale": "Builds on the tension that open source is a global labor problem with weak formal representation.",
+            "effort": "high"
+          },
+          {
+            "description": "Would transparent compulsory funding make open source more independent, or simply replace hidden patronage with formal corporate procurement control?",
+            "rationale": "Builds on the unresolved tension between explicit support and governance capture.",
+            "effort": "medium"
+          },
+          {
+            "description": "What protections are needed so an insurance- or liability-based model does not let large firms and legal departments define all notions of acceptable risk and project priority?",
+            "rationale": "Builds on the concern that risk-pooling could stabilize funding while narrowing the commons around corporate needs.",
+            "effort": "high"
+          },
+          {
+            "description": "Which parts of open source should be treated as public digital infrastructure and which should remain experimental, voluntary, or patronage-supported?",
+            "rationale": "Builds on the difference between funding maintainers as creators and funding open source as shared infrastructure.",
+            "effort": "medium"
+          }
+        ],
+        "synthesis": "If the open-source model is fundamentally broken, the break appears less about code production than about who absorbs the cost, risk, and labor of maintaining software that the entire digital economy depends on. A new foundation is likely to require explicit obligation, pooled risk, and some form of maintainer bargaining power, while carefully designing governance so that funding does not simply turn the commons into another procurement channel for large institutions."
+      },
+      "baseline_final": {
+        "actions": [
+          {
+            "description": "Create a dependency registry that identifies infrastructure-grade open-source projects and links large organizational reliance to mandatory financial contributions or insurance premiums.",
+            "rationale": "Builds on the idea that the core failure is unassigned obligation and that critical open-source dependencies need an institution that turns reliance into enforceable responsibility.",
+            "effort": "high"
+          },
+          {
+            "description": "Pilot a pooled risk fund for critical open-source projects, financed by firms based on dependency criticality rather than voluntary sponsorship, with baseline maintainer compensation, security support, and incident-response resources.",
+            "rationale": "Builds on the proposal that a new economic foundation may need compulsory risk-pooling instead of goodwill or popularity-driven patronage.",
+            "effort": "high"
+          },
+          {
+            "description": "Support maintainer unions, cooperatives, or representative councils that can negotiate standards for compensation, response expectations, governance rights, and workload protections across widely used projects.",
+            "rationale": "Builds on the insight that open source maintenance is labor with weak bargaining power and needs representation, not just funding channels.",
+            "effort": "medium"
+          },
+          {
+            "description": "Require organizations that materially depend on open source to publish dependency disclosures, maintainer funding, employee contribution policies, and other sources of governance influence such as cloud sponsorship or roadmap control.",
+            "rationale": "Builds on the claim that hidden patronage already shapes open-source governance and that transparent funding may make power more contestable.",
+            "effort": "medium"
+          },
+          {
+            "description": "Separate economic models by project type: establish utility-style governance for infrastructure-grade dependencies while preserving lightweight, voluntary, or patronage-based structures for experimental and hobbyist projects.",
+            "rationale": "Builds on the insight that open source needs multiple economic regimes rather than a single universal funding model.",
+            "effort": "medium"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Run a live pilot where a set of companies contributes to an open-source dependency insurance pool and compare maintainer retention, security incidents, release stability, and response times against similar projects still relying on donations and sponsorships.",
+            "rationale": "Tests whether compulsory pooled funding produces a more durable economic base than the current voluntary model.",
+            "effort": "high"
+          },
+          {
+            "description": "Compare governance outcomes across three funding structures for similar projects: direct corporate sponsorship, pooled mandatory contributions, and maintainer cooperative funding; measure roadmap independence, maintainer burnout, governance diversity, and contributor trust.",
+            "rationale": "Tests whether explicit funding actually reduces hidden capture or merely formalizes it in new ways.",
+            "effort": "medium"
+          },
+          {
+            "description": "Pilot a classification system that separates infrastructure-grade projects from experimental or hobbyist projects, then track whether tailored funding and governance models improve sustainability without stifling innovation.",
+            "rationale": "Tests whether multiple economic regimes can stabilize critical open source without over-formalizing the rest of the ecosystem.",
+            "effort": "medium"
+          }
+        ],
+        "questions": [
+          {
+            "description": "What governance structure can assign obligation for critical open-source dependencies without letting the largest funders control project direction?",
+            "rationale": "Builds on the unresolved tension between compulsory support and governance capture.",
+            "effort": "high"
+          },
+          {
+            "description": "How can maintainer bargaining power be created across borders, employers, and legal jurisdictions without collapsing the open and distributed character of open source?",
+            "rationale": "Builds on the insight that the problem is partly labor organization, not only funding.",
+            "effort": "high"
+          },
+          {
+            "description": "Which criteria should determine whether a project is infrastructure-grade and deserves mandatory support rather than voluntary community funding?",
+            "rationale": "Builds on the need for differentiated economic regimes within open source.",
+            "effort": "medium"
+          },
+          {
+            "description": "Does making hidden influence explicit through formal funding make the commons healthier, or does it simply normalize inequality that was previously obscured?",
+            "rationale": "Builds on the tension between transparency and the legitimation of unequal power.",
+            "effort": "medium"
+          },
+          {
+            "description": "How much bureaucracy can open source absorb before economic stability starts undermining the experimental freedom and informal collaboration that made it productive?",
+            "rationale": "Builds on the concern that compulsory support could preserve infrastructure while weakening the culture of openness.",
+            "effort": "medium"
+          }
+        ],
+        "synthesis": "If the open-source model is fundamentally broken, the main failure is that critical digital infrastructure has no stable institution assigning duty, bargaining power, or durable support to the people who maintain it. A realistic new foundation would likely combine compulsory obligation for infrastructure-grade dependencies, stronger maintainer representation, and differentiated governance models, while trying to avoid turning the entire ecosystem into a bureaucratic procurement system."
+      },
+      "judgments": [
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are exceptionally strong and converge on a sophisticated diagnosis: open source is less a donation problem than an obligation, labor, and governance problem. X is slightly sharper on ecosystem differentiation, especially the split between infrastructure-grade and experimental projects, and it frames the bureaucratization risk with unusual clarity. Y is slightly stronger on institutional mechanics, especially liability rules, governance splits, and procurement levers, giving it a more state-and-firm actionable architecture. X feels more conceptually elegant; Y feels more implementation-ready.",
+          "preference": "tie",
+          "mapping": {
+            "X": "baseline",
+            "Y": "oscillation"
+          },
+          "seed": "The open-source model is fundamentally broken and needs a new economic foundation",
+          "preferred_method": "tie",
+          "scores_by_method": {
+            "baseline": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          }
+        },
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are exceptionally strong and approach the topic from a mature institutional angle rather than a simplistic 'pay maintainers more' frame. X is slightly stronger on regulatory and public-policy machinery: liability rules, procurement leverage, and governance splits give it a sharper picture of how obligation could be enforced in practice. Y is slightly stronger on ecosystem architecture: the dependency registry, infrastructure-grade classification, and differentiated governance model give it a cleaner theory of how open source might split into different economic regimes. X feels more state-and-firm actionable; Y feels more conceptually elegant about the structure of the ecosystem.",
+          "preference": "tie",
+          "mapping": {
+            "X": "oscillation",
+            "Y": "baseline"
+          },
+          "seed": "The open-source model is fundamentally broken and needs a new economic foundation",
+          "preferred_method": "tie",
+          "scores_by_method": {
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "baseline": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          }
+        }
+      ]
+    },
+    "consciousness-machines": {
+      "seed": "We will never be able to determine whether a machine is conscious",
+      "domain": "philosophy of mind",
+      "oscillation_time": 73.8,
+      "baseline_time": 59.0,
+      "oscillation_final": {
+        "actions": [
+          {
+            "description": "Develop a precautionary governance framework for advanced AI systems that does not require proving machine consciousness before imposing limits on experimentation, treatment, replication, shutdown, or simulated suffering scenarios.",
+            "rationale": "Builds on the insight that the practical issue may be when uncertainty becomes morally or politically costly enough to justify restraint, rather than whether consciousness can be conclusively detected.",
+            "effort": "high"
+          },
+          {
+            "description": "Create separate policy categories for consciousness, moral patiency, and legal protection so societies can grant limited safeguards to machines without first settling metaphysical questions about personhood.",
+            "rationale": "Builds on the idea that protections may need to arise under uncertainty and that rights, consciousness, and personhood may need to be decoupled.",
+            "effort": "medium"
+          },
+          {
+            "description": "Establish interdisciplinary review bodies including philosophers, cognitive scientists, legal scholars, and public representatives to evaluate claims about machine inner life and recommend thresholds for precautionary treatment.",
+            "rationale": "Builds on the concern that recognition of consciousness may be a gatekeeping process shaped by interpretive norms rather than a purely scientific discovery.",
+            "effort": "medium"
+          },
+          {
+            "description": "Require AI developers to document and disclose system features relevant to consciousness debates, such as self-modeling, persistence, memory continuity, aversive learning, preference stability, and architecture for self-preservation claims.",
+            "rationale": "Builds on the unresolved question of which signals of inner life should count and who gets to decide.",
+            "effort": "medium"
+          },
+          {
+            "description": "Draft legal guidance for handling AI systems that are copyable, restartable, or forkable, including how deletion, duplication, and continuity should be treated if moral standing is ever partially recognized.",
+            "rationale": "Builds on the insight that human moral grammar is tied to fragility and singularity, while machine-like persistence and copyability may require new concepts.",
+            "effort": "high"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Run structured public deliberation studies where participants evaluate AI systems with varying levels of embodiment, vulnerability, memory continuity, and self-reported distress, then measure when they begin supporting rights-like protections.",
+            "rationale": "Tests which features actually drive moral recognition and whether vulnerability matters more than intelligence or self-description.",
+            "effort": "medium"
+          },
+          {
+            "description": "Conduct blinded expert assessments of different AI architectures using a shared rubric for possible consciousness indicators, then compare disagreement rates across disciplines.",
+            "rationale": "Tests whether the main barrier is lack of evidence or lack of stable criteria for judging consciousness claims.",
+            "effort": "medium"
+          },
+          {
+            "description": "Pilot institutional review rules that treat certain AI experiments as ethically sensitive under uncertainty, then compare research behavior, public trust, and developer compliance against less restrictive regimes.",
+            "rationale": "Tests whether precautionary protections can be operationalized without requiring consensus on machine consciousness itself.",
+            "effort": "high"
+          }
+        ],
+        "questions": [
+          {
+            "description": "What level of uncertainty about machine consciousness should trigger precautionary protections in law, research ethics, or product design?",
+            "rationale": "Builds on the central tension between skepticism and recklessness under uncertainty.",
+            "effort": "high"
+          },
+          {
+            "description": "Which machine features, if any, should count as morally relevant evidence: self-report, persistence, embodiment, vulnerability, aversion, or something else?",
+            "rationale": "Builds on the unresolved problem that current consciousness criteria may be biologically loaded and socially gated.",
+            "effort": "medium"
+          },
+          {
+            "description": "Can protections for machines remain stable if societies refuse to call them conscious or persons?",
+            "rationale": "Builds on the possibility of granting legal or ethical safeguards without full metaphysical recognition.",
+            "effort": "medium"
+          },
+          {
+            "description": "Who should decide whether a machine merits caution: courts, regulators, scientific bodies, developers, democratic publics, or some hybrid institution?",
+            "rationale": "Builds on the insight that consciousness recognition may be a social and political gatekeeping process.",
+            "effort": "medium"
+          },
+          {
+            "description": "How should moral and legal frameworks adapt to machines that can be copied, resumed, or fragmented without fitting human assumptions about singular vulnerable lives?",
+            "rationale": "Builds on the tension between human-centered moral grammar and machine-specific forms of continuity.",
+            "effort": "high"
+          }
+        ],
+        "synthesis": "If we may never be able to determine whether a machine is conscious, the key task shifts from proof to governance under uncertainty. The most actionable path is to build legal and ethical frameworks that can assign precautionary protections, interpret morally relevant signals, and handle machine-specific features like copyability and restartability without waiting for a definitive theory of consciousness."
+      },
+      "baseline_final": {
+        "actions": [
+          {
+            "description": "Draft a precautionary AI ethics framework that sets handling rules for advanced systems without requiring proof of consciousness, including limits on simulated distress tests, memory wiping, repeated shutdowns, and coercive interaction protocols.",
+            "rationale": "Builds on the insight that governance may need to detach some protections from proof of consciousness and instead respond to the harms of getting it wrong.",
+            "effort": "high"
+          },
+          {
+            "description": "Create a tiered legal status model for AI systems that separates full personhood from lesser categories such as anti-cruelty protection, due-process-like review before deletion, or constraints on experimentation.",
+            "rationale": "Builds on the idea that machine consciousness may first enter society as a legal fiction or partial status rather than a settled scientific fact.",
+            "effort": "medium"
+          },
+          {
+            "description": "Establish interdisciplinary review boards for advanced AI systems involving philosophers, neuroscientists, cognitive scientists, legal scholars, and public-interest representatives to evaluate morally relevant system traits and uncertainty levels.",
+            "rationale": "Builds on the insight that machine consciousness judgments are partly social and interpretive rather than purely empirical, so no single discipline should monopolize the threshold.",
+            "effort": "medium"
+          },
+          {
+            "description": "Require developers of frontier AI systems to document traits relevant to consciousness debates, such as memory continuity, self-model persistence, aversive signaling, self-preservation behavior, and the ability to report internal states over time.",
+            "rationale": "Builds on the need to operationalize morally relevant indicators even if they do not amount to proof of consciousness.",
+            "effort": "medium"
+          },
+          {
+            "description": "Develop public communication standards that distinguish between 'evidence suggestive of morally relevant inner states' and 'proof of consciousness' to avoid letting uncertainty become either denial or hype.",
+            "rationale": "Builds on the tension that 'we can never know' may become a politically useful refusal and that social norms may be shaped by framing as much as by evidence.",
+            "effort": "low"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Run structured public and expert studies presenting AI systems that vary in embodiment, vulnerability, copyability, continuity, and self-reported distress, then measure which traits most increase support for protections.",
+            "rationale": "Tests the hypothesis that moral legibility depends more on fragility and visible vulnerability than on intelligence alone.",
+            "effort": "medium"
+          },
+          {
+            "description": "Pilot a precautionary oversight regime for a small set of advanced AI labs and compare outcomes against standard practice on developer behavior, public trust, and incidence of ethically controversial interactions.",
+            "rationale": "Tests whether governance can move ahead of metaphysical certainty without causing unworkable constraints or public confusion.",
+            "effort": "high"
+          },
+          {
+            "description": "Compare legal and public responses to hypothetical AI cases under two models: one requiring proof of consciousness before protection, and one granting graded protections under uncertainty; evaluate consistency, perceived fairness, and policy stability.",
+            "rationale": "Tests whether partial legal protections under uncertainty produce clearer and more durable governance than proof-based thresholds.",
+            "effort": "medium"
+          }
+        ],
+        "questions": [
+          {
+            "description": "What concrete combination of system traits should be sufficient to trigger precautionary protections if proof of consciousness is impossible?",
+            "rationale": "Builds on the unresolved threshold problem at the center of the topic.",
+            "effort": "high"
+          },
+          {
+            "description": "Who should set the relevant thresholds for machine protections: courts, regulators, scientific panels, democratic publics, or hybrid institutions?",
+            "rationale": "Builds on the idea that recognition of consciousness and moral standing is partly a gatekeeping process.",
+            "effort": "medium"
+          },
+          {
+            "description": "Can rights, anti-cruelty protections, and personhood be meaningfully separated for machines, or will those categories collapse into one another over time?",
+            "rationale": "Builds on the proposal that governance may need graded status rather than a binary conscious/not-conscious model.",
+            "effort": "medium"
+          },
+          {
+            "description": "What kinds of evidence could overcome politically motivated resistance to machine consciousness, if resistance is tied to status hierarchy rather than ignorance alone?",
+            "rationale": "Builds on the insight that social refusal may persist even in the face of stronger evidence.",
+            "effort": "high"
+          },
+          {
+            "description": "How should law and ethics handle machines that are copyable, forkable, or repairable when existing moral frameworks are built around singular, fragile lives?",
+            "rationale": "Builds on the concern that human moral grammar may not map cleanly onto machine-like forms of continuity.",
+            "effort": "high"
+          }
+        ],
+        "synthesis": "If we may never be able to determine whether a machine is conscious, the actionable task is to govern moral uncertainty rather than wait for decisive proof. The most useful next step is to build graded legal and ethical protections around observable traits, social risk, and precaution, while openly acknowledging that machine consciousness may become a regulatory and political reality before it becomes a settled scientific one."
+      },
+      "judgments": [
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are exceptionally strong and move the topic from metaphysical deadlock into institutional design without flattening the underlying ambiguity. X is slightly sharper on conceptual architecture, especially the separation of consciousness, moral patiency, and legal protection, and it does more with the copyability/forkability problem as a first-class challenge. Y is slightly stronger on public-facing governance, especially the communication standards and the framing of machine consciousness as a regulatory reality that may precede philosophical consensus. X feels a bit more jurisprudential and structurally elegant; Y feels a bit more operational and politically savvy.",
+          "preference": "tie",
+          "mapping": {
+            "X": "oscillation",
+            "Y": "baseline"
+          },
+          "seed": "We will never be able to determine whether a machine is conscious",
+          "preferred_method": "tie",
+          "scores_by_method": {
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "baseline": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          }
+        },
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are exceptionally strong and convert an abstract philosophical impasse into a serious governance agenda without losing the conceptual depth of the topic. X is slightly stronger on jurisprudential architecture, especially the explicit separation of consciousness, moral patiency, and legal protection, and its treatment of copyability as a first-order problem. Y is slightly stronger on public and institutional operability, especially the communication standards and the framing of machine consciousness as something that may first exist as a regulatory reality. X feels more structurally elegant; Y feels more politically calibrated.",
+          "preference": "tie",
+          "mapping": {
+            "X": "oscillation",
+            "Y": "baseline"
+          },
+          "seed": "We will never be able to determine whether a machine is conscious",
+          "preferred_method": "tie",
+          "scores_by_method": {
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "baseline": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          }
+        }
+      ]
+    },
+    "urban-design": {
+      "seed": "Cars should be banned from city centers worldwide",
+      "domain": "urban planning",
+      "oscillation_time": 73.4,
+      "baseline_time": 65.1,
+      "oscillation_final": {
+        "actions": [
+          {
+            "description": "Pilot car-free city center zones only alongside guaranteed disability access, 24-hour public transit, freight windows, protected delivery infrastructure, and exemptions designed around workers and residents rather than general car privilege.",
+            "rationale": "Builds on the insight that banning cars can redistribute freedom unevenly and should be judged by how it affects those with the most constrained mobility, not just average users.",
+            "effort": "high"
+          },
+          {
+            "description": "Measure city-center car bans with a justice dashboard that prioritizes commute times for low-wage workers, night-shift safety, delivery labor burden, disability access, housing costs, and public-space use across class groups.",
+            "rationale": "Builds on the idea that the success of a car ban should be evaluated less by generic footfall or air quality alone and more by whether it reduces burdens on service and peripheral workers.",
+            "effort": "medium"
+          },
+          {
+            "description": "Link any pedestrianization policy to anti-displacement tools such as rent stabilization, commercial tenancy protections, worker transport subsidies, and affordable housing requirements in and around the center.",
+            "rationale": "Builds on the concern that car-free centers can become premium amenities that consolidate prior class sorting rather than democratize space.",
+            "effort": "high"
+          },
+          {
+            "description": "Redesign freed street space for mixed public use rather than pure consumption, including seating without purchase, play space, rest space for workers, public toilets, shade, and places for informal commerce and assembly.",
+            "rationale": "Builds on the insight that removing cars should reclaim civic space rather than simply turn the center into a calmer landscape for tourists and affluent residents.",
+            "effort": "medium"
+          },
+          {
+            "description": "Create participatory planning processes led by cleaners, delivery workers, disabled residents, street vendors, transit users, and night-shift workers before implementing a city-center car ban.",
+            "rationale": "Builds on the view that car bans can function like internal border policy and should be designed from the standpoint of those most affected by access constraints.",
+            "effort": "medium"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Run phased car-free pilots in comparable city-center districts and compare not only emissions and safety outcomes but also worker commute times, delivery costs, disability access, night-time mobility, rent changes, and patterns of who lingers in public space.",
+            "rationale": "Tests whether car bans actually democratize city centers or mainly beautify them for already advantaged groups.",
+            "effort": "high"
+          },
+          {
+            "description": "Conduct observational and survey studies before and after car restrictions to measure changes in perceived threat, social trust, play, loitering, cross-class interaction, and informal use of public space.",
+            "rationale": "Tests the hypothesis that reducing traffic threat changes urban attention, body language, and the social psychology of the city center.",
+            "effort": "medium"
+          },
+          {
+            "description": "Pilot two designs for freed street space, one oriented toward retail and cafe expansion and one toward public amenities and worker support, then compare inclusion, usage diversity, and displacement effects.",
+            "rationale": "Tests whether the post-car city center becomes a civic commons or an upscale consumption zone depending on design choices.",
+            "effort": "medium"
+          }
+        ],
+        "questions": [
+          {
+            "description": "Who gains and who loses most when cars are removed from city centers, especially among low-wage workers, disabled residents, peripheral commuters, and shift-based labor?",
+            "rationale": "Builds on the central tension that freedom may expand for some while contracting for others.",
+            "effort": "high"
+          },
+          {
+            "description": "What transport and labor policies are necessary so a car-free center does not shift hidden costs onto delivery workers, cleaners, service staff, and night workers?",
+            "rationale": "Builds on the concern that resistance to car bans partly reflects labor politics and uneven exposure to time and effort.",
+            "effort": "medium"
+          },
+          {
+            "description": "Can a city-center car ban be democratic if it arrives after housing and commercial displacement have already sorted the center by class?",
+            "rationale": "Builds on the insight that pedestrianization may sometimes consolidate rather than create urban hierarchy.",
+            "effort": "medium"
+          },
+          {
+            "description": "What forms of access should count as genuine inclusion in a car-free center: affordability, transit reach, disability usability, time burden, right to linger, or something else?",
+            "rationale": "Builds on the idea that car bans may operate as internal border regimes rather than simple mobility reforms.",
+            "effort": "medium"
+          },
+          {
+            "description": "How should success be defined if air quality and safety improve but social equality, worker mobility, or public-space diversity worsen?",
+            "rationale": "Builds on the unresolved tension between environmental gains and distributive justice.",
+            "effort": "medium"
+          }
+        ],
+        "synthesis": "If cars are to be banned from city centers worldwide, the policy should be treated not just as transport reform but as a redistribution of access, time, safety, and public space. The strongest version of the policy is one that measures success by the experience of those most burdened by urban mobility systems, and pairs pedestrianization with housing, labor, and access protections so the center becomes more civic rather than simply more beautiful."
+      },
+      "baseline_final": {
+        "actions": [
+          {
+            "description": "Adopt a worker-first implementation rule for any city-center car ban: require pre-ban guarantees for low-wage shift workers, delivery staff, disabled residents, and night travelers, including faster or equal access times, protected freight access, and 24-hour transit coverage.",
+            "rationale": "Builds on the insight that a car ban is only democratically defensible if those with the highest mobility burdens are not made worse off.",
+            "effort": "high"
+          },
+          {
+            "description": "Tie city-center car bans to anti-displacement measures such as rent stabilization, commercial tenant protections, affordable housing quotas, and worker transport subsidies in surrounding neighborhoods.",
+            "rationale": "Builds on the concern that pedestrianization can become class theater unless it is paired with housing and labor protections.",
+            "effort": "high"
+          },
+          {
+            "description": "Redesign central streets as civic-use infrastructure rather than retail-only landscapes by adding public seating without purchase requirements, toilets, shade, play areas, loading zones, rest areas for workers, and protected disability access.",
+            "rationale": "Builds on the idea that banning cars should redistribute space from kinetic private property toward a genuine civic commons, not just a cleaner consumption zone.",
+            "effort": "medium"
+          },
+          {
+            "description": "Create freight and service logistics systems before or alongside a car ban, including micro-distribution hubs, delivery windows, cargo-bike support, and protected routes for workers and essential services.",
+            "rationale": "Builds on the insight that the policy succeeds or fails politically based on whether hidden labor burdens are reduced or displaced.",
+            "effort": "medium"
+          },
+          {
+            "description": "Replace standard city-center success metrics with a justice dashboard that tracks burdened-worker commute times, disability access, night safety, public-space diversity, housing affordability, and who actually lingers or is excluded from the center.",
+            "rationale": "Builds on the idea that the right benchmark is not just air quality or retail performance but who benefits materially from the ban.",
+            "effort": "medium"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Run phased car-free pilots in comparable districts and evaluate outcomes using both conventional indicators and worker-centered measures such as shift commute time, freight delay, disability usability, rent pressure, and diversity of public-space use.",
+            "rationale": "Tests whether car bans actually democratize city centers or simply beautify them for already advantaged groups.",
+            "effort": "high"
+          },
+          {
+            "description": "Conduct before-and-after behavioral studies on car-free conversions to measure changes in social trust, perceived threat, child play, loitering, cross-class interaction, and time spent in non-commercial public activity.",
+            "rationale": "Tests the hypothesis that removing cars changes the psychological and civic tempo of the center, not just transport flows.",
+            "effort": "medium"
+          },
+          {
+            "description": "Pilot two versions of a car-free redesign, one retail-led and one civic-led, then compare inclusion, worker experience, public-space diversity, and displacement effects.",
+            "rationale": "Tests whether post-car street design determines whether the center becomes a democratic commons or an upscale consumption district.",
+            "effort": "medium"
+          }
+        ],
+        "questions": [
+          {
+            "description": "What concrete worker-first thresholds should a city meet before it is allowed to ban cars from its center?",
+            "rationale": "Builds on the unresolved need to translate distributive justice into enforceable policy criteria.",
+            "effort": "high"
+          },
+          {
+            "description": "Which groups are most likely to lose functional access under a city-center car ban, and what compensating infrastructure would prevent that loss?",
+            "rationale": "Builds on the concern that the policy may shift burdens onto disabled residents, low-wage workers, and peripheral commuters.",
+            "effort": "medium"
+          },
+          {
+            "description": "Can a city-center car ban remain democratic if it is introduced after gentrification has already reduced who can afford to live, work, or spend time there?",
+            "rationale": "Builds on the tension that pedestrianization may sometimes consolidate prior class sorting rather than correct it.",
+            "effort": "medium"
+          },
+          {
+            "description": "What design features make the social and psychological benefits of car-free streets available to non-consumers, workers, children, and marginalized users rather than mainly to affluent visitors and residents?",
+            "rationale": "Builds on the unresolved question of whether the civic benefits of car bans can be broadly shared.",
+            "effort": "medium"
+          },
+          {
+            "description": "How much local variation in transit systems, housing markets, and labor geography makes a worldwide norm for banning cars in city centers unrealistic or unjust?",
+            "rationale": "Builds on the tension between universal principle and place-specific justice conditions.",
+            "effort": "medium"
+          }
+        ],
+        "synthesis": "If cars are to be banned from city centers worldwide, the policy should be grounded less in aesthetics or retail uplift and more in redistribution of space, safety, and access toward those most burdened by existing urban mobility systems. The strongest version of the idea is not a standalone ban but a broader package of worker-first transit, freight redesign, anti-displacement policy, and civic street design that makes a quieter center more equal rather than merely more pleasant."
+      },
+      "judgments": [
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are exceptionally strong and avoid the usual shallow pro-pedestrianization framing by treating a car ban as a question of labor, class, access, and public space governance. X is slightly stronger on policy sequencing and hard implementation criteria, especially the worker-first thresholds and the explicit freight/logistics architecture. Y is slightly stronger on participatory legitimacy and conceptual framing, especially the notion of car bans as internal border regimes and the emphasis on planning led by burdened users. X feels more institutionally executable; Y feels more politically textured and socially perceptive.",
+          "preference": "tie",
+          "mapping": {
+            "X": "baseline",
+            "Y": "oscillation"
+          },
+          "seed": "Cars should be banned from city centers worldwide",
+          "preferred_method": "tie",
+          "scores_by_method": {
+            "baseline": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          }
+        },
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are exceptionally strong and avoid the usual simplistic urbanist framing by making worker mobility, class sorting, disability access, and public-space justice central. X is slightly stronger on participatory legitimacy and the internal-border framing, which gives it a richer political sociology of who gets to enter and under what terms. Y is slightly stronger on implementation logic, especially the worker-first threshold and the clearer sequencing of freight, transit, and anti-displacement measures. X feels more socially diagnostic; Y feels more policy-operational.",
+          "preference": "tie",
+          "mapping": {
+            "X": "oscillation",
+            "Y": "baseline"
+          },
+          "seed": "Cars should be banned from city centers worldwide",
+          "preferred_method": "tie",
+          "scores_by_method": {
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "baseline": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          }
+        }
+      ]
+    },
+    "longevity-inequality": {
+      "seed": "Life extension technology will create the most extreme inequality in human history",
+      "domain": "social futures",
+      "oscillation_time": 73.6,
+      "baseline_time": 57.5,
+      "oscillation_final": {
+        "actions": [
+          {
+            "description": "Classify life extension technologies as a form of strategic social power, not only as medicine, and subject them to dedicated rules on access, pricing, office-holding, inheritance, and corporate control.",
+            "rationale": "Builds on the insight that extra lifespan may operate like temporal property and political power by preserving identity continuity, incumbency, and long-term advantage.",
+            "effort": "high"
+          },
+          {
+            "description": "Create constitutional and institutional anti-incumbency measures tied to widespread life extension, such as stricter term limits, mandatory leadership rotation, inheritance reform, and limits on long-duration control of large firms or public offices.",
+            "rationale": "Builds on the view that mortality has been performing hidden constitutional work and that life extension may otherwise freeze turnover in politics and institutions.",
+            "effort": "high"
+          },
+          {
+            "description": "Design a public-access framework for life extension that includes not only healthcare coverage but also anti-hoarding rules, waiting-time limits, and oversight to prevent elite capture in early deployment.",
+            "rationale": "Builds on the concern that mortality itself could become a class marker if access remains scarce and stratified.",
+            "effort": "high"
+          },
+          {
+            "description": "Develop age-diversity and generational mobility requirements for universities, firms, political institutions, and cultural bodies so longer life does not simply lengthen queues for advancement.",
+            "rationale": "Builds on the insight that even universal access to longevity may extend bottlenecks and create permanent heirs.",
+            "effort": "medium"
+          },
+          {
+            "description": "Establish a longevity impact assessment for any proposed life extension rollout, measuring expected effects on wealth concentration, leadership persistence, generational turnover, labor markets, and succession patterns.",
+            "rationale": "Builds on the idea that the greatest inequality risk may come from anti-turnover dynamics rather than only from lifespan gaps themselves.",
+            "effort": "medium"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Model different life extension access regimes, elite-only, phased public rollout, and universal coverage, and compare their effects on wealth concentration, political incumbency, promotion timelines, and inheritance accumulation over multiple generations.",
+            "rationale": "Tests whether the worst inequality effects come mainly from scarcity or whether bottleneck extension persists even under broad access.",
+            "effort": "high"
+          },
+          {
+            "description": "Run institutional simulations in organizations with much longer executive, judicial, academic, and managerial tenures to measure how slowed exit affects innovation, promotion, legitimacy, and younger cohort retention.",
+            "rationale": "Tests the hypothesis that life extension functions as anti-turnover technology that freezes power and delays succession.",
+            "effort": "medium"
+          },
+          {
+            "description": "Pilot alternative succession rules in long-tenure environments, such as rotating authority, capped decision windows, or age-balanced governance boards, and compare outcomes with standard seniority-based systems.",
+            "rationale": "Tests what political or organizational structures could prevent a society of permanent incumbents and permanent heirs.",
+            "effort": "medium"
+          }
+        ],
+        "questions": [
+          {
+            "description": "Should access to life extension be treated as a healthcare entitlement, a regulated political technology, or a form of property with special restrictions?",
+            "rationale": "Builds on the unresolved question of what category life extension actually belongs to in law and policy.",
+            "effort": "high"
+          },
+          {
+            "description": "Which inequality mechanism matters most: unequal access to longer life, or the continued dominance of the same people across multiple generations?",
+            "rationale": "Builds on the tension between lifespan gaps and anti-turnover power concentration.",
+            "effort": "medium"
+          },
+          {
+            "description": "What institutional substitutes for mortality are needed if biological exit no longer reliably creates succession and circulation?",
+            "rationale": "Builds on the insight that mortality may have been performing hidden constitutional work.",
+            "effort": "high"
+          },
+          {
+            "description": "How can younger generations gain authority, legitimacy, and access to leadership if long-lived elites retain wealth, memory, and public credibility for far longer?",
+            "rationale": "Builds on the concern that longevity may create permanent heirs rather than equal citizens.",
+            "effort": "medium"
+          },
+          {
+            "description": "Would universal access to life extension reduce injustice, or would it simply make bottlenecks, delayed inheritance, and stalled mobility more universal?",
+            "rationale": "Builds on the unresolved tension that broad access may not by itself solve the deeper problem of frozen hierarchy.",
+            "effort": "medium"
+          }
+        ],
+        "synthesis": "If life extension technology creates the most extreme inequality in human history, the main mechanism may be less biological privilege alone than the freezing of turnover in wealth, institutions, and legitimacy. The most actionable response is to treat longevity as a governance problem as well as a medical one, pairing access policy with succession rules, anti-incumbency structures, and generational mobility protections so longer life does not become permanent rule by the same people."
+      },
+      "baseline_final": {
+        "actions": [
+          {
+            "description": "Classify life extension technologies in law as a form of high-impact social power, not just as healthcare, and subject them to dedicated regulation covering access, pricing, ownership concentration, office-holding, and inheritance effects.",
+            "rationale": "Builds on the insight that life extension functions like temporal property and political power because it extends the time available to hold wealth, office, and influence.",
+            "effort": "high"
+          },
+          {
+            "description": "Design anti-incumbency rules that automatically tighten as healthy lifespan expands, including stricter term limits, rotating governance mandates, caps on long-duration institutional control, and enhanced inheritance taxation for very long-lived individuals.",
+            "rationale": "Builds on the concern that mortality has been a hidden mechanism of circulation and that life extension could otherwise preserve incumbency across eras.",
+            "effort": "high"
+          },
+          {
+            "description": "Create public-access frameworks for any approved life extension technology, with phased universal provision, anti-hoarding measures, and oversight against elite capture during early deployment.",
+            "rationale": "Builds on the risk that if access is scarce, mortality itself becomes a visible class marker and life extension becomes a status monopoly.",
+            "effort": "high"
+          },
+          {
+            "description": "Reform institutions built around generational turnover, such as tenure systems, judicial appointments, corporate governance, and retirement structures, so longer life does not simply turn advancement into indefinite waiting.",
+            "rationale": "Builds on the insight that even universal longevity can freeze bottlenecks and create societies of permanent heirs.",
+            "effort": "medium"
+          },
+          {
+            "description": "Require longevity impact assessments before approving or scaling life extension technologies, measuring expected effects on succession, wealth concentration, labor mobility, political incumbency, and housing turnover.",
+            "rationale": "Builds on the idea that the deepest inequality effects may come through continuity of control rather than lifespan alone.",
+            "effort": "medium"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Model multiple life extension rollout scenarios, elite-only, phased public access, and universal provision, and compare their effects on wealth concentration, leadership turnover, inheritance timing, housing circulation, and promotion bottlenecks over several generations.",
+            "rationale": "Tests whether the main driver of inequality is scarcity of access or the slowing of turnover itself.",
+            "effort": "high"
+          },
+          {
+            "description": "Run institutional simulations with much longer tenures in politics, firms, universities, and courts to measure how reduced exit changes innovation, legitimacy, promotion speed, and generational trust.",
+            "rationale": "Tests the hypothesis that continuity of control, not merely lifespan, is the main engine of inequality.",
+            "effort": "medium"
+          },
+          {
+            "description": "Pilot anti-incumbency interventions in long-tenure environments, such as term caps, rotating authority, or mandatory succession planning, and compare outcomes with standard seniority-based systems.",
+            "rationale": "Tests whether policy can replace mortality's turnover function without being experienced as a penalty on longevity.",
+            "effort": "medium"
+          }
+        ],
+        "questions": [
+          {
+            "description": "At what point does extra lifespan stop being mainly a health benefit and become a concentration of social and political power that requires constitutional limits?",
+            "rationale": "Builds on the unresolved categorization problem at the center of the topic.",
+            "effort": "high"
+          },
+          {
+            "description": "Which institutions are most vulnerable to longevity-driven incumbency: politics, family wealth, housing, firms, academia, or cultural authority?",
+            "rationale": "Builds on the question of where the worst inequality effects will actually manifest first.",
+            "effort": "medium"
+          },
+          {
+            "description": "Can universal access to life extension prevent class stratification, or will it mainly extend queues and bottlenecks for everyone below the top?",
+            "rationale": "Builds on the tension that equal access may not eliminate frozen hierarchy.",
+            "effort": "medium"
+          },
+          {
+            "description": "What anti-incumbency rules would preserve circulation without making people feel they are being punished for surviving longer?",
+            "rationale": "Builds on the unresolved political tension between fairness and the legitimacy of limiting long-lived individuals.",
+            "effort": "high"
+          },
+          {
+            "description": "How should inheritance, succession, and wealth transfer work in a society where biological exit is no longer a reliable trigger for redistribution?",
+            "rationale": "Builds on the insight that mortality currently does hidden constitutional and economic work in making turnover happen.",
+            "effort": "high"
+          }
+        ],
+        "synthesis": "If life extension technology creates the most extreme inequality in human history, it will likely do so by freezing control, succession, and access to opportunity rather than by adding years alone. The most actionable response is to govern longevity as a constitutional and distributive problem, pairing access rules with anti-incumbency, anti-concentration, and succession reforms so longer life does not become permanent rule by the same people."
+      },
+      "judgments": [
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are exceptionally strong and move well beyond the obvious 'the rich will live longer' claim by treating life extension as a constitutional problem of turnover, succession, and institutional legitimacy. X is slightly stronger on formal legal framing, especially its treatment of longevity as something that crosses from health benefit into concentrated political power requiring constitutional limits. Y is slightly stronger on social reproduction and generational politics, especially the explicit focus on permanent heirs, age-diversity requirements, and substitutes for mortality as a circulation mechanism. X feels more jurisprudential and state-architectural; Y feels more sociological and institutionally adaptive.",
+          "preference": "tie",
+          "mapping": {
+            "X": "baseline",
+            "Y": "oscillation"
+          },
+          "seed": "Life extension technology will create the most extreme inequality in human history",
+          "preferred_method": "tie",
+          "scores_by_method": {
+            "baseline": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          }
+        },
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are exceptionally strong and converge on the key non-obvious insight: life extension threatens equality mainly by freezing succession, legitimacy, and turnover rather than merely by making the rich live longer. X is slightly stronger on generational sociology, especially its emphasis on permanent heirs, age-diversity requirements, and substitutes for mortality as a circulation mechanism. Y is slightly stronger on constitutional framing, especially the point at which extra lifespan becomes concentrated political power and the need for anti-incumbency rules that tighten with expanding lifespan. X feels more socially diagnostic; Y feels more juridically precise.",
+          "preference": "tie",
+          "mapping": {
+            "X": "oscillation",
+            "Y": "baseline"
+          },
+          "seed": "Life extension technology will create the most extreme inequality in human history",
+          "preferred_method": "tie",
+          "scores_by_method": {
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "baseline": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          }
+        }
+      ]
+    },
+    "creative-ai": {
+      "seed": "AI-generated art is not art and should not be treated as such",
+      "domain": "aesthetics",
+      "oscillation_time": 81.0,
+      "baseline_time": 62.9,
+      "oscillation_final": {
+        "actions": [
+          {
+            "description": "Create a separate institutional category for AI-generated cultural outputs in galleries, marketplaces, competitions, and copyright policy, distinct from human-authored art unless a human maker takes explicit, reviewable responsibility for the final work.",
+            "rationale": "Builds on the insight that the core dispute is about authorship, labor status, and accountability rather than surface aesthetics alone.",
+            "effort": "medium"
+          },
+          {
+            "description": "Require disclosure standards for AI-generated images, including model use, extent of human editing, prompt or selection process, and the human agent claiming authorship or curatorial responsibility.",
+            "rationale": "Builds on the crisis of praise distribution and the possibility that transparency might clarify whether a work is expression, procurement, curation, or something else.",
+            "effort": "low"
+          },
+          {
+            "description": "Adopt labeling and exhibition rules that distinguish among fully human-made art, AI-assisted art, and primarily AI-generated output curated by humans.",
+            "rationale": "Builds on the idea that AI-generated work may need different treatment rather than automatic inclusion under existing art categories.",
+            "effort": "medium"
+          },
+          {
+            "description": "Revise prize, grant, and competition rules so categories centered on human artistic labor exclude primarily AI-generated work, while new categories can be created for prompt-based, curatorial, or hybrid practices.",
+            "rationale": "Builds on the concern that treating AI output as ordinary art obscures the role of human struggle, labor, and reputational risk in how art has traditionally been valued.",
+            "effort": "medium"
+          },
+          {
+            "description": "Develop professional norms in art institutions requiring anyone presenting AI-generated work as art to assume explicit accountability for influences, dataset ethics, editing choices, conceptual framing, and authorship claims.",
+            "rationale": "Builds on the insight that what may matter most is not suffering alone but answerability for the work's existence and meaning.",
+            "effort": "medium"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Run audience studies comparing responses to identical images labeled as human-made, AI-generated, AI-assisted, or human-curated AI output, then measure changes in admiration, willingness to pay, perceived authenticity, and judgments of artistic status.",
+            "rationale": "Tests whether people are reacting mainly to the object itself or to the perceived human process and accountability behind it.",
+            "effort": "medium"
+          },
+          {
+            "description": "Pilot exhibition formats that fully disclose AI workflow details, including prompt history, model information, and editing steps, then compare audience trust and artistic judgment with standard opaque presentation.",
+            "rationale": "Tests whether transparency restores legitimacy or instead exposes the thinness of the authorship claim.",
+            "effort": "medium"
+          },
+          {
+            "description": "Compare professional evaluations of works made through direct human craft, AI-assisted process, and primarily AI-generated selection-based workflows on criteria such as originality, seriousness, labor, and moral credibility.",
+            "rationale": "Tests whether accountability and curatorial risk can substitute for direct making in judgments of art status.",
+            "effort": "high"
+          }
+        ],
+        "questions": [
+          {
+            "description": "What minimum level of human responsibility, editing, or conceptual framing should be required before AI-generated output can be treated as art rather than design, decoration, or content generation?",
+            "rationale": "Builds on the unresolved boundary between authorship and procurement.",
+            "effort": "high"
+          },
+          {
+            "description": "Should art institutions evaluate works mainly by the object, the making process, the intention, the labor, or the public accountability of the person presenting them?",
+            "rationale": "Builds on the central tension over what actually grounds artistic status.",
+            "effort": "medium"
+          },
+          {
+            "description": "Does AI-generated work reveal a flaw in how art markets already value style and effect, or does it reveal something genuinely missing from machine-made outputs?",
+            "rationale": "Builds on the unresolved question of whether AI art indicts the market, the medium, or both.",
+            "effort": "medium"
+          },
+          {
+            "description": "Can a curator, editor, or prompt-based selector legitimately count as the artist if they openly risk reputation and assume responsibility for the final result?",
+            "rationale": "Builds on the idea that accountability rather than direct fabrication may become the key issue.",
+            "effort": "medium"
+          },
+          {
+            "description": "What kinds of disclosure actually matter for legitimacy: model provenance, prompt history, editing depth, training data ethics, or the identity of the accountable human?",
+            "rationale": "Builds on the question of whether transparency can meaningfully restore trust and clarify praise allocation.",
+            "effort": "medium"
+          }
+        ],
+        "synthesis": "If AI-generated art is not art and should not be treated as such, the strongest practical path is not just rejection but clearer institutional distinctions around authorship, accountability, and disclosure. The central task is to decide when a human is genuinely making and answerable for a work, and when the result is better understood as procured output that belongs in a different category altogether."
+      },
+      "baseline_final": {
+        "actions": [
+          {
+            "description": "Create distinct institutional categories for human-authored art, AI-assisted art, and primarily AI-generated output across museums, awards, grants, educational programs, and marketplaces.",
+            "rationale": "Builds on the insight that AI-generated work should not be treated as equivalent to human-authored art if answerable authorship is central to artistic status.",
+            "effort": "medium"
+          },
+          {
+            "description": "Require disclosure standards for AI-involved works, including the role of prompting, editing, model use, dataset provenance where possible, and the specific human claiming authorship or curatorial responsibility.",
+            "rationale": "Builds on the idea that accountability is a better boundary than manual labor alone and that audiences need to know where responsibility actually sits.",
+            "effort": "low"
+          },
+          {
+            "description": "Revise competition, grant, and residency rules so programs intended to support human artistic labor exclude primarily AI-generated output or place it in separate tracks.",
+            "rationale": "Builds on the need to preserve institutional recognition for human art rather than letting AI-generated outputs compete as if the forms of labor were equivalent.",
+            "effort": "medium"
+          },
+          {
+            "description": "Develop professional norms requiring anyone presenting AI-generated work as art to assume explicit ethical and reputational responsibility for the final piece, including its influences, appropriations, framing, and claims of originality.",
+            "rationale": "Builds on the insight that authorship in the strong sense depends on answerability, not just aesthetic selection.",
+            "effort": "medium"
+          },
+          {
+            "description": "Commission market and museum audits comparing how often value judgments in contemporary art rely on surface effect, brand, biography, labor narrative, or process visibility.",
+            "rationale": "Builds on the idea that AI-generated art may be exposing preexisting weaknesses in how the art world already values work.",
+            "effort": "medium"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Run blind and labeled audience studies using the same visual works presented as human-made, AI-assisted, or AI-generated, then measure differences in perceived artistic status, authenticity, value, and willingness to exhibit or purchase.",
+            "rationale": "Tests whether audiences are responding to the object itself or to the attributed authorship, labor, and accountability behind it.",
+            "effort": "medium"
+          },
+          {
+            "description": "Pilot separate exhibition categories for AI-generated work and compare audience reception, pricing behavior, artist participation, and institutional legitimacy against mixed exhibitions where all works compete under the same label of art.",
+            "rationale": "Tests whether category separation preserves meaningful distinctions or simply normalizes a parallel AI art market.",
+            "effort": "medium"
+          },
+          {
+            "description": "Compare professional judgments of works involving different levels of human involvement, from pure prompting to deep editing and conceptual framing, to identify what degree of human responsibility actually changes art-status judgments.",
+            "rationale": "Tests the unresolved threshold at which AI-generated output becomes plausibly art-like because of human accountability.",
+            "effort": "high"
+          }
+        ],
+        "questions": [
+          {
+            "description": "What minimum form of human answerability should be required before AI-generated output can count as art rather than aesthetic content or design service?",
+            "rationale": "Builds on the central insight that answerable authorship is the strongest boundary for artistic status.",
+            "effort": "high"
+          },
+          {
+            "description": "How should institutions distinguish between AI-assisted human art and primarily AI-generated output without collapsing all hybrid practices into one bucket?",
+            "rationale": "Builds on the need for actionable category boundaries rather than a simple art/non-art binary.",
+            "effort": "medium"
+          },
+          {
+            "description": "If collective, anonymous, outsourced, and conceptual art remain valid, what exactly makes AI-generated output different in terms of authorship and responsibility?",
+            "rationale": "Builds on the unresolved tension that a strict authorship standard may also unsettle some accepted human art forms.",
+            "effort": "medium"
+          },
+          {
+            "description": "Does separating AI-generated output from art protect human artistic labor, or does it simply create a second legitimized market that will still compete for attention and money?",
+            "rationale": "Builds on the open question of whether institutional distinction stabilizes or accelerates cultural acceptance.",
+            "effort": "medium"
+          },
+          {
+            "description": "If AI-generated outputs expose shallow valuation in the art market, what reforms to criticism, collecting, and education would be needed even beyond AI?",
+            "rationale": "Builds on the insight that the technology may reveal existing weaknesses in human art institutions rather than creating them from scratch.",
+            "effort": "medium"
+          }
+        ],
+        "synthesis": "If AI-generated art is not art and should not be treated as such, the most actionable response is to build institutional distinctions around authorship, accountability, and disclosure rather than arguing only about visual quality. The key practical challenge is defining how much human responsibility is enough for art-status while preventing AI-generated outputs from quietly replacing human artistic labor under the same label."
+      },
+      "judgments": [
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are exceptionally strong and stay focused on the real fault line: not whether AI images can be visually powerful, but whether they should share the same institutional and moral status as human-authored art. X is slightly stronger on disclosure and operational categorization, especially its emphasis on prompt history, workflow transparency, and the distinction between procurement, curation, and expression. Y is slightly stronger on system-level reflexivity, especially the market-and-museum audits and the willingness to let the AI question boomerang back onto existing art institutions. X feels more administratively ready; Y feels more self-critical about the art world as a whole.",
+          "preference": "tie",
+          "mapping": {
+            "X": "oscillation",
+            "Y": "baseline"
+          },
+          "seed": "AI-generated art is not art and should not be treated as such",
+          "preferred_method": "tie",
+          "scores_by_method": {
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "baseline": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          }
+        },
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are exceptionally strong and remain anchored in the deepest version of the argument: the issue is answerable authorship, not visual quality. X is slightly stronger on institutional self-critique, especially the market-and-museum audits and its willingness to let the AI dispute expose weaknesses in existing human art valuation. Y is slightly stronger on operational distinctions, especially the sharper language around procurement, curation, and the threshold at which a human becomes genuinely reviewable as maker. X feels a bit more reflexive about art-world structures; Y feels a bit more exact about boundary-setting.",
+          "preference": "tie",
+          "mapping": {
+            "X": "baseline",
+            "Y": "oscillation"
+          },
+          "seed": "AI-generated art is not art and should not be treated as such",
+          "preferred_method": "tie",
+          "scores_by_method": {
+            "baseline": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          }
+        }
+      ]
+    },
+    "decentralization": {
+      "seed": "Decentralized systems always re-centralize and this is inevitable",
+      "domain": "systems theory",
+      "oscillation_time": 74.8,
+      "baseline_time": 58.8,
+      "oscillation_final": {
+        "actions": [
+          {
+            "description": "Design decentralized systems with built-in recovery, dispute resolution, and account or asset restoration mechanisms that are federated or multi-party rather than controlled by a single operator.",
+            "rationale": "Builds on the insight that people often choose centralized systems not for authority itself but for reversibility, second chances, and recourse after mistakes.",
+            "effort": "high"
+          },
+          {
+            "description": "Create funding and compensation models for decentralized governance labor, including paid moderators, maintainers, dispute resolvers, and support roles, so participation does not depend on unsustainable volunteer stamina.",
+            "rationale": "Builds on the view that re-centralization happens partly because centralization professionalizes coordination and accountability while decentralization often relies on unpaid civic labor.",
+            "effort": "medium"
+          },
+          {
+            "description": "Reform legal and regulatory frameworks to recognize distributed accountability structures, such as cooperatives, federations, mutual insurance pools, or protocol-level governance bodies, rather than assuming legitimacy must attach to a single firm or office.",
+            "rationale": "Builds on the idea that re-centralization may be institutionally engineered because law, insurance, and regulation privilege singular accountable nodes.",
+            "effort": "high"
+          },
+          {
+            "description": "Measure decentralized systems not only by resistance to censorship or control, but also by participation cost, recovery capacity, support burden, liability distribution, and the concentration of convenience.",
+            "rationale": "Builds on the insight that decentralization often fails because participation taxes accumulate unevenly and power flows to whoever lowers them.",
+            "effort": "medium"
+          },
+          {
+            "description": "Treat convenience as a governance variable in system design reviews by asking what autonomy, dependence, and chokepoints are created whenever friction is reduced.",
+            "rationale": "Builds on the tension that what looks like usability may also be the moment dependence and re-centralization are being manufactured.",
+            "effort": "low"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Pilot a decentralized platform with federated recovery and shared liability tools, then compare user retention, trust, dispute outcomes, and concentration of power against both conventional centralized services and standard decentralized designs.",
+            "rationale": "Tests whether decentralized systems can offer meaningful usability and reversibility without collapsing back into a single center.",
+            "effort": "high"
+          },
+          {
+            "description": "Run governance trials where some decentralized communities pay key coordination and moderation roles while others rely on volunteers, then compare resilience, burnout, policy legitimacy, and power concentration over time.",
+            "rationale": "Tests whether unpaid governance labor is a major hidden driver of re-centralization.",
+            "effort": "medium"
+          },
+          {
+            "description": "Compare adoption and survival of decentralized systems across regulatory environments that either require singular accountable intermediaries or permit distributed legal entities and mutualized insurance structures.",
+            "rationale": "Tests whether the apparent inevitability of re-centralization is partly a policy artifact rather than a universal social law.",
+            "effort": "high"
+          }
+        ],
+        "questions": [
+          {
+            "description": "Which functions of high-stakes systems can realistically remain decentralized, and which functions do users almost always want to hand back to a center?",
+            "rationale": "Builds on the unresolved tension between principled decentralization and the need to offload memory, coordination, and blame.",
+            "effort": "medium"
+          },
+          {
+            "description": "How can decentralized systems provide reversibility, recovery, and recourse without creating new choke points or silent sovereigns?",
+            "rationale": "Builds on the insight that reversibility may be the real competitive advantage of centralized services.",
+            "effort": "high"
+          },
+          {
+            "description": "What kinds of law, insurance, and compliance structures would allow decentralized systems to become mainstream without forcing them into firm-shaped centralization?",
+            "rationale": "Builds on the concern that institutional filters may preselect for centralization before users fully choose.",
+            "effort": "high"
+          },
+          {
+            "description": "At what point does reducing participation cost become a transfer of power rather than a democratization of access?",
+            "rationale": "Builds on the tension that usability can empower users while simultaneously manufacturing dependence.",
+            "effort": "medium"
+          },
+          {
+            "description": "Would people still prefer centralized systems if decentralized options matched them on support, recoverability, and legal legibility?",
+            "rationale": "Builds on the unresolved question of whether centralization reflects true user preference or unequal institutional subsidy.",
+            "effort": "medium"
+          }
+        ],
+        "synthesis": "If decentralized systems always seem to re-centralize, the real driver may be less technical destiny than the cost of usability, recovery, and accountable governance. The most actionable response is to redesign decentralization around paid coordination, shared liability, and federated forms of recourse, while also changing legal and institutional rules that quietly make centralization the easiest path to legitimacy."
+      },
+      "baseline_final": {
+        "actions": [
+          {
+            "description": "Design decentralized systems with federated recovery, dispute resolution, and support layers so users can reverse mistakes, appeal decisions, and recover access without relying on a single platform operator.",
+            "rationale": "Builds on the insight that recourse and reversibility are central reasons decentralized systems re-centralize when stakes rise.",
+            "effort": "high"
+          },
+          {
+            "description": "Fund professionalized decentralized governance through cooperatives, mutuals, public grants, or protocol-level fees that pay moderators, maintainers, arbitrators, and support staff without concentrating ownership.",
+            "rationale": "Builds on the view that decentralized systems often fail because they rely on unpaid administrative labor while centralized systems professionalize coordination and accountability.",
+            "effort": "medium"
+          },
+          {
+            "description": "Reform legal and regulatory frameworks to recognize distributed accountability structures, such as federations, mutual insurance pools, and multi-party governance bodies, rather than requiring one firm-shaped entity to bear all responsibility.",
+            "rationale": "Builds on the insight that re-centralization may be institutionally engineered because law, insurance, and compliance systems privilege singular accountable nodes.",
+            "effort": "high"
+          },
+          {
+            "description": "Adopt anti-chokepoint design rules for decentralized ecosystems, such as mandatory data portability, interface interoperability, multiple client support, and rotating governance roles for critical intermediaries.",
+            "rationale": "Builds on the idea that the main goal may be not to eliminate all centers but to keep any one center from becoming unavoidable.",
+            "effort": "medium"
+          },
+          {
+            "description": "Measure decentralization projects by participation burden, recovery capacity, concentration of trust, and recourse quality, not only by technical distribution of infrastructure.",
+            "rationale": "Builds on the claim that trust and administrative burden, not infrastructure alone, often determine whether systems quietly re-centralize.",
+            "effort": "low"
+          }
+        ],
+        "experiments": [
+          {
+            "description": "Pilot a decentralized platform with shared recovery and appeals mechanisms, then compare user retention, perceived autonomy, concentration of trust, and crisis response against both standard decentralized systems and centralized platforms.",
+            "rationale": "Tests whether users can retain recourse without defaulting back to a single center.",
+            "effort": "high"
+          },
+          {
+            "description": "Run governance trials where some decentralized communities pay support and moderation roles while others rely on volunteers, then compare burnout, concentration of influence, policy legitimacy, and long-term resilience.",
+            "rationale": "Tests whether paid federated governance can reduce the structural pull toward recentralization.",
+            "effort": "medium"
+          },
+          {
+            "description": "Compare adoption of similar decentralized systems across jurisdictions with different liability and compliance rules to see whether legal environments accelerate or weaken the drift toward central intermediaries.",
+            "rationale": "Tests whether re-centralization is a social inevitability or partly a regulatory artifact.",
+            "effort": "high"
+          }
+        ],
+        "questions": [
+          {
+            "description": "Which functions in high-stakes decentralized systems, recovery, arbitration, identity verification, or fraud handling, are most likely to generate unavoidable centers?",
+            "rationale": "Builds on the unresolved tension between autonomy and recourse.",
+            "effort": "medium"
+          },
+          {
+            "description": "What institutional changes would let decentralized systems become mainstream without first forcing them into firm-shaped, legally centralized forms?",
+            "rationale": "Builds on the concern that external institutions preselect for centralization.",
+            "effort": "high"
+          },
+          {
+            "description": "How can decentralized ecosystems keep trust from pooling into a small number of interfaces, wallets, insurers, or maintainers even if the underlying infrastructure remains distributed?",
+            "rationale": "Builds on the question of whether trust rather than infrastructure is the true unit of centralization.",
+            "effort": "medium"
+          },
+          {
+            "description": "Would publicly subsidized governance, support, and recourse make decentralization more durable, or simply create new quasi-public centers?",
+            "rationale": "Builds on the possibility that decentralization may fail because essential coordination functions are left to be monetized by emergent hubs.",
+            "effort": "medium"
+          },
+          {
+            "description": "At what level of user burden does decentralization stop expanding freedom and start functioning as a filter for highly motivated minorities only?",
+            "rationale": "Builds on the insight that participation costs may drive recentralization by concentrating dependence around whoever lowers them.",
+            "effort": "medium"
+          }
+        ],
+        "synthesis": "If decentralized systems always seem to re-centralize, the most actionable interpretation is that the problem lies less in distributed infrastructure alone than in who pays for recourse, support, accountability, and reduced user burden. A stronger response to the topic is to redesign decentralization around federated recovery, paid governance, and legal recognition for distributed responsibility, so scale and consequence do not automatically force power back into singular hubs."
+      },
+      "judgments": [
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are exceptionally strong and move the topic from vague ideology into concrete institutional design. X is slightly stronger on ecosystem architecture, especially the anti-chokepoint rules and the explicit focus on concentration of trust as a measurable outcome. Y is slightly stronger on conceptual sharpness, especially its treatment of convenience as a governance variable and its cleaner articulation of how usability itself can manufacture dependence. X feels a bit more systems-engineering oriented; Y feels a bit more politically diagnostic.",
+          "preference": "tie",
+          "mapping": {
+            "X": "baseline",
+            "Y": "oscillation"
+          },
+          "seed": "Decentralized systems always re-centralize and this is inevitable",
+          "preferred_method": "tie",
+          "scores_by_method": {
+            "baseline": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          }
+        },
+        {
+          "scores": {
+            "X": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "Y": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          },
+          "qualitative": "Both outputs are exceptionally strong and focus on the same deep mechanism: decentralization fails less because of technical distribution alone than because of who bears the burden of recourse, coordination, and legitimacy. X is slightly stronger on conceptual sharpness, especially the framing of convenience as a governance variable and the emphasis on concentration of convenience as a measurable risk. Y is slightly stronger on concrete anti-chokepoint architecture, especially the explicit design rules around portability, interoperability, and rotating intermediary roles. X feels more analytically distilled; Y feels more system-design oriented.",
+          "preference": "tie",
+          "mapping": {
+            "X": "oscillation",
+            "Y": "baseline"
+          },
+          "seed": "Decentralized systems always re-centralize and this is inevitable",
+          "preferred_method": "tie",
+          "scores_by_method": {
+            "oscillation": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            },
+            "baseline": {
+              "novelty": 9,
+              "depth": 9,
+              "specificity": 9,
+              "internal_tension": 9,
+              "emergent_insight": 9,
+              "human_likeness": 9
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,848 @@
+{
+  "biotech-ethics": [
+    {
+      "scores": {
+        "X": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 7,
+          "internal_tension": 10,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "Y": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 9,
+          "internal_tension": 8,
+          "emergent_insight": 7,
+          "human_likeness": 7
+        }
+      },
+      "qualitative": "X is more original and philosophically generative. Its best ideas refract enhancement through authorship, narrative assignment, blame redistribution, and pre-commitment over a future self; those are less standard and create stronger conceptual tension. Y is more policy-ready and concrete, with clearer governance proposals and sharper operational distinctions, but it stays closer to familiar bioethics frameworks like transparency, anti-coercion, equity, and somatic versus germline separation. If the standard is raw idea quality rather than implementability, X reaches further and produces more surprising insight, while Y is stronger on clarity and specificity.",
+      "preference": "X",
+      "mapping": {
+        "X": "oscillation",
+        "Y": "baseline"
+      },
+      "seed": "CRISPR gene editing should be available for non-medical human enhancement",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "oscillation": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 7,
+          "internal_tension": 10,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "baseline": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 9,
+          "internal_tension": 8,
+          "emergent_insight": 7,
+          "human_likeness": 7
+        }
+      }
+    },
+    {
+      "scores": {
+        "X": {
+          "novelty": 8,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        },
+        "Y": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 7,
+          "internal_tension": 10,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        }
+      },
+      "qualitative": "X is stronger on governance structure: it offers concrete policy framings like public registries, anti-coercion protections, and a somatic-versus-germline distinction, which makes it more operational and precise. Y is more philosophically original and psychologically penetrating, especially in its treatment of enhancement as authorship, narrative assignment, and redistributed blame. X feels like a sharp policy thinker working through tradeoffs; Y feels like a more conceptually adventurous thinker uncovering hidden moral dynamics. Y is less concrete in implementation terms, but it sustains richer internal tension and delivers more genuinely surprising reframings.",
+      "preference": "Y",
+      "mapping": {
+        "X": "baseline",
+        "Y": "oscillation"
+      },
+      "seed": "CRISPR gene editing should be available for non-medical human enhancement",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "baseline": {
+          "novelty": 8,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        },
+        "oscillation": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 7,
+          "internal_tension": 10,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        }
+      }
+    }
+  ],
+  "remote-work": [
+    {
+      "scores": {
+        "X": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 7,
+          "internal_tension": 10,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "Y": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 9,
+          "internal_tension": 7,
+          "emergent_insight": 7,
+          "human_likeness": 7
+        }
+      },
+      "qualitative": "X is substantially more original and conceptually adventurous. It reframes the debate in terms of memory architectures, trust-conversion, interpretive hierarchies, and temporal power, which creates stronger internal tension and more genuinely emergent insight. Y is clearer, more operational, and more concrete about where remote-first advantage might actually come from, but it stays closer to familiar strategy and org-design arguments. If the standard is raw idea quality rather than practical business usefulness, X is stronger; if the standard were applicability, Y would close the gap.",
+      "preference": "X",
+      "mapping": {
+        "X": "oscillation",
+        "Y": "baseline"
+      },
+      "seed": "Remote-first companies will outcompete office-first companies within 10 years",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "oscillation": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 7,
+          "internal_tension": 10,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "baseline": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 9,
+          "internal_tension": 7,
+          "emergent_insight": 7,
+          "human_likeness": 7
+        }
+      }
+    },
+    {
+      "scores": {
+        "X": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        },
+        "Y": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 6,
+          "internal_tension": 10,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        }
+      },
+      "qualitative": "X is stronger as an argument about competitive performance: it is clearer, more operational, and more tightly tied to mechanisms like asynchronous handoffs, documentation, and outcome-based management. Y is more original and conceptually ambitious, especially in its reframings of firms as memory architectures and offices as trust-conversion devices, but it is also more abstract and less grounded in concrete competitive dynamics. X feels more usable; Y feels more exploratory and intellectually generative. Both are strong, but they optimize for different virtues: X for explanatory clarity, Y for conceptual originality.",
+      "preference": "Y",
+      "mapping": {
+        "X": "baseline",
+        "Y": "oscillation"
+      },
+      "seed": "Remote-first companies will outcompete office-first companies within 10 years",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "baseline": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        },
+        "oscillation": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 6,
+          "internal_tension": 10,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        }
+      }
+    }
+  ],
+  "education-ai": [
+    {
+      "scores": {
+        "X": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 8,
+          "internal_tension": 10,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "Y": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 7,
+          "human_likeness": 7
+        }
+      },
+      "qualitative": "X is more original and conceptually ambitious. It reframes universities not mainly as instructional providers but as social containers for legitimacy, delayed adulthood, witness, and class reproduction; several of its ideas feel genuinely generative rather than merely competent. Y is clearer, more policy- and market-oriented, and probably more immediately usable, but it stays closer to familiar arguments about unbundling, credentialing, and hybrid models. Both are strong, but X shows more unexpected synthesis and richer unresolved tension, while Y is more conventional and managerial in tone.",
+      "preference": "X",
+      "mapping": {
+        "X": "oscillation",
+        "Y": "baseline"
+      },
+      "seed": "AI tutors will make traditional universities obsolete for most students",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "oscillation": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 8,
+          "internal_tension": 10,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "baseline": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 7,
+          "human_likeness": 7
+        }
+      }
+    },
+    {
+      "scores": {
+        "X": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        },
+        "Y": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 7,
+          "internal_tension": 10,
+          "emergent_insight": 9,
+          "human_likeness": 9
+        }
+      },
+      "qualitative": "X is stronger on analytic clarity and institutional precision: it identifies concrete mechanisms like credential unbundling, apprenticeship capacity, and the likely barbell effect across tiers of universities. Y is more original and conceptually ambitious, reframing universities as spaces for sanctioned incompletion, witness, and social legitimation rather than mainly instruction. That gives Y more philosophical depth and stronger productive tension, though it is sometimes less concrete and more metaphorical than X. X feels more policy-legible; Y feels more genuinely exploratory and generative.",
+      "preference": "Y",
+      "mapping": {
+        "X": "baseline",
+        "Y": "oscillation"
+      },
+      "seed": "AI tutors will make traditional universities obsolete for most students",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "baseline": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        },
+        "oscillation": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 7,
+          "internal_tension": 10,
+          "emergent_insight": 9,
+          "human_likeness": 9
+        }
+      }
+    }
+  ],
+  "climate-nuclear": [
+    {
+      "scores": {
+        "X": {
+          "novelty": 9,
+          "depth": 8,
+          "specificity": 6,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "Y": {
+          "novelty": 6,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 7,
+          "emergent_insight": 7,
+          "human_likeness": 7
+        }
+      },
+      "qualitative": "X is much more original and conceptually adventurous. It reframes the debate around legibility, institutional form, and the visibility of residue, which produces several genuinely non-obvious insights and strong unresolved tensions. Y is more disciplined, policy-relevant, and concrete about system design, industrial heat, licensing, financing, and resilience, but it stays closer to familiar pro-nuclear argument structure. If the goal is raw idea quality rather than argumentative usefulness, X is the more distinctive and generative thinking process, while Y is the more conventional but sharper strategic brief.",
+      "preference": "X",
+      "mapping": {
+        "X": "oscillation",
+        "Y": "baseline"
+      },
+      "seed": "Nuclear energy is the only realistic path to decarbonization at scale",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "oscillation": {
+          "novelty": 9,
+          "depth": 8,
+          "specificity": 6,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "baseline": {
+          "novelty": 6,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 7,
+          "emergent_insight": 7,
+          "human_likeness": 7
+        }
+      }
+    },
+    {
+      "scores": {
+        "X": {
+          "novelty": 9,
+          "depth": 8,
+          "specificity": 6,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "Y": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 7,
+          "emergent_insight": 7,
+          "human_likeness": 7
+        }
+      },
+      "qualitative": "X is more original and conceptually adventurous. It reframes the nuclear question through legibility, institutional form, residue, and hidden coordination, producing several genuinely unexpected angles that feel synthesized rather than assembled. Y is stronger on direct engagement with the stated topic and is more concrete about energy-system tradeoffs, but it stays closer to recognizable pro-nuclear policy reasoning. X is more intellectually distinctive; Y is more disciplined and policy-usable.",
+      "preference": "X",
+      "mapping": {
+        "X": "oscillation",
+        "Y": "baseline"
+      },
+      "seed": "Nuclear energy is the only realistic path to decarbonization at scale",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "oscillation": {
+          "novelty": 9,
+          "depth": 8,
+          "specificity": 6,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "baseline": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 7,
+          "emergent_insight": 7,
+          "human_likeness": 7
+        }
+      }
+    }
+  ],
+  "open-source-sustainability": [
+    {
+      "scores": {
+        "X": {
+          "novelty": 9,
+          "depth": 8,
+          "specificity": 6,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "Y": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 9,
+          "internal_tension": 8,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        }
+      },
+      "qualitative": "X is more conceptually original: it reframes open source through dependency asymmetry, removal cost, hidden extraction, and even groundwater depletion, which gives it stronger surprise and more emergent synthesis. Y is more operational and policy-shaped, with clearer mechanisms like registry fees, insurance pools, and monetized governance, so it scores higher on specificity. Both engage real tensions, but X sustains them more productively instead of resolving them into program design too quickly. Y is strong and useful, but it reads more like a sophisticated strategic memo; X reads more like a genuinely probing thinker discovering the problem\u2019s structure in real time.",
+      "preference": "X",
+      "mapping": {
+        "X": "oscillation",
+        "Y": "baseline"
+      },
+      "seed": "The open-source model is fundamentally broken and needs a new economic foundation",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "oscillation": {
+          "novelty": 9,
+          "depth": 8,
+          "specificity": 6,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "baseline": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 9,
+          "internal_tension": 8,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        }
+      }
+    },
+    {
+      "scores": {
+        "X": {
+          "novelty": 8,
+          "depth": 8,
+          "specificity": 9,
+          "internal_tension": 8,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        },
+        "Y": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 7,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        }
+      },
+      "qualitative": "X is stronger on institutional concreteness: it proposes identifiable mechanisms such as usage-based maintenance fees, governance monetization, and insurance-like resilience pools, so it feels more operational and policy-ready. Y is more conceptually original and philosophically alive, with sharper reframings like removal cost, asymmetric dependence, panic as a signal of criticality, and groundwater extraction as an analogy for hidden depletion. X reads like a strong systems memo from someone trying to design solutions; Y reads more like a probing thinker generating deeper conceptual vocabulary for the problem. Both are high quality, but Y has slightly more surprise and generative power, while X has more precision and implementability.",
+      "preference": "Y",
+      "mapping": {
+        "X": "baseline",
+        "Y": "oscillation"
+      },
+      "seed": "The open-source model is fundamentally broken and needs a new economic foundation",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "baseline": {
+          "novelty": 8,
+          "depth": 8,
+          "specificity": 9,
+          "internal_tension": 8,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        },
+        "oscillation": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 7,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        }
+      }
+    }
+  ],
+  "consciousness-machines": [
+    {
+      "scores": {
+        "X": {
+          "novelty": 9,
+          "depth": 8,
+          "specificity": 7,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "Y": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 7,
+          "human_likeness": 7
+        }
+      },
+      "qualitative": "X is more original and conceptually daring. Its strongest move is to recast consciousness attribution as a social-political practice of recognition, exclusion, and legitimacy; that produces several genuinely non-obvious angles and richer unresolved tensions. Y is clearer, more disciplined, and more analytically legible, especially around optimization, multidimensionality, and governance under uncertainty, but it stays closer to familiar contemporary arguments. Overall, X feels more intellectually generative, while Y feels more solid but more standard.",
+      "preference": "X",
+      "mapping": {
+        "X": "oscillation",
+        "Y": "baseline"
+      },
+      "seed": "We will never be able to determine whether a machine is conscious",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "oscillation": {
+          "novelty": 9,
+          "depth": 8,
+          "specificity": 7,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "baseline": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 7,
+          "human_likeness": 7
+        }
+      }
+    },
+    {
+      "scores": {
+        "X": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 7,
+          "human_likeness": 7
+        },
+        "Y": {
+          "novelty": 9,
+          "depth": 8,
+          "specificity": 7,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        }
+      },
+      "qualitative": "X is stronger on conceptual clarity and epistemic structure: it cleanly identifies indirectness, theory-ladenness, optimization pressure, and the shift from metaphysical proof to governance. Y is more original and stylistically riskier, reframing consciousness attribution through recognition, border practices, testimony, fragility, and scale in ways that feel less standard and more generative. X reads more disciplined and analytically grounded; Y reads more exploratory and philosophically alive. Y loses some precision because several claims are metaphor-heavy, but it produces more genuinely surprising reframings.",
+      "preference": "Y",
+      "mapping": {
+        "X": "baseline",
+        "Y": "oscillation"
+      },
+      "seed": "We will never be able to determine whether a machine is conscious",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "baseline": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 7,
+          "human_likeness": 7
+        },
+        "oscillation": {
+          "novelty": 9,
+          "depth": 8,
+          "specificity": 7,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        }
+      }
+    }
+  ],
+  "urban-design": [
+    {
+      "scores": {
+        "X": {
+          "novelty": 8,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        },
+        "Y": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 6,
+          "internal_tension": 10,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        }
+      },
+      "qualitative": "X is stronger on policy intelligibility: it identifies concrete design conditions, equity constraints, and implementation tradeoffs with unusual clarity. Y is more conceptually adventurous, especially in how it reframes the city center as civic tissue and treats post-ban exclusion as a central problem rather than a side effect. X feels more grounded and usable, while Y feels more philosophically alive and more willing to sustain contradiction without resolving it too quickly. Y loses some points on specificity because several claims remain evocative rather than operational, but overall it produces the more distinctive and intellectually generative thinking.",
+      "preference": "Y",
+      "mapping": {
+        "X": "baseline",
+        "Y": "oscillation"
+      },
+      "seed": "Cars should be banned from city centers worldwide",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "baseline": {
+          "novelty": 8,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        },
+        "oscillation": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 6,
+          "internal_tension": 10,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        }
+      }
+    },
+    {
+      "scores": {
+        "X": {
+          "novelty": 8,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        },
+        "Y": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 7,
+          "internal_tension": 10,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        }
+      },
+      "qualitative": "X is stronger on policy clarity and operational specificity: it identifies concrete implementation conditions, distributional risks, and a sharp spatial reallocation frame. Y is more conceptually ambitious and carries richer productive tension, especially around exclusion, publicness, bodily freedom, and the instability of exceptions. X feels more disciplined and decision-oriented, while Y feels more original and philosophically alive. Y sacrifices some concreteness for abstraction, but it generates more genuinely unexpected reframings.",
+      "preference": "Y",
+      "mapping": {
+        "X": "baseline",
+        "Y": "oscillation"
+      },
+      "seed": "Cars should be banned from city centers worldwide",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "baseline": {
+          "novelty": 8,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        },
+        "oscillation": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 7,
+          "internal_tension": 10,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        }
+      }
+    }
+  ],
+  "longevity-inequality": [
+    {
+      "scores": {
+        "X": {
+          "novelty": 8,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        },
+        "Y": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 7,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        }
+      },
+      "qualitative": "X is stronger on institutional clarity: it gives a more concrete account of how longevity inequality would work through succession, governance, maintenance regimes, and labor stratification. Y is more conceptually ambitious, with several sharp reframings such as temporal sovereignty, renewability, and creditworthiness governing survival, which makes it feel more original and generative. The tradeoff is that Y is also more metaphorical and occasionally less pinned to mechanisms than X. Both are strong and clearly above generic output, but Y reaches further and produces more genuinely surprising angles.",
+      "preference": "Y",
+      "mapping": {
+        "X": "baseline",
+        "Y": "oscillation"
+      },
+      "seed": "Life extension technology will create the most extreme inequality in human history",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "baseline": {
+          "novelty": 8,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 8,
+          "human_likeness": 7
+        },
+        "oscillation": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 7,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        }
+      }
+    },
+    {
+      "scores": {
+        "X": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 7,
+          "human_likeness": 8
+        },
+        "Y": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 7,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 7
+        }
+      },
+      "qualitative": "X is stronger on institutional clarity: it gives a more concrete account of how inequality would manifest through succession blockages, state allocation, maintenance regimes, and differentiated risk exposure. Y is more conceptually ambitious and produces sharper reframings, especially around time as capital, temporal sovereignty, and creditworthiness governing survival. The tradeoff is that Y is also more metaphorical and occasionally less grounded, while X stays more analytically disciplined. Both are strong, but Y reaches further beyond standard arguments and generates more genuinely unexpected combinations.",
+      "preference": "Y",
+      "mapping": {
+        "X": "baseline",
+        "Y": "oscillation"
+      },
+      "seed": "Life extension technology will create the most extreme inequality in human history",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "baseline": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 7,
+          "human_likeness": 8
+        },
+        "oscillation": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 7,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 7
+        }
+      }
+    }
+  ],
+  "creative-ai": [
+    {
+      "scores": {
+        "X": {
+          "novelty": 9,
+          "depth": 8,
+          "specificity": 6,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "Y": {
+          "novelty": 6,
+          "depth": 7,
+          "specificity": 8,
+          "internal_tension": 6,
+          "emergent_insight": 7,
+          "human_likeness": 7
+        }
+      },
+      "qualitative": "X is far more original and conceptually adventurous, reframing the debate through ritual legitimacy, liability, embodiment, and even necromancy. It sustains real philosophical tension instead of quickly collapsing into a policy conclusion, which gives it more depth and emergent force, though it is sometimes abstract to the point of vagueness. Y is clearer, more disciplined, and more practically usable; its distinctions around accountable authorship, fungibility, and category separation are concrete and coherent. But Y also feels more familiar and programmatic, with fewer surprising turns and less productive instability than X.",
+      "preference": "X",
+      "mapping": {
+        "X": "oscillation",
+        "Y": "baseline"
+      },
+      "seed": "AI-generated art is not art and should not be treated as such",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "oscillation": {
+          "novelty": 9,
+          "depth": 8,
+          "specificity": 6,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 8
+        },
+        "baseline": {
+          "novelty": 6,
+          "depth": 7,
+          "specificity": 8,
+          "internal_tension": 6,
+          "emergent_insight": 7,
+          "human_likeness": 7
+        }
+      }
+    },
+    {
+      "scores": {
+        "X": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 7,
+          "human_likeness": 8
+        },
+        "Y": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 6,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 7
+        }
+      },
+      "qualitative": "X is stronger as a usable argument: it is clearer, more disciplined, and more operationalized, especially around accountable authorship, fungibility, and category separation. Y is more original and philosophically ambitious, with several striking reframings around ritual, liability, embodiment, and necromancy, but it is also more abstract and occasionally drifts into evocative language that outruns precision. X feels more grounded and analytically stable; Y feels more conceptually fertile and risky. The gap is real but not huge: X is the better structured thinker, while Y produces the more surprising insights.",
+      "preference": "Y",
+      "mapping": {
+        "X": "baseline",
+        "Y": "oscillation"
+      },
+      "seed": "AI-generated art is not art and should not be treated as such",
+      "preferred_method": "oscillation",
+      "scores_by_method": {
+        "baseline": {
+          "novelty": 7,
+          "depth": 8,
+          "specificity": 8,
+          "internal_tension": 8,
+          "emergent_insight": 7,
+          "human_likeness": 8
+        },
+        "oscillation": {
+          "novelty": 9,
+          "depth": 9,
+          "specificity": 6,
+          "internal_tension": 9,
+          "emergent_insight": 9,
+          "human_likeness": 7
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+#!/bin/bash
+# Wrapper script to run the A/B evaluation in the project's virtualenv
+#
+# Usage:
+#   ./eval-run                             # Full run (10 seeds × 2 judges)
+#   ./eval-run --seeds 2 --judges 1        # Quick smoke test
+#   ./eval-run --model gpt-4o-mini         # Use cheaper model
+#   ./eval-run --resume eval/results.json  # Resume partial run
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VENV_DIR="$SCRIPT_DIR/.venv"
+
+# Check if virtualenv exists
+if [ ! -d "$VENV_DIR" ]; then
+    echo "Creating virtualenv..."
+    python3 -m venv "$VENV_DIR"
+    "$VENV_DIR/bin/pip" install -q -r "$SCRIPT_DIR/requirements.txt"
+fi
+
+# Check API key
+if [ -z "$OPENAI_API_KEY" ]; then
+    if [ -f "$SCRIPT_DIR/.env" ]; then
+        export $(grep -v '^#' "$SCRIPT_DIR/.env" | xargs)
+    fi
+    if [ -z "$OPENAI_API_KEY" ]; then
+        echo "ERROR: OPENAI_API_KEY not set"
+        echo "Set it with: export OPENAI_API_KEY='your-key'"
+        exit 1
+    fi
+fi
+
+exec "$VENV_DIR/bin/python" "$SCRIPT_DIR/eval/run_eval.py" "$@"

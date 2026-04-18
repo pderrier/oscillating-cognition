@@ -1,0 +1,105 @@
+{
+  "total_judgments": 20,
+  "total_seeds": 10,
+  "method_stats": {
+    "oscillation": {
+      "novelty": {
+        "mean": 8.9,
+        "std": 0.3,
+        "n": 20
+      },
+      "depth": {
+        "mean": 9.0,
+        "std": 0.0,
+        "n": 20
+      },
+      "specificity": {
+        "mean": 8.9,
+        "std": 0.3,
+        "n": 20
+      },
+      "internal_tension": {
+        "mean": 8.9,
+        "std": 0.3,
+        "n": 20
+      },
+      "emergent_insight": {
+        "mean": 8.7,
+        "std": 0.46,
+        "n": 20
+      },
+      "human_likeness": {
+        "mean": 8.9,
+        "std": 0.3,
+        "n": 20
+      },
+      "overall": {
+        "mean": 8.88,
+        "n": 120
+      }
+    },
+    "baseline": {
+      "novelty": {
+        "mean": 8.7,
+        "std": 0.46,
+        "n": 20
+      },
+      "depth": {
+        "mean": 9.0,
+        "std": 0.0,
+        "n": 20
+      },
+      "specificity": {
+        "mean": 9.0,
+        "std": 0.0,
+        "n": 20
+      },
+      "internal_tension": {
+        "mean": 8.8,
+        "std": 0.4,
+        "n": 20
+      },
+      "emergent_insight": {
+        "mean": 8.9,
+        "std": 0.3,
+        "n": 20
+      },
+      "human_likeness": {
+        "mean": 8.9,
+        "std": 0.3,
+        "n": 20
+      },
+      "overall": {
+        "mean": 8.88,
+        "n": 120
+      }
+    }
+  },
+  "win_rate": {
+    "oscillation": {
+      "count": 4,
+      "rate": 0.2
+    },
+    "baseline": {
+      "count": 4,
+      "rate": 0.2
+    },
+    "tie": {
+      "count": 12,
+      "rate": 0.6
+    }
+  },
+  "deltas": {
+    "novelty": 0.2,
+    "depth": 0.0,
+    "specificity": -0.1,
+    "internal_tension": 0.1,
+    "emergent_insight": -0.2,
+    "human_likeness": 0.0
+  },
+  "preferences_raw": {
+    "baseline": 4,
+    "oscillation": 4,
+    "tie": 12
+  }
+}

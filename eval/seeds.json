@@ -1,0 +1,55 @@
+{
+  "_comment": "External-domain seeds for A/B evaluation. None reference oscillating-cognition itself to avoid circular evaluation.",
+  "seeds": [
+    {
+      "id": "biotech-ethics",
+      "topic": "CRISPR gene editing should be available for non-medical human enhancement",
+      "domain": "bioethics"
+    },
+    {
+      "id": "remote-work",
+      "topic": "Remote-first companies will outcompete office-first companies within 10 years",
+      "domain": "business strategy"
+    },
+    {
+      "id": "education-ai",
+      "topic": "AI tutors will make traditional universities obsolete for most students",
+      "domain": "education"
+    },
+    {
+      "id": "climate-nuclear",
+      "topic": "Nuclear energy is the only realistic path to decarbonization at scale",
+      "domain": "energy policy"
+    },
+    {
+      "id": "open-source-sustainability",
+      "topic": "The open-source model is fundamentally broken and needs a new economic foundation",
+      "domain": "software economics"
+    },
+    {
+      "id": "consciousness-machines",
+      "topic": "We will never be able to determine whether a machine is conscious",
+      "domain": "philosophy of mind"
+    },
+    {
+      "id": "urban-design",
+      "topic": "Cars should be banned from city centers worldwide",
+      "domain": "urban planning"
+    },
+    {
+      "id": "longevity-inequality",
+      "topic": "Life extension technology will create the most extreme inequality in human history",
+      "domain": "social futures"
+    },
+    {
+      "id": "creative-ai",
+      "topic": "AI-generated art is not art and should not be treated as such",
+      "domain": "aesthetics"
+    },
+    {
+      "id": "decentralization",
+      "topic": "Decentralized systems always re-centralize and this is inevitable",
+      "domain": "systems theory"
+    }
+  ]
+}

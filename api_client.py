@@ -1,10 +1,13 @@
 """
-Robust OpenAI API client with retry logic and error handling.
+Robust API client with retry logic and error handling.
+
+Supports two backends:
+  1. OpenAI SDK (when OPENAI_API_KEY is set)
+  2. Codex app-server (when no API key — uses OAuth session)
 """
 import time
 import logging
 from typing import Optional
-from openai import OpenAI, APIError, APIConnectionError, RateLimitError, APITimeoutError
 
 from config import OPENAI_BASE_URL, OPENAI_API_KEY, OPENAI_MODEL
 
@@ -15,6 +18,13 @@ DEFAULT_TIMEOUT = 60  # seconds
 DEFAULT_MAX_RETRIES = 3
 DEFAULT_RETRY_DELAY = 2  # seconds (will be multiplied exponentially)
 
+# Always import OpenAI types — needed for test patching and the OpenAI code path.
+# The openai package is a required dependency regardless of backend.
+from openai import OpenAI, APIError, APIConnectionError, RateLimitError, APITimeoutError
+
+if not OPENAI_API_KEY:
+    logger.info("No OPENAI_API_KEY — will route through Codex app-server")
+
 
 class APIClientError(Exception):
     """Custom exception for API client errors."""
@@ -24,11 +34,12 @@ class APIClientError(Exception):
         self.original_error = original_error
 
 
-def get_client(timeout: int = DEFAULT_TIMEOUT) -> OpenAI:
+def get_client(timeout: int = DEFAULT_TIMEOUT) -> "OpenAI":
     """Create OpenAI client with configured settings."""
     if not OPENAI_API_KEY:
         raise APIClientError(
-            "OPENAI_API_KEY not set. Set it in environment or .env file."
+            "OPENAI_API_KEY not set. Set it in environment or .env file.\n"
+            "Or install Codex CLI and run 'codex login' to use OAuth instead."
         )
 
     return OpenAI(
@@ -67,6 +78,13 @@ def chat_completion(
     Raises:
         APIClientError: If all retries fail
     """
+    # Route through Codex app-server when no API key
+    if not OPENAI_API_KEY:
+        return _codex_chat_completion(
+            messages, temperature, max_tokens, model,
+            json_response, max_retries, retry_delay
+        )
+
     if model is None:
         model = OPENAI_MODEL
 
@@ -153,5 +171,55 @@ def chat_completion(
     # All retries exhausted
     raise APIClientError(
         f"API request failed after {max_retries} attempts. Last error: {last_error}",
+        original_error=last_error
+    )
+
+
+def _codex_chat_completion(
+    messages: list[dict],
+    temperature: float,
+    max_tokens: int,
+    model: str = None,
+    json_response: bool = True,
+    max_retries: int = DEFAULT_MAX_RETRIES,
+    retry_delay: float = DEFAULT_RETRY_DELAY
+) -> str:
+    """Route chat completion through Codex app-server."""
+    from codex_client import codex_chat_completion, CodexClientError
+
+    # When json_response is requested, add explicit instruction
+    # (Codex app-server doesn't support response_format parameter)
+    if json_response:
+        has_system = any(m.get("role") == "system" for m in messages)
+        if has_system:
+            messages = [
+                {**m, "content": m["content"] + "\n\nIMPORTANT: Output ONLY valid JSON, no other text."}
+                if m.get("role") == "system" else m
+                for m in messages
+            ]
+        else:
+            messages = [{"role": "system", "content": "Output ONLY valid JSON, no other text."}] + messages
+
+    last_error = None
+    for attempt in range(max_retries):
+        try:
+            content = codex_chat_completion(
+                messages=messages,
+                temperature=temperature,
+                model=model,
+            )
+            if content and content.strip():
+                return content
+            last_error = APIClientError("Codex returned empty content")
+        except CodexClientError as e:
+            last_error = e
+            logger.warning(f"Codex error (attempt {attempt + 1}/{max_retries}): {e}")
+
+        if attempt < max_retries - 1:
+            sleep_time = retry_delay * (2 ** attempt)
+            time.sleep(sleep_time)
+
+    raise APIClientError(
+        f"Codex request failed after {max_retries} attempts: {last_error}",
         original_error=last_error
     )
